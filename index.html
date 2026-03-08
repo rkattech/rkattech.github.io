@@ -12,128 +12,508 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoot Ventures | Making AI Uncomplicate Your Life</title>
-  <meta name="description" content="Hoot Ventures builds AI apps that turn daily chaos into clarity. Our first product, Gist, is a smart inbox for busy parents. We also build custom AI solutions for organizations.">
-  <meta property="og:title" content="Hoot Ventures | Making AI Uncomplicate Your Life">
-  <meta property="og:description" content="AI apps that turn daily chaos into clarity. Built by Rohit Kapoor.">
+  <meta name="theme-color" content="#091226">
+  <title>Hoot Ventures | Production AI Systems</title>
+  <meta name="description" content="Hoot Ventures builds AI systems that actually run in production. Our first product, Gist, turns chaotic school emails into a daily action plan for parents.">
+  <meta property="og:title" content="Hoot Ventures | Production AI Systems">
+  <meta property="og:description" content="We build AI systems that survive the real world. Gist reads every school email so you don't have to. Built by Rohit Kapoor.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.hootventures.ai">
   <link rel="canonical" href="https://www.hootventures.ai">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%238b5cf6'/%3E%3Ccircle cx='11' cy='14' r='4' fill='white'/%3E%3Ccircle cx='21' cy='14' r='4' fill='white'/%3E%3Ccircle cx='12' cy='14' r='2.2' fill='%230a0a12'/%3E%3Ccircle cx='22' cy='14' r='2.2' fill='%230a0a12'/%3E%3Cpath d='M14 20 L16 23 L18 20' fill='%23fbbf24'/%3E%3Cpath d='M6 8 L9 14 L4 11Z' fill='%238b5cf6'/%3E%3Cpath d='M26 8 L23 14 L28 11Z' fill='%238b5cf6'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23091226'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%230DB7A3' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%230DB7A3'/%3E%3C/svg%3E">
 </head>
 <body>
-
-  <!-- Flowing Ribbon Background -->
-  <div class="mesh-bg" aria-hidden="true">
-    <video autoplay loop muted playsinline class="bg-video">
-      <source src="bg-video.mp4" type="video/mp4">
-    </video>
-  </div>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="Hoot Ventures Home">
-        <img src="hoot-ventures-transparent.png" alt="Hoot Ventures Logo" class="nav-logo-img">
+        <div class="nav-logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2" fill="white" stroke="none"/>
+            <line x1="12" y1="2" x2="12" y2="6"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="6" y2="12"/>
+            <line x1="18" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
         <span class="nav-logo-text">Hoot Ventures</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#blueprint">Blueprint</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="nav-cta">Partner with us</a></li>
       </ul>
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" onclick="closeMobileMenu()">About</a>
-    <a href="#products" onclick="closeMobileMenu()">Products</a>
-    <a href="#expertise" onclick="closeMobileMenu()">Expertise</a>
-    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <a href="#blueprint" onclick="closeMobileMenu()">Blueprint</a>
+    <a href="#product" onclick="closeMobileMenu()">Product</a>
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#contact" onclick="closeMobileMenu()">Partner with us</a>
   </div>
 
-  <!-- Hero Section -->
+  <!-- ========================= -->
+  <!-- 1. HERO — COMPANY THESIS  -->
+  <!-- ========================= -->
   <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>Making AI <span class="gradient-text">Uncomplicate</span> Your Life</h1>
-      <p class="hero-subtitle">We build apps that turn daily chaos into clarity — starting with Gist, an AI inbox that gives busy parents their time back.</p>
-      <div class="hero-cta">
-        <a href="#products" class="btn btn-primary">See What We're Building</a>
-        <a href="#contact" class="btn btn-secondary">Work With Us</a>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>AI is easy to demo.<br>Shipping it in <span class="accent-word">production</span> is the hard part.</h1>
+          <p class="hero-subtitle">Hoot Ventures is a technology studio building production-grade AI experiences. We combine enterprise data infrastructure, consumer product design, and modern AI systems to create software that actually works at scale.</p>
+          <div class="hero-cta">
+            <a href="#blueprint" class="btn btn-primary">See How We Build</a>
+            <a href="#product" class="btn btn-secondary">Explore Gist</a>
+          </div>
+          <p class="hero-microcopy">We ship product, not papers.</p>
+
+          <div class="trust-strip">
+            <p class="trust-strip-label">Built by operators from</p>
+            <div class="trust-strip-logos">
+              <span>Capital One</span>
+              <span>Visa</span>
+              <span>Anywhere Real Estate</span>
+              <span>Wharton</span>
+              <span>Georgia Tech</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-diagram">
+            <!-- Abstract floating nodes representing the system -->
+            <div class="hero-node input">
+              <div class="hero-node-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg>
+              </div>
+              Emails
+            </div>
+            <div class="hero-node agent">
+              <div class="hero-node-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+              </div>
+              Extract Agent
+            </div>
+            <div class="hero-node input">
+              <div class="hero-node-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="10"/></svg>
+              </div>
+              Calendars
+            </div>
+            <div class="hero-node agent">
+              <div class="hero-node-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              Orchestrator
+            </div>
+            <div class="hero-node input">
+              <div class="hero-node-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              Documents
+            </div>
+            <div class="hero-node output">
+              <div class="hero-node-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              Daily Briefing
+            </div>
+            <div class="hero-node agent">
+              <div class="hero-node-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              Calendar Agent
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
+  <!-- ========================= -->
+  <!-- 2. PROOF AT A GLANCE      -->
+  <!-- ========================= -->
+  <section class="proof-section">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-text fade-in">
-          <span class="section-label">About</span>
-          <h2 class="section-title">Technology Should Simplify, Not Complicate</h2>
-          <p>Most AI startups are built by people who've never operated at scale — or by executives who can strategize but can't build. Hoot Ventures was founded to be neither.</p>
-          <p>Rohit Kapoor started his career as a software engineer, spent 12 years at Capital One rising from analyst to senior director over a $1.3B portfolio, led global data products at Visa, and built the 65-person consumer product organization at Anywhere Real Estate from scratch. Wharton MBA. Georgia Tech MS. Now he's writing the code himself.</p>
+      <div class="proof-grid">
+        <div class="proof-card fade-in">
+          <div class="proof-card-accent"></div>
+          <p class="proof-card-label">Flagship Product</p>
+          <h3>Gist</h3>
+          <p>A family inbox that reads every school email, activity update, and calendar invite — then tells you only what you need to do today.</p>
+          <a href="#product" class="btn btn-ghost">See Gist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-        <div class="pillars-grid fade-in">
-          <div class="glass-card pillar-card">
-            <div class="pillar-icon simplify">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
-            </div>
-            <h3>Operated at Scale</h3>
-            <p>$1.3B portfolio at Capital One. Global data products at Visa. 65-person product org at Anywhere Real Estate. We've built and led at the scale that matters.</p>
+        <div class="proof-card fade-in">
+          <div class="proof-card-accent"></div>
+          <p class="proof-card-label">Operating Pedigree</p>
+          <h3>Enterprise Muscle</h3>
+          <p>$1.3B in portfolio decisions at Capital One. Data infrastructure at Visa's global scale. A product org built from zero to sixty-five.</p>
+          <div class="proof-metrics">
+            <span class="proof-metric">$1.3B portfolio</span>
+            <span class="proof-metric">65-person org</span>
           </div>
-          <div class="glass-card pillar-card">
-            <div class="pillar-icon innovate">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-            </div>
-            <h3>Outcomes, Not Decks</h3>
-            <p>23% organic search growth. 18-month delivery cycles cut to 6. Per-customer profit up 70%. We measure everything by what shipped and what moved.</p>
-          </div>
-          <div class="glass-card pillar-card">
-            <div class="pillar-icon human">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-            <h3>Engineer at Heart</h3>
-            <p>Gist runs on multi-agent AI pipelines, NLP, and multi-modal processing — all architected and built in-house. We don't outsource the hard parts.</p>
+        </div>
+        <div class="proof-card fade-in">
+          <div class="proof-card-accent"></div>
+          <p class="proof-card-label">Measured Outcomes</p>
+          <h3>Outcomes, Not Decks</h3>
+          <p>23% organic search growth. 18-month delivery cycles cut to 6. Per-customer profit up 70%. Those weren't projections — they shipped.</p>
+          <div class="proof-metrics">
+            <span class="proof-metric">23% growth</span>
+            <span class="proof-metric">3x faster</span>
+            <span class="proof-metric">+70% profit</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="products">
+  <!-- ========================= -->
+  <!-- 3. THE PROBLEM WITH AI    -->
+  <!-- ========================= -->
+  <section class="problem-section" id="problem">
     <div class="container">
-      <div class="fade-in" style="text-align: center; margin-bottom: 1rem;">
-        <span class="section-label">Products</span>
+      <div class="problem-grid">
+        <div class="problem-text fade-in">
+          <span class="section-label">The Problem</span>
+          <h2>Most AI projects never make it to production.</h2>
+          <p>The internet is full of impressive AI demos. But most organizations discover the real difficulty after the prototype: connecting messy real-world data, building reliable pipelines, managing model drift, creating trustworthy user experiences, and operating systems that run every day without failure.</p>
+          <p>The gap between AI demo and AI product is where most projects fail.</p>
+          <p>That gap is where we work.</p>
+        </div>
+        <div class="problem-visual fade-in">
+          <div class="problem-compare compare-demo">
+            <p class="problem-compare-label">Typical AI Demo</p>
+            <div class="problem-compare-flow">
+              <span>prompt</span>
+              <span class="arrow">&rarr;</span>
+              <span>model</span>
+              <span class="arrow">&rarr;</span>
+              <span>output</span>
+            </div>
+          </div>
+          <div class="problem-compare compare-production">
+            <p class="problem-compare-label">Production AI</p>
+            <div class="problem-compare-flow">
+              <span>data</span>
+              <span class="arrow">&rarr;</span>
+              <span>pipelines</span>
+              <span class="arrow">&rarr;</span>
+              <span>agents</span>
+              <span class="arrow">&rarr;</span>
+              <span>orchestration</span>
+              <span class="arrow">&rarr;</span>
+              <span>monitoring</span>
+              <span class="arrow">&rarr;</span>
+              <span>product</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 4. THE HOOT APPROACH      -->
+  <!-- ========================= -->
+  <section class="approach-section">
+    <div class="container">
+      <div class="approach-content fade-in">
+        <span class="section-label">Our Approach</span>
+        <h2>Build the system.<br>Then build the product.</h2>
+        <p>At Hoot Ventures, we treat AI as a system problem, not just a model problem. Real AI products require structured data pipelines, multi-step reasoning workflows, robust orchestration layers, human-centered interfaces, and governance and monitoring.</p>
+        <p>When these pieces work together, AI stops being a novelty and becomes infrastructure.</p>
+      </div>
+      <div class="approach-pillars fade-in">
+        <div class="approach-pillar">
+          <div class="approach-pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+          </div>
+          <span class="approach-pillar-text">Data</span>
+        </div>
+        <div class="approach-pillar">
+          <div class="approach-pillar-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="approach-pillar-text">Pipelines</span>
+        </div>
+        <div class="approach-pillar">
+          <div class="approach-pillar-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <span class="approach-pillar-text">Agents</span>
+        </div>
+        <div class="approach-pillar">
+          <div class="approach-pillar-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <span class="approach-pillar-text">Product UX</span>
+        </div>
+        <div class="approach-pillar">
+          <div class="approach-pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="approach-pillar-text">Monitoring</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 5. PRODUCTION BLUEPRINT   -->
+  <!-- ========================= -->
+  <section class="blueprint-section" id="blueprint">
+    <div class="container">
+      <div class="blueprint-header fade-in">
+        <span class="section-label">Signature Asset</span>
+        <h2>The Production AI Blueprint</h2>
+        <p>From messy inputs to reliable product outcomes — a consistent architecture we reuse across products.</p>
+      </div>
+
+      <div class="blueprint-diagram fade-in">
+        <!-- Zone 1: Chaos -->
+        <div class="blueprint-chaos">
+          <p class="blueprint-zone-title">Real-World Inputs</p>
+          <p class="blueprint-zone-subtitle">Messy, fragmented information humans struggle to manage.</p>
+          <div class="chaos-nodes">
+            <div class="chaos-node">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg>
+              Email
+            </div>
+            <div class="chaos-node">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Documents
+            </div>
+            <div class="chaos-node">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Messages
+            </div>
+            <div class="chaos-node">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="10"/></svg>
+              Calendars
+            </div>
+            <div class="chaos-node">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+              Forms
+            </div>
+            <div class="chaos-node">
+              <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
+              APIs
+            </div>
+            <div class="chaos-node">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Images
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone 2: Engine -->
+        <div class="blueprint-engine">
+          <p class="blueprint-zone-title">Hoot Intelligence Engine</p>
+          <p class="blueprint-zone-subtitle">Structured, modular, engineered for production.</p>
+
+          <div class="engine-layer">
+            <div class="engine-layer-num">1</div>
+            <div class="engine-layer-content">
+              <p class="engine-layer-title">Connectors</p>
+              <p class="engine-layer-desc">Secure ingestion from real-world sources</p>
+            </div>
+            <span class="engine-layer-chevron">&rsaquo;</span>
+            <div class="engine-tooltip">
+              <p class="engine-tooltip-title">Data Connectors</p>
+              <p class="engine-tooltip-body">Secure connectors ingest emails, docs, and webhooks. We normalize schema at ingest to minimize downstream handling.</p>
+            </div>
+          </div>
+
+          <div class="engine-layer">
+            <div class="engine-layer-num">2</div>
+            <div class="engine-layer-content">
+              <p class="engine-layer-title">Semantic Understanding</p>
+              <p class="engine-layer-desc">Entity extraction and intent detection</p>
+            </div>
+            <span class="engine-layer-chevron">&rsaquo;</span>
+            <div class="engine-tooltip">
+              <p class="engine-tooltip-title">Understanding Layer</p>
+              <p class="engine-tooltip-body">Entity extraction and intent detection convert raw text into canonical facts — child, date, action type, urgency.</p>
+            </div>
+          </div>
+
+          <div class="engine-layer">
+            <div class="engine-layer-num">3</div>
+            <div class="engine-layer-content">
+              <p class="engine-layer-title">Agent Workflows</p>
+              <p class="engine-layer-desc">Modular agents for extract, classify, summarize, act</p>
+            </div>
+            <span class="engine-layer-chevron">&rsaquo;</span>
+            <div class="engine-tooltip">
+              <p class="engine-tooltip-title">Task-Oriented Agents</p>
+              <p class="engine-tooltip-body">Modular agents run discrete tasks — extract deadlines, classify messages, propose actions, and trigger calendar updates. Modularity enables fallback and explainability.</p>
+            </div>
+          </div>
+
+          <div class="engine-layer">
+            <div class="engine-layer-num">4</div>
+            <div class="engine-layer-content">
+              <p class="engine-layer-title">Context Engine</p>
+              <p class="engine-layer-desc">Vector search and semantic memory across time</p>
+            </div>
+            <span class="engine-layer-chevron">&rsaquo;</span>
+            <div class="engine-tooltip">
+              <p class="engine-tooltip-title">Persistent Context</p>
+              <p class="engine-tooltip-body">Persistent, versioned semantic memory stores context across time — who, where, prior decisions. Stable retrieval with reproducible results.</p>
+            </div>
+          </div>
+
+          <div class="engine-layer">
+            <div class="engine-layer-num">5</div>
+            <div class="engine-layer-content">
+              <p class="engine-layer-title">Orchestration</p>
+              <p class="engine-layer-desc">Coordination, fallback logic, cost controls</p>
+            </div>
+            <span class="engine-layer-chevron">&rsaquo;</span>
+            <div class="engine-tooltip">
+              <p class="engine-tooltip-title">Control Plane</p>
+              <p class="engine-tooltip-body">A control plane coordinates agents, enforces fallbacks, and optimizes for latency and cost. Observability and rollback built in.</p>
+            </div>
+          </div>
+
+          <div class="engine-layer">
+            <div class="engine-layer-num">6</div>
+            <div class="engine-layer-content">
+              <p class="engine-layer-title">Product Integration</p>
+              <p class="engine-layer-desc">Context-aware UX and progressive disclosure</p>
+            </div>
+            <span class="engine-layer-chevron">&rsaquo;</span>
+            <div class="engine-tooltip">
+              <p class="engine-tooltip-title">Product Layer</p>
+              <p class="engine-tooltip-body">AI is invisible until it becomes useful. Interfaces present information clearly and help users take action — with human-in-the-loop flows.</p>
+            </div>
+          </div>
+
+          <div class="engine-governance">
+            <span class="engine-governance-label">Guardrails</span>
+            <div class="engine-governance-items">
+              <span>Monitoring</span>
+              <span>Human feedback</span>
+              <span>Safety checks</span>
+              <span>Privacy controls</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone 3: Experiences -->
+        <div class="blueprint-experiences">
+          <div class="experience-card primary">
+            <p class="experience-card-label">Live Product</p>
+            <h3>Gist</h3>
+            <p>Daily intelligence briefing for families. Action items, deadlines, and events — organized by child.</p>
+            <ul class="experience-card-bullets">
+              <li>Actions detected</li>
+              <li>Deadlines surfaced</li>
+              <li>Events organized</li>
+            </ul>
+          </div>
+          <div class="experience-card">
+            <p class="experience-card-label">Roadmap</p>
+            <h3>Future Experiences</h3>
+            <p>AI-powered consumer and enterprise products built on the same production engine.</p>
+          </div>
+          <div class="experience-card">
+            <p class="experience-card-label">Platform</p>
+            <h3>Partner Integrations</h3>
+            <p>APIs and SDKs to embed extraction and orchestration into partner applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blueprint-footer fade-in">
+        <p>Most AI companies focus on models. <strong>We build the systems that turn models into reliable products.</strong></p>
+      </div>
+
+      <!-- Technical brief -->
+      <div class="blueprint-brief fade-in">
+        <h3>Technical Brief</h3>
+        <p>We build production AI by separating <strong>task decomposition</strong> from <strong>model execution</strong>. Raw inputs flow through secure connectors into lightweight parser agents; extracted entities and canonical representations are persisted in a versioned semantic store. An orchestrator composes agent outputs into product responses; MLOps layers provide rollout controls, observability, and automated rollback. We prioritize data lineage, human-in-the-loop corrections, and ephemeral demos to keep production safe and auditable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 6. CREDIBILITY / PROOF    -->
+  <!-- ========================= -->
+  <section class="credibility-section" id="about">
+    <div class="container">
+      <div class="credibility-grid">
+        <div class="credibility-text fade-in">
+          <span class="section-label">Built by Operators</span>
+          <h2>Built by people who have run real systems.</h2>
+          <p>Before founding Hoot Ventures, our team built and operated products across large organizations.</p>
+          <ul>
+            <li>Managing a $1.3B portfolio at a major financial institution</li>
+            <li>Building global data platforms at enterprise scale</li>
+            <li>Leading a 65-person consumer product organization</li>
+            <li>Launching production analytics systems used by millions</li>
+          </ul>
+          <p>These experiences shaped how we build today.</p>
+          <div class="founder-line">
+            <p class="founder-name">Rohit Kapoor</p>
+            <p class="founder-title">Founder, Hoot Ventures</p>
+            <p class="founder-tagline">Engineer by training. Product builder by trade.</p>
+          </div>
+        </div>
+        <div class="fade-in">
+          <div class="metrics-strip">
+            <div class="metric-item">
+              <p class="metric-value">23%</p>
+              <p class="metric-label">Organic search growth delivered</p>
+            </div>
+            <div class="metric-item">
+              <p class="metric-value">3x</p>
+              <p class="metric-label">Faster delivery cycles</p>
+            </div>
+            <div class="metric-item">
+              <p class="metric-value">70%</p>
+              <p class="metric-label">Per-customer profit increase</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 7. PRODUCT — GIST         -->
+  <!-- ========================= -->
+  <section class="products-section" id="product">
+    <div class="container">
       <div class="product-showcase">
         <div class="product-info fade-in">
-          <span class="product-badge">Launching March 2026</span>
-          <h2 class="product-name">Gist</h2>
-          <p class="product-tagline">Smart Inbox for Busy Parents</p>
-          <p class="product-desc">Parents drown in school emails, activity updates, and calendar chaos spread across inboxes. Gist consolidates it all, uses AI to extract what actually matters, and delivers a daily action plan organized by child. No more digging — Gist gives you the gist.</p>
+          <span class="section-label">Products</span>
+          <h2>Gist</h2>
+          <p class="product-tagline">One inbox. Every kid. Nothing missed.</p>
+          <p class="product-desc">Your kids' schools, sports leagues, and activities all send email to different accounts. Important deadlines get buried under newsletters and reply-alls. Gist pulls everything into one place, figures out what needs action, and organizes it by child — so you see exactly what matters for Emma today, and what can wait.</p>
           <ul class="product-features">
-            <li>Unified inbox for all school and activity emails across multiple accounts</li>
-            <li>AI extracts deadlines, registrations, and action items automatically</li>
-            <li>Child-centric daily briefing shows exactly what matters for each kid</li>
-            <li>Integrated calendar with school events, practices, and deadlines</li>
-            <li>Invite co-parents and caregivers to stay in sync</li>
+            <li>Connects all your email accounts into one feed</li>
+            <li>Spots deadlines, permission slips, and sign-ups buried in long emails</li>
+            <li>Daily briefing organized by child — Emma's day, Jake's day, all separate</li>
+            <li>Syncs school events, practice schedules, and due dates to your calendar</li>
+            <li>Share with your co-parent, nanny, or grandparents so everyone sees the same plan</li>
           </ul>
-          <a href="support.html" class="btn btn-primary">Learn More</a>
+          <a href="support.html" class="btn btn-accent">Learn More</a>
         </div>
         <div class="product-visual fade-in">
           <div class="phone-mockup">
@@ -166,94 +546,135 @@
     </div>
   </section>
 
-  <!-- Expertise Section -->
-  <section id="expertise">
+  <!-- ========================= -->
+  <!-- 8. SERVICES               -->
+  <!-- ========================= -->
+  <section class="services-section" id="services">
     <div class="container">
-      <div class="fade-in" style="text-align: center;">
-        <span class="section-label">Expertise & Services</span>
-        <h2 class="section-title" style="margin-bottom: 0.5rem;">Work With Us</h2>
-        <p class="section-subtitle" style="margin: 0 auto;">We build AI products for ourselves — and we can build them for you. Strategy through production, no hand-waving.</p>
+      <div class="fade-in" style="max-width: 640px;">
+        <span class="section-label">What We Build</span>
+        <h2>Hire the builder, not the advisor.</h2>
+        <p class="section-subtitle">Everything we sell, we've built for ourselves first. From architecture to App Store — no decks, no hand-waving.</p>
       </div>
-      <div class="expertise-grid">
-        <div class="glass-card expertise-card fade-in">
-          <div class="expertise-icon ai">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M12 2a4 4 0 014 4c0 1.1-.45 2.1-1.17 2.83L12 12l-2.83-3.17A4 4 0 0112 2zM6.5 9A3.5 3.5 0 003 12.5c0 .97.39 1.84 1.03 2.47L6.5 17.5l2.47-2.53c.64-.63 1.03-1.5 1.03-2.47A3.5 3.5 0 006.5 9zM17.5 9a3.5 3.5 0 00-3.5 3.5c0 .97.39 1.84 1.03 2.47l2.47 2.53 2.47-2.53c.64-.63 1.03-1.5 1.03-2.47A3.5 3.5 0 0017.5 9zM12 15a4 4 0 00-4 4c0 1.1.45 2.1 1.17 2.83L12 24l2.83-2.17A4 4 0 0012 15z"/></svg>
-          </div>
-          <h3>Custom AI Solutions</h3>
-          <p>We've built multi-agent AI pipelines, semantic search systems, and intelligent automation from scratch. Tell us the problem — we'll architect and ship the solution.</p>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <h3>AI Products, Built</h3>
+          <p>We've shipped multi-agent systems, semantic search, and intelligent automation — not as demos, but as production software. Bring us the problem. We'll build and deploy the answer.</p>
         </div>
-        <div class="glass-card expertise-card fade-in">
-          <div class="expertise-icon data">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-          </div>
-          <h3>Data & Analytics</h3>
-          <p>Data architecture, ML pipelines, and analytics platforms — built for scale, not for demos. We've done this at enterprise scale and know what actually works in production.</p>
+        <div class="service-card fade-in">
+          <h3>Data Infrastructure</h3>
+          <p>Data architecture, ML pipelines, and analytics platforms that survive contact with real users and real volume. We've built these systems at Visa and Capital One. We know what holds up.</p>
         </div>
-        <div class="glass-card expertise-card fade-in">
-          <div class="expertise-icon apps">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
-          </div>
-          <h3>Application Development</h3>
-          <p>Full-stack product development — iOS, web, and backend — from concept to App Store. We build the same way for clients as we build for ourselves: fast, polished, production-grade.</p>
-        </div>
-        <div class="glass-card expertise-card fade-in">
-          <div class="expertise-icon strategy">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-          </div>
+        <div class="service-card fade-in">
           <h3>AI Strategy</h3>
-          <p>Cut through the hype. We help leadership teams identify where AI will actually move the needle — and build a roadmap that's grounded in what's technically possible today.</p>
+          <p>Most AI roadmaps are fiction. We help leadership teams figure out what's real — what you can build now, what will actually change your numbers, and what's not worth touching yet.</p>
+        </div>
+      </div>
+      <p class="services-note fade-in">We partner selectively with organizations building ambitious products.</p>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 9. CULTURE / HIRING       -->
+  <!-- ========================= -->
+  <section class="culture-section">
+    <div class="container">
+      <div class="culture-content fade-in">
+        <span class="section-label" style="color: var(--accent);">Team</span>
+        <h2>A small team building serious technology.</h2>
+        <p>We believe the best systems are built by small groups of experienced builders.</p>
+        <ul class="culture-values">
+          <li>Engineers who understand product.</li>
+          <li>Product leaders who understand data.</li>
+          <li>Designers who understand systems.</li>
+        </ul>
+        <p>If that sounds like you, we'd love to talk.</p>
+        <a href="mailto:contact@hootventures.ai" class="btn btn-accent">Work with us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 10. CONTACT               -->
+  <!-- ========================= -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-text fade-in">
+          <span class="section-label">Let's Talk</span>
+          <h2>Have a problem worth solving?</h2>
+          <p>If you're building a product where AI could fundamentally change the user experience, we'd love to hear about it.</p>
+          <a href="mailto:contact@hootventures.ai" class="contact-email-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            contact@hootventures.ai
+          </a>
+        </div>
+        <div class="contact-form fade-in">
+          <h3>Start a conversation</h3>
+          <form action="https://formspree.io/f/placeholder" method="POST">
+            <div class="form-group">
+              <label>I am a</label>
+              <div class="form-radio-group">
+                <label class="form-radio"><input type="radio" name="type" value="partner"><span>Potential partner</span></label>
+                <label class="form-radio"><input type="radio" name="type" value="investor"><span>Investor / Press</span></label>
+                <label class="form-radio"><input type="radio" name="type" value="talent"><span>Talent</span></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company">Company (optional)</label>
+              <input type="text" id="company" name="company" placeholder="Your company">
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us the problem</label>
+              <textarea id="message" name="message" placeholder="Brief description (120 chars)" maxlength="500"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Start conversation</button>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="container fade-in">
-      <span class="section-label">Contact</span>
-      <h2 class="section-title">Have a Problem Worth Solving?</h2>
-      <p class="section-subtitle">Whether you need an AI product built, a strategy partner, or just want to talk shop — reach out.</p>
-      <a href="mailto:contact@hootventures.ai" class="contact-email">contact@hootventures.ai</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- ========================= -->
+  <!-- FOOTER                    -->
+  <!-- ========================= -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <a href="/" class="footer-logo">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="18" cy="28" rx="11" ry="13" fill="#8b5cf6" opacity="0.9"/>
-            <circle cx="18" cy="16" r="10" fill="#a78bfa"/>
-            <path d="M9.5 9 L12 16 L7.5 12.5Z" fill="#a78bfa"/>
-            <path d="M26.5 9 L24 16 L28.5 12.5Z" fill="#a78bfa"/>
-            <circle cx="14" cy="15" r="4" fill="#f1f5f9"/>
-            <circle cx="22" cy="15" r="4" fill="#f1f5f9"/>
-            <circle cx="15" cy="15" r="2.4" fill="#0a0a12"/>
-            <circle cx="23" cy="15" r="2.4" fill="#0a0a12"/>
-            <path d="M16.5 19 L18 21.5 L19.5 19Z" fill="#fbbf24"/>
-            <ellipse cx="36" cy="31" rx="7.5" ry="9" fill="#8b5cf6" opacity="0.9"/>
-            <circle cx="36" cy="22.5" r="7" fill="#c4b5fd"/>
-            <path d="M30.5 18 L32.5 22.5 L29 20Z" fill="#c4b5fd"/>
-            <path d="M41.5 18 L39.5 22.5 L43 20Z" fill="#c4b5fd"/>
-            <circle cx="33.5" cy="22" r="3" fill="#f1f5f9"/>
-            <circle cx="38.5" cy="22" r="3" fill="#f1f5f9"/>
-            <circle cx="34.2" cy="22" r="1.8" fill="#0a0a12"/>
-            <circle cx="39.2" cy="22" r="1.8" fill="#0a0a12"/>
-            <path d="M35 25 L36 27 L37 25Z" fill="#fbbf24"/>
-            <path d="M4 42 Q 24 38 46 42" stroke="#8b5cf6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          </svg>
-          <span class="footer-logo-text">Hoot Ventures</span>
-        </a>
-        <ul class="footer-links">
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="mailto:contact@hootventures.ai">Contact</a></li>
-        </ul>
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <div class="footer-logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2" fill="white" stroke="none"/>
+              </svg>
+            </div>
+            <span class="footer-logo-text">Hoot Ventures</span>
+          </a>
+          <p>Technology studio building production-grade AI products.</p>
+        </div>
+        <div class="footer-links-section">
+          <div class="footer-links-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#product">Gist</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="support.html">Support</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Hoot Ventures LLC. All rights reserved.</p>
+        <p>&copy; 2026 Hoot Ventures LLC. All rights reserved. Data practices are transparent. We do not sell customer data. <a href="privacy.html">See our privacy policy</a>.</p>
       </div>
     </div>
   </footer>
@@ -263,6 +684,21 @@
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Active nav link tracking
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY + 200;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+        if (link) {
+          link.classList.toggle('active', scrollY >= top && scrollY < top + height);
+        }
+      });
     });
 
     // Mobile menu
@@ -291,7 +727,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
   </script>
 </body>
 </html>
