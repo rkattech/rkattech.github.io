@@ -191,9 +191,16 @@
         <div class="problem-text fade-in">
           <span class="section-label">The Problem</span>
           <h2>Most AI projects never make it to production.</h2>
-          <p>The internet is full of impressive AI demos. But most organizations discover the real difficulty after the prototype: connecting messy real-world data, building reliable pipelines, managing model drift, creating trustworthy user experiences, and operating systems that run every day without failure.</p>
-          <p>The gap between AI demo and AI product is where most projects fail.</p>
-          <p>That gap is where we work.</p>
+          <p>The internet is full of impressive AI demos. But most organizations discover the real difficulty after the prototype:</p>
+          <ul class="problem-list">
+            <li>connecting messy real-world data</li>
+            <li>building reliable pipelines</li>
+            <li>managing model drift</li>
+            <li>creating trustworthy user experiences</li>
+            <li>operating systems that run every day without failure</li>
+          </ul>
+          <p>The gap between <strong>AI demo</strong> and <strong>AI product</strong> is where most projects fail.</p>
+          <p class="problem-punchline">That gap is where we work.</p>
         </div>
         <div class="problem-visual fade-in">
           <div class="problem-compare compare-demo">
@@ -290,33 +297,35 @@
           <p class="blueprint-zone-title">Real-World Inputs</p>
           <p class="blueprint-zone-subtitle">Messy, fragmented information humans struggle to manage.</p>
           <div class="chaos-nodes">
-            <div class="chaos-node">
-              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg>
+            <div class="chaos-node" style="transform: rotate(-3deg)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Email
+              <span class="chaos-tooltip">Subject: Field Trip — Permission slip due 3/10. Body: Please sign &amp; return.</span>
             </div>
-            <div class="chaos-node">
-              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <div class="chaos-node" style="transform: rotate(2deg)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
               Documents
+              <span class="chaos-tooltip">PDF: Immunization form — signed copy required.</span>
             </div>
-            <div class="chaos-node">
-              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <div class="chaos-node" style="transform: rotate(-1deg)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               Messages
+              <span class="chaos-tooltip">PTA thread: new volunteer request for bake sale.</span>
             </div>
-            <div class="chaos-node">
-              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="10"/></svg>
+            <div class="chaos-node" style="transform: rotate(3deg)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Calendars
+              <span class="chaos-tooltip">iCal event: School picture day — Mar 12.</span>
             </div>
-            <div class="chaos-node">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+            <div class="chaos-node" style="transform: rotate(-2deg)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
               Forms
+              <span class="chaos-tooltip">Registration: Summer camp — spots limited.</span>
             </div>
-            <div class="chaos-node">
-              <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
+            <div class="chaos-node" style="transform: rotate(1deg)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               APIs
-            </div>
-            <div class="chaos-node">
-              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Images
+              <span class="chaos-tooltip">School system webhook: new announcement posted.</span>
             </div>
           </div>
         </div>
@@ -329,8 +338,13 @@
           <div class="engine-layer">
             <div class="engine-layer-num">1</div>
             <div class="engine-layer-content">
-              <p class="engine-layer-title">Connectors</p>
+              <p class="engine-layer-title">Data Layer &amp; Connectors</p>
               <p class="engine-layer-desc">Secure ingestion from real-world sources</p>
+              <div class="engine-modules">
+                <span class="engine-module">Email Parser</span>
+                <span class="engine-module">Doc Ingestion</span>
+                <span class="engine-module">API Connectors</span>
+              </div>
             </div>
             <span class="engine-layer-chevron">&rsaquo;</span>
             <div class="engine-tooltip">
@@ -344,6 +358,12 @@
             <div class="engine-layer-content">
               <p class="engine-layer-title">Semantic Understanding</p>
               <p class="engine-layer-desc">Entity extraction and intent detection</p>
+              <div class="engine-modules">
+                <span class="engine-module">NER</span>
+                <span class="engine-module">Classification</span>
+                <span class="engine-module">Summarization</span>
+                <span class="engine-module">Intent</span>
+              </div>
             </div>
             <span class="engine-layer-chevron">&rsaquo;</span>
             <div class="engine-tooltip">
@@ -355,8 +375,17 @@
           <div class="engine-layer">
             <div class="engine-layer-num">3</div>
             <div class="engine-layer-content">
-              <p class="engine-layer-title">Agent Workflows</p>
-              <p class="engine-layer-desc">Modular agents for extract, classify, summarize, act</p>
+              <p class="engine-layer-title">Agent Pipelines</p>
+              <p class="engine-layer-desc">Specialized agents collaborate on complex workflows</p>
+              <div class="engine-agent-chain">
+                <span class="engine-agent-node">Extract</span>
+                <span class="engine-agent-line"></span>
+                <span class="engine-agent-node">Classify</span>
+                <span class="engine-agent-line"></span>
+                <span class="engine-agent-node">Summarize</span>
+                <span class="engine-agent-line"></span>
+                <span class="engine-agent-node">Act</span>
+              </div>
             </div>
             <span class="engine-layer-chevron">&rsaquo;</span>
             <div class="engine-tooltip">
@@ -368,8 +397,13 @@
           <div class="engine-layer">
             <div class="engine-layer-num">4</div>
             <div class="engine-layer-content">
-              <p class="engine-layer-title">Context Engine</p>
-              <p class="engine-layer-desc">Vector search and semantic memory across time</p>
+              <p class="engine-layer-title">Semantic Context Engine</p>
+              <p class="engine-layer-desc">Persistent knowledge across time and interactions</p>
+              <div class="engine-chips">
+                <span class="engine-chip">Vector Search</span>
+                <span class="engine-chip">Semantic Memory</span>
+                <span class="engine-chip">Historical Context</span>
+              </div>
             </div>
             <span class="engine-layer-chevron">&rsaquo;</span>
             <div class="engine-tooltip">
@@ -381,26 +415,18 @@
           <div class="engine-layer">
             <div class="engine-layer-num">5</div>
             <div class="engine-layer-content">
-              <p class="engine-layer-title">Orchestration</p>
+              <p class="engine-layer-title">Orchestration &amp; Governance</p>
               <p class="engine-layer-desc">Coordination, fallback logic, cost controls</p>
+              <div class="engine-modules">
+                <span class="engine-module">Workflow Orchestrator</span>
+                <span class="engine-module">Latency Optimizer</span>
+                <span class="engine-module">Fallback Logic</span>
+              </div>
             </div>
             <span class="engine-layer-chevron">&rsaquo;</span>
             <div class="engine-tooltip">
               <p class="engine-tooltip-title">Control Plane</p>
-              <p class="engine-tooltip-body">A control plane coordinates agents, enforces fallbacks, and optimizes for latency and cost. Observability and rollback built in.</p>
-            </div>
-          </div>
-
-          <div class="engine-layer">
-            <div class="engine-layer-num">6</div>
-            <div class="engine-layer-content">
-              <p class="engine-layer-title">Product Integration</p>
-              <p class="engine-layer-desc">Context-aware UX and progressive disclosure</p>
-            </div>
-            <span class="engine-layer-chevron">&rsaquo;</span>
-            <div class="engine-tooltip">
-              <p class="engine-tooltip-title">Product Layer</p>
-              <p class="engine-tooltip-body">AI is invisible until it becomes useful. Interfaces present information clearly and help users take action — with human-in-the-loop flows.</p>
+              <p class="engine-tooltip-body">A control plane coordinates agents, enforces fallbacks, and optimizes for latency and cost. Monitoring, human reviews, and privacy controls ensure auditable production behavior.</p>
             </div>
           </div>
 
