@@ -112,14 +112,15 @@ img {
   right: 0;
   z-index: 100;
   padding: 1rem 0;
-  transition: background 0.3s, backdrop-filter 0.3s;
+  border-bottom: 1px solid transparent;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .nav.scrolled {
   background: rgba(10, 10, 18, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom-color: var(--glass-border);
   padding: 0.5rem 0;
 }
 
@@ -152,14 +153,14 @@ img {
   gap: 0.25rem;
   text-decoration: none;
   color: var(--text-primary);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .nav-logo-img {
   height: 99px;
   width: auto;
   display: block;
-  transition: height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: height 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .nav-logo-text {
@@ -167,7 +168,7 @@ img {
   font-weight: 700;
   letter-spacing: 0.03em;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .nav-links {
