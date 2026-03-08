@@ -39,17 +39,30 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .section-title {
-  font-family: 'Outfit', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Sans', sans-serif;
   letter-spacing: -0.02em;
+  line-height: 1.15;
 }
+
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+h4 { font-size: 1.125rem; font-weight: 600; }
+h5 { font-size: 1rem; font-weight: 600; }
+h6 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+small, .text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.8rem; }
 
 a {
   color: var(--accent);
@@ -120,7 +133,7 @@ img {
 }
 
 .nav.scrolled .nav-logo-text {
-  font-size: 14pt;
+  font-size: 1rem;
 }
 
 .nav-inner {
@@ -150,9 +163,9 @@ img {
 }
 
 .nav-logo-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 18pt;
+  font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: 0.03em;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -254,7 +267,7 @@ section {
   display: inline-block;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
@@ -264,14 +277,15 @@ section {
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 
 .section-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.125rem;
   color: var(--text-secondary);
   max-width: 650px;
   line-height: 1.7;
@@ -320,9 +334,10 @@ section {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(3rem, 7vw, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
+  letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
@@ -475,9 +490,9 @@ section {
 
 .product-badge {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent-teal);
   background: rgba(45, 212, 191, 0.1);
@@ -488,13 +503,14 @@ section {
 }
 
 .product-name {
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 0.25rem;
 }
 
 .product-tagline {
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   color: var(--accent);
   margin-bottom: 1.25rem;
 }
@@ -776,8 +792,9 @@ section {
 }
 
 .content-page h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
 
@@ -788,15 +805,15 @@ section {
 }
 
 .content-page h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   color: var(--accent-light);
 }
 
 .content-page h3 {
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
@@ -878,10 +895,6 @@ section {
     padding: 7rem 1.5rem 3rem;
   }
 
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
   .hero-subtitle {
     font-size: 1rem;
   }
@@ -893,10 +906,6 @@ section {
 
   section {
     padding: 4rem 0;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
   }
 
   .about-grid {
@@ -936,10 +945,6 @@ section {
 }
 
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
   .hero-cta {
     flex-direction: column;
     align-items: center;
