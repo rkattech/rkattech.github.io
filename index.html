@@ -1,192 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TLER1XJFMF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TLER1XJFMF');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLER1XJFMF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TLER1XJFMF');
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoot Ventures</title>
+  <title>Hoot Ventures | Making AI Uncomplicate Your Life</title>
+  <meta name="description" content="Hoot Ventures builds AI-powered applications that simplify everyday life. From smart inboxes to intelligent assistants, we turn complexity into clarity.">
+  <meta property="og:title" content="Hoot Ventures | Making AI Uncomplicate Your Life">
+  <meta property="og:description" content="We build AI-powered applications that simplify everyday life.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.hootventures.ai">
+  <link rel="canonical" href="https://www.hootventures.ai">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-  <style>
-    /* Reset and base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-color: #F6EAFE;
-      color: #AE96DA;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Container styles */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    
-    /* Header styles */
-    header {
-      padding: 1.5rem 0;
-    }
-    
-    /* Main content styles */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem;
-    }
-    
-    .logo-container {
-      width: 16rem;
-      height: 16rem;
-      margin: 0 auto 2rem;
-      position: relative;
-    }
-    
-    .logo {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      opacity: 0.8;
-    }
-    
-    .tagline {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.25rem;
-      color: #AE96DA;
-      margin-bottom: 1.5rem;
-      max-width: 36rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .divider {
-      width: 4rem;
-      height: 0.25rem;
-      background-color: #AE96DA;
-      margin: 0 auto 2rem;
-    }
-    
-    .dots-container {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    
-    .dot {
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 50%;
-    }
-    
-    .dot-1 {
-      background-color: #CEB6FA;
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    
-    .dot-2 {
-      background-color: #BEA6EA;
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-      animation-delay: 0.5s;
-    }
-    
-    .dot-3 {
-      background-color: #AE96DA;
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-      animation-delay: 1s;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
-    .build-mode {
-      font-family: 'Space Mono', monospace;
-      color: #AE96DA;
-      font-size: 1rem;
-      text-align: center;
-      margin-top: -1rem;
-    }
-    
-    /* Footer styles */
-    footer {
-      padding: 1.5rem 0;
-      text-align: center;
-      font-size: 0.875rem;
-      color: #AE96DA;
-    }
-    
-    /* Animation keyframes */
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.4;
-        transform: scale(0.95);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.05);
-      }
-    }
-    
-    /* Media queries for responsiveness */
-    @media (min-width: 768px) {
-      .tagline {
-        font-size: 1.5rem;
-      }
-      
-      .logo-container {
-        width: 20rem;
-        height: 20rem;
-      }
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%238b5cf6'/%3E%3Ccircle cx='11' cy='14' r='4' fill='white'/%3E%3Ccircle cx='21' cy='14' r='4' fill='white'/%3E%3Ccircle cx='12' cy='14' r='2.2' fill='%230a0a12'/%3E%3Ccircle cx='22' cy='14' r='2.2' fill='%230a0a12'/%3E%3Cpath d='M14 20 L16 23 L18 20' fill='%23fbbf24'/%3E%3Cpath d='M6 8 L9 14 L4 11Z' fill='%238b5cf6'/%3E%3Cpath d='M26 8 L23 14 L28 11Z' fill='%238b5cf6'/%3E%3C/svg%3E">
 </head>
 <body>
-  <header class="container">
-    <!-- Header content (empty as requested) -->
-  </header>
-  
-  <main>
-    <div class="logo-container">
-      <img src="hootventures.png" alt="Hoot Ventures Logo" class="logo">
-    </div>
-    
-    <p class="tagline">making ai uncomplicate your life</p>
-    
-    <div class="divider"></div>
-    
-    <div class="dots-container">
-      <div class="dot dot-1"></div>
-      <div class="dot dot-2"></div>
-      <div class="dot dot-3"></div>
-    </div>
 
-    <p class="build-mode">[in build mode]</p>
-  </main>
-  
-  <footer class="container">
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> Hoot Ventures. All rights reserved.</p>
+  <!-- Flowing Ribbon Background -->
+  <div class="mesh-bg" aria-hidden="true">
+    <video autoplay loop muted playsinline class="bg-video">
+      <source src="bg-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Hoot Ventures Home">
+        <img src="hoot-ventures-transparent.png" alt="Hoot Ventures Logo" class="nav-logo-img">
+        <span class="nav-logo-text">Hoot Ventures</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#products" onclick="closeMobileMenu()">Products</a>
+    <a href="#expertise" onclick="closeMobileMenu()">Expertise</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Making AI <span class="gradient-text">Uncomplicate</span> Your Life</h1>
+      <p class="hero-subtitle">We build intelligent applications that simplify the everyday. From smart inboxes to AI-powered assistants, Hoot Ventures turns complexity into clarity.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary">Discover Our Products</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">Technology Should Simplify, Not Complicate</h2>
+          <p>At Hoot Ventures, we're focused on building AI-powered applications that streamline everyday life — reducing digital clutter, automating tedious tasks, and helping people make smarter decisions faster.</p>
+          <p>Our mission is to remove friction from daily life by creating intuitive, human-centered tools powered by artificial intelligence. We bring practical innovation to life, with a focus on clarity, efficiency, and usability.</p>
+          <p>We combine deterministic, reliable software with cutting-edge AI to create new experiences that weren't possible before — products that feel like magic but are grounded in real engineering.</p>
+        </div>
+        <div class="pillars-grid fade-in">
+          <div class="glass-card pillar-card">
+            <div class="pillar-icon simplify">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <h3>Simplify</h3>
+            <p>Technology should reduce friction, not add it. Every product we build starts by removing unnecessary complexity.</p>
+          </div>
+          <div class="glass-card pillar-card">
+            <div class="pillar-icon innovate">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3>Innovate</h3>
+            <p>We combine deterministic systems with AI to create experiences that weren't possible before.</p>
+          </div>
+          <div class="glass-card pillar-card">
+            <div class="pillar-icon human">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <h3>Human-First</h3>
+            <p>Every product starts with a real human need. AI is the engine, but people are always at the center.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <div class="container">
+      <div class="fade-in" style="text-align: center; margin-bottom: 1rem;">
+        <span class="section-label">Products</span>
+      </div>
+      <div class="product-showcase">
+        <div class="product-info fade-in">
+          <span class="product-badge">Launching Spring 2026</span>
+          <h2 class="product-name">Gist</h2>
+          <p class="product-tagline">Smart Inbox for Busy Parents</p>
+          <p class="product-desc">Gist is an AI-powered family assistant that turns scattered school emails, activity updates, and calendar events into a clear, child-centric daily action plan. No more digging through your inbox — Gist gives you the gist.</p>
+          <ul class="product-features">
+            <li>Unified inbox for all school and activity emails across multiple accounts</li>
+            <li>AI extracts deadlines, registrations, and action items automatically</li>
+            <li>Child-centric daily briefing shows exactly what matters for each kid</li>
+            <li>Integrated calendar with school events, practices, and deadlines</li>
+            <li>Invite co-parents and caregivers to stay in sync</li>
+          </ul>
+          <a href="support.html" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="product-visual fade-in">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="mock-header">
+                <span class="mock-app-name">Gist</span>
+                <span class="mock-date">Today</span>
+              </div>
+              <div class="mock-child-tab">Emma's Day</div>
+              <div class="mock-card">
+                <span class="mock-card-badge mock-badge-urgent">Due Today</span>
+                <p class="mock-card-text">Permission slip — Field trip to Science Museum</p>
+              </div>
+              <div class="mock-card">
+                <span class="mock-card-badge mock-badge-info">New Message</span>
+                <p class="mock-card-text">Soccer practice moved to 4:30 PM Thursday</p>
+              </div>
+              <div class="mock-card">
+                <span class="mock-card-badge mock-badge-calendar">Tomorrow</span>
+                <p class="mock-card-text">School picture day — wear dress code</p>
+              </div>
+              <div class="mock-card">
+                <span class="mock-card-badge mock-badge-task">Action Needed</span>
+                <p class="mock-card-text">Register for summer camp by March 15</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section id="expertise">
+    <div class="container">
+      <div class="fade-in" style="text-align: center;">
+        <span class="section-label">Expertise & Services</span>
+        <h2 class="section-title" style="margin-bottom: 0.5rem;">Beyond Products</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">We partner with organizations to bring AI-powered solutions to life — from strategy to production.</p>
+      </div>
+      <div class="expertise-grid">
+        <div class="glass-card expertise-card fade-in">
+          <div class="expertise-icon ai">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"><path d="M12 2a4 4 0 014 4c0 1.1-.45 2.1-1.17 2.83L12 12l-2.83-3.17A4 4 0 0112 2zM6.5 9A3.5 3.5 0 003 12.5c0 .97.39 1.84 1.03 2.47L6.5 17.5l2.47-2.53c.64-.63 1.03-1.5 1.03-2.47A3.5 3.5 0 006.5 9zM17.5 9a3.5 3.5 0 00-3.5 3.5c0 .97.39 1.84 1.03 2.47l2.47 2.53 2.47-2.53c.64-.63 1.03-1.5 1.03-2.47A3.5 3.5 0 0017.5 9zM12 15a4 4 0 00-4 4c0 1.1.45 2.1 1.17 2.83L12 24l2.83-2.17A4 4 0 0012 15z"/></svg>
+          </div>
+          <h3>Custom AI Solutions</h3>
+          <p>End-to-end development of AI-powered applications tailored to your business needs. From multi-agent systems to intelligent automation pipelines.</p>
+        </div>
+        <div class="glass-card expertise-card fade-in">
+          <div class="expertise-icon data">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3>Data & Analytics</h3>
+          <p>Transform raw data into actionable intelligence. Data architecture, analytics platforms, and ML pipelines built for scale and reliability.</p>
+        </div>
+        <div class="glass-card expertise-card fade-in">
+          <div class="expertise-icon apps">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+          </div>
+          <h3>Application Development</h3>
+          <p>Full-stack product development from concept to launch. Mobile, web, and backend systems built with modern frameworks and best practices.</p>
+        </div>
+        <div class="glass-card expertise-card fade-in">
+          <div class="expertise-icon strategy">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </div>
+          <h3>AI Strategy Consulting</h3>
+          <p>Navigate the AI landscape with clarity. We help organizations identify high-impact opportunities and build practical implementation roadmaps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container fade-in">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Let's Build Something Together</h2>
+      <p class="section-subtitle">Whether you're looking for a technology partner, exploring AI opportunities, or just want to connect — we'd love to hear from you.</p>
+      <a href="mailto:contact@hootventures.ai" class="contact-email">contact@hootventures.ai</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="18" cy="28" rx="11" ry="13" fill="#8b5cf6" opacity="0.9"/>
+            <circle cx="18" cy="16" r="10" fill="#a78bfa"/>
+            <path d="M9.5 9 L12 16 L7.5 12.5Z" fill="#a78bfa"/>
+            <path d="M26.5 9 L24 16 L28.5 12.5Z" fill="#a78bfa"/>
+            <circle cx="14" cy="15" r="4" fill="#f1f5f9"/>
+            <circle cx="22" cy="15" r="4" fill="#f1f5f9"/>
+            <circle cx="15" cy="15" r="2.4" fill="#0a0a12"/>
+            <circle cx="23" cy="15" r="2.4" fill="#0a0a12"/>
+            <path d="M16.5 19 L18 21.5 L19.5 19Z" fill="#fbbf24"/>
+            <ellipse cx="36" cy="31" rx="7.5" ry="9" fill="#8b5cf6" opacity="0.9"/>
+            <circle cx="36" cy="22.5" r="7" fill="#c4b5fd"/>
+            <path d="M30.5 18 L32.5 22.5 L29 20Z" fill="#c4b5fd"/>
+            <path d="M41.5 18 L39.5 22.5 L43 20Z" fill="#c4b5fd"/>
+            <circle cx="33.5" cy="22" r="3" fill="#f1f5f9"/>
+            <circle cx="38.5" cy="22" r="3" fill="#f1f5f9"/>
+            <circle cx="34.2" cy="22" r="1.8" fill="#0a0a12"/>
+            <circle cx="39.2" cy="22" r="1.8" fill="#0a0a12"/>
+            <path d="M35 25 L36 27 L37 25Z" fill="#fbbf24"/>
+            <path d="M4 42 Q 24 38 46 42" stroke="#8b5cf6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="footer-logo-text">Hoot Ventures</span>
+        </a>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="mailto:contact@hootventures.ai">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Hoot Ventures LLC. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    function closeMobileMenu() {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  </script>
 </body>
 </html>
-
