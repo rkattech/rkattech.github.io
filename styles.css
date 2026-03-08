@@ -165,23 +165,21 @@ section[id] {
 }
 
 .nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: var(--ink);
-  border-radius: 10px;
+  height: 34px;
+  width: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
   transition: transform 0.3s ease;
 }
 
 .nav-logo:hover .nav-logo-mark {
-  transform: rotate(-6deg);
+  transform: scale(1.05);
 }
 
-.nav-logo-mark svg {
-  width: 20px;
-  height: 20px;
+.nav-logo-mark img {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
 .nav-logo-text {
@@ -1912,18 +1910,16 @@ section[id] {
 }
 
 .footer-logo-mark {
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  height: 28px;
+  width: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.footer-logo-mark svg {
-  width: 18px;
-  height: 18px;
+.footer-logo-mark img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .footer-logo-text {
