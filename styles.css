@@ -2459,164 +2459,317 @@ section[id] {
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
 
-  .nav-hamburger {
-    display: flex;
-  }
+  /* ── Navigation ── */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
 
-  section {
-    padding: var(--space-3xl) 0;
-  }
+  /* ── General spacing — tighter on mobile ── */
+  section { padding: var(--space-2xl) 0; }
 
-  .hero {
-    padding: 6rem 0 var(--space-3xl);
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
-
-  .hero-visual {
-    display: none;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2.25rem, 8vw, 3rem);
-  }
-
-  .proof-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .problem-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
-
+  /* ── Particle canvas: off on mobile ── */
   #particleCanvas { display: none; }
 
-  /* Gauntlet mobile: disable sticky scrollytelling */
-  .gauntlet-track {
-    height: auto;
+  /* ──────────────────────────────────────
+     HERO — Full-bleed, centered manifesto
+  ────────────────────────────────────── */
+  .hero {
+    padding: 5rem 0 var(--space-xl);
+    text-align: center;
   }
-  .gauntlet-sticky {
-    position: static;
-    height: auto;
-    z-index: auto;
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
+  .hero-visual { display: none; }
+  .hero-content h1 {
+    font-size: clamp(2.4rem, 10vw, 3.25rem);
+    line-height: 1.1;
+  }
+  .hero-subtitle {
+    font-size: 0.975rem;
+    line-height: 1.65;
+    max-width: 34ch;
+    margin: 0 auto;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  /* ──────────────────────────────────────
+     HOW WE BUILD — Manifesto timeline
+     (disable sticky, render as vertical rail)
+  ────────────────────────────────────── */
+  .gauntlet-track { height: auto; }
+  .gauntlet-sticky { position: static; height: auto; z-index: auto; }
+  .gs-scroll-cue, .gs-dots { display: none; }
+
+  /* All panels: base reset */
   .gs-panel {
     position: static;
     opacity: 1 !important;
     transform: none !important;
     pointer-events: auto !important;
-    padding: 3rem 1.5rem;
-    border-bottom: 1px solid var(--card-border);
+    border-bottom: none;
   }
+
+  /* Intro panel (gs-0): centered statement */
+  .gs-0 {
+    padding: 3.5rem 1.5rem 2rem;
+    text-align: center;
+  }
+  .gs-headline {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    line-height: 1.1;
+  }
+  .gs-subtext {
+    font-size: 0.975rem;
+    max-width: 36ch;
+    margin: 0 auto;
+  }
+
+  /* Principles (gs-1 to gs-4): left-border timeline rail */
+  .gs-1, .gs-2, .gs-3, .gs-4 {
+    padding: 1.5rem 1.25rem 1.5rem 1.75rem;
+    margin: 0 1.25rem;
+    border-left: 2px solid var(--accent);
+    position: relative;
+  }
+  /* Timeline dot on the rail */
+  .gs-1::before, .gs-2::before, .gs-3::before, .gs-4::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 1.875rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+  /* Spacing between principles */
+  .gs-1 { margin-top: 0; }
+  .gs-4 { margin-bottom: 1.5rem; }
+
+  /* Step layout: inline meta + stacked copy */
+  .gs-step-layout {
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: left;
+  }
+  .gs-step-meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .gs-step-num {
+    font-size: 1.75rem;
+    line-height: 1;
+    min-width: 2.5rem;
+  }
+  .gs-step-h {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .gs-step-micro {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  /* Mic drop: clean card, not full-bleed box */
   .gs-micdrop {
     position: static;
     opacity: 1 !important;
     pointer-events: auto !important;
     transform: none;
-    width: 100%;
-    padding: 3rem 1.5rem;
+    width: auto;
+    margin: 0 1.25rem 0;
+    padding: 1.75rem 1.5rem;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    border-top: 1px solid var(--card-border);
-    border-bottom: 1px solid var(--card-border);
+    border: 1px solid var(--card-border);
+    border-top: 2px solid var(--accent);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
   }
-  .gs-scroll-cue,
-  .gs-dots {
-    display: none;
+  .gmd-line {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
   }
-  .gs-step-layout {
-    flex-direction: column;
-    gap: 1.25rem;
+
+  /* ──────────────────────────────────────
+     BLUEPRINT — Vertical flow, no rails
+  ────────────────────────────────────── */
+
+  /* Hide left/right rails — supplementary detail not readable on mobile */
+  .stack-rail { display: none; }
+
+  .stack-grid { grid-template-columns: 1fr; }
+
+  .blueprint-header { text-align: center; }
+  .blueprint-header h2 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+  .blueprint-header p {
+    font-size: 0.925rem;
+  }
+
+  /* Layer cards: compact, strip subtitle, keep tags */
+  .layer-card {
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 0.625rem;
+    border-radius: var(--radius-md);
+  }
+  .layer-card-top { margin-bottom: 0.625rem; gap: 0.5rem; }
+  .layer-title { font-size: 1rem; }
+  .layer-subtitle { display: none; }
+  .layer-num-badge { display: none; }
+  .layer-tag {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
+  }
+  .layer-callout {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Fork: prominent divider */
+  .path-fork {
+    margin: 0.25rem 0;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.8rem;
+    border-radius: var(--radius-md);
     text-align: center;
   }
-  .gs-step-num {
-    font-size: 2.75rem;
-  }
 
-  .product-showcase {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
+  /* Read/write: stacked 1-col */
+  .layer-split { grid-template-columns: 1fr; gap: 0.625rem; }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  /* Stack footer: just the badge */
+  .stack-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
+  .stack-footer-desc { display: none; }
 
+  /* ──────────────────────────────────────
+     WHAT WE DO — Gist + Studio modes
+  ────────────────────────────────────── */
+  .whatwedo-header { text-align: center; }
+  .whatwedo-header h2 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    line-height: 1.15;
+  }
+  .whatwedo-subhead { font-size: 0.925rem; }
+
+  /* Gist showcase */
   .gist-showcase {
     grid-template-columns: 1fr;
-    padding: 1.75rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
-
   .gist-visual {
     order: -1;
+    display: flex;
+    justify-content: center;
   }
+  .gist-name { font-size: 2.25rem; }
+  /* Keep tagline + proof callout; hide long description */
+  .gist-desc { display: none; }
+  .gist-proof-callout { font-size: 0.825rem; }
 
+  /* Studio divider */
+  .studio-divider { margin: 2rem 0 1.5rem; }
+  .studio-divider-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    white-space: normal;
+    text-align: center;
+  }
+  .studio-intro { font-size: 0.925rem; text-align: center; }
+
+  /* Studio modes: compact list — not full cards
+     Each mode: number + title only. Hide verbose desc. */
   .studio-modes {
     grid-template-columns: 1fr;
+    gap: 0;
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .studio-mode {
+    padding: 1.25rem 1.5rem;
+    border-radius: 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .studio-mode:last-child { border-bottom: none; }
+  .studio-mode--featured {
+    border-left: 3px solid var(--accent);
+  }
+  .mode-header { margin-bottom: 0.5rem; gap: 0.5rem; }
+  .mode-num { font-size: 0.7rem; }
+  .mode-type { font-size: 0.7rem; }
+  .mode-title {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  /* Hide verbose descriptions — "For..." qualifier is enough */
+  .mode-desc { display: none; }
+  .mode-for {
+    font-size: 0.8rem;
+    margin-top: 0;
+    padding-top: 0.625rem;
+    border-top: 1px solid var(--card-border);
   }
 
+  /* Studio footer / credentials */
   .studio-footer {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
+  .creds-list { gap: 0.3rem; }
 
-  .creds-list {
-    gap: 0.35rem;
-  }
-
+  /* ──────────────────────────────────────
+     CONTACT + FOOTER
+  ────────────────────────────────────── */
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-xl);
   }
-
   .footer-inner {
     flex-direction: column;
     gap: var(--space-lg);
   }
+  .footer-links-section { gap: var(--space-2xl); }
 
-  .footer-links-section {
-    gap: var(--space-2xl);
-  }
-
-  .metrics-strip {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: var(--space-md);
-  }
-
-  .metric-item {
-    padding: var(--space-sm);
-    border-bottom: 1px solid var(--card-border);
-  }
-
-  .metric-item:last-child {
-    border-bottom: none;
-  }
-
-  .phone-mockup {
-    width: 260px;
-  }
+  /* Legacy / unused on current build — keep for safety */
+  .proof-grid { grid-template-columns: 1fr; }
+  .problem-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+  .product-showcase { grid-template-columns: 1fr; gap: var(--space-2xl); }
+  .services-grid { grid-template-columns: 1fr; }
+  .metrics-strip { grid-template-columns: 1fr; gap: 0; padding: var(--space-md); }
+  .metric-item { padding: var(--space-sm); border-bottom: 1px solid var(--card-border); }
+  .metric-item:last-child { border-bottom: none; }
+  .phone-mockup { width: 240px; }
 }
 
 @media (max-width: 480px) {
-  .hero-cta {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .trust-strip-logos {
-    gap: 1rem;
-  }
+  .hero-content h1 { font-size: clamp(2rem, 11vw, 2.75rem); }
+  .hero-cta { align-items: stretch; }
+  .btn { width: 100%; justify-content: center; }
+  .trust-strip-logos { gap: 1rem; }
+  .gs-1, .gs-2, .gs-3, .gs-4 { margin: 0 0.75rem; }
+  .gs-micdrop { margin: 0 0.75rem; }
+  .gmd-line { font-size: clamp(1rem, 5.5vw, 1.35rem); }
 }
