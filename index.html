@@ -206,199 +206,251 @@
         <p>We do not treat AI as the system. We treat it as one bounded component inside a larger production architecture. Raw inputs are structured before inference. Candidate meaning is verified before it becomes durable state. Product surfaces sit downstream of provenance, policy, and fallback logic.</p>
       </div>
 
-      <div class="stack-grid fade-in">
+      <!-- Blueprint teaser — ghost preview with gradient fade -->
+      <div class="blueprint-teaser fade-in">
 
-        <!-- Left Rail: Structured Ingestion -->
-        <aside class="stack-rail">
-          <p class="rail-label">Structured Ingestion</p>
-          <p class="rail-desc">Typed source inputs with metadata and provenance captured at entry.</p>
-          <div class="rail-items">
-            <div class="rail-item">Email<span class="rail-num">01</span></div>
-            <div class="rail-item">Files<span class="rail-num">02</span></div>
-            <div class="rail-item">Images<span class="rail-num">03</span></div>
-            <div class="rail-item">Voice<span class="rail-num">04</span></div>
-            <div class="rail-item">Camera<span class="rail-num">05</span></div>
-            <div class="rail-item">APIs<span class="rail-num">06</span></div>
-            <div class="rail-item rail-item--meta">Source Metadata<span class="rail-num">—</span></div>
-            <div class="rail-item rail-item--meta">Provenance Capture<span class="rail-num">—</span></div>
+        <!-- Ghost layer cards — visual suggestion of the full diagram -->
+        <div class="btl-preview" aria-hidden="true">
+          <div class="btl-rail btl-rail--left">
+            <span>Email</span><span>Files</span><span>Images</span><span>Voice</span><span>APIs</span>
           </div>
-        </aside>
-
-        <!-- Center: Layer Cards -->
-        <div class="stack-layers">
-
-          <!-- Layer 1: Deterministic Processing -->
-          <div class="layer-card">
-            <div class="layer-card-top">
-              <div class="layer-card-meta">
-                <p class="layer-eyebrow">Layer 1</p>
-                <h3 class="layer-title">Deterministic Processing</h3>
-                <p class="layer-subtitle">Noise is removed and structure is extracted before any model is asked to infer meaning.</p>
-              </div>
-              <div class="layer-num-badge">1</div>
+          <div class="btl-layers">
+            <div class="btl-layer">
+              <span class="btl-num">1</span>
+              <span class="btl-name">Deterministic Processing</span>
+              <div class="btl-tags"><span>Cleaning</span><span>Fingerprinting</span><span>Normalization</span><span>Deduplication</span><span>Provenance Tagging</span></div>
             </div>
-            <div class="layer-tags">
-              <span class="layer-tag">Cleaning &amp; Parsing</span>
-              <span class="layer-tag">Fingerprinting</span>
-              <span class="layer-tag">Normalization</span>
-              <span class="layer-tag">Entity Extraction</span>
-              <span class="layer-tag">Temporal Preprocessing</span>
-              <span class="layer-tag">Visual Structure Analysis</span>
-              <span class="layer-tag">Deduplication Cascade</span>
-              <span class="layer-tag">Provenance Tagging</span>
+            <div class="btl-layer">
+              <span class="btl-num">2</span>
+              <span class="btl-name">Data &amp; Context Layer</span>
+              <div class="btl-tags"><span>Raw Cache</span><span>Vector Index</span><span>Graph Context</span><span>Timeline State</span></div>
             </div>
+            <div class="btl-layer">
+              <span class="btl-num">3</span>
+              <span class="btl-name">Reasoning &amp; Orchestration</span>
+              <div class="btl-tags"><span>Prompt Policy</span><span>Retrieval Routing</span><span>Model Runtime</span><span>Tool Connectors</span></div>
+            </div>
+            <div class="btl-fork">Reads and writes diverge here.</div>
+            <div class="btl-split">
+              <div class="btl-layer btl-layer--read"><span class="btl-num btl-num--read">R</span><span class="btl-name">Retrieval &amp; Synthesis</span></div>
+              <div class="btl-layer btl-layer--write"><span class="btl-num btl-num--write">W</span><span class="btl-name">Verification &amp; Write Controls</span></div>
+            </div>
+            <div class="btl-layer btl-layer--memory"><span class="btl-num">M</span><span class="btl-name">Governed Memory</span></div>
           </div>
-
-          <!-- Layer 2: Data & Context -->
-          <div class="layer-card">
-            <div class="layer-card-top">
-              <div class="layer-card-meta">
-                <p class="layer-eyebrow">Layer 2</p>
-                <h3 class="layer-title">Data &amp; Context Layer</h3>
-                <p class="layer-subtitle">Multiple durable representations of source records, structured state, semantic retrieval, and relational context.</p>
-              </div>
-              <div class="layer-num-badge">2</div>
-            </div>
-            <div class="layer-tags">
-              <span class="layer-tag">Raw Cache</span>
-              <span class="layer-tag">Relational Store</span>
-              <span class="layer-tag">Vector Index</span>
-              <span class="layer-tag">Graph Context</span>
-              <span class="layer-tag">Timeline State</span>
-              <span class="layer-tag">Source References</span>
-            </div>
+          <div class="btl-rail btl-rail--right">
+            <span>AI Chat</span><span>Daily Briefings</span><span>Notifications</span><span>UI Surfaces</span><span>Approved Actions</span>
           </div>
-
-          <!-- Layer 3: Reasoning & Orchestration -->
-          <div class="layer-card">
-            <div class="layer-card-top">
-              <div class="layer-card-meta">
-                <p class="layer-eyebrow">Layer 3</p>
-                <h3 class="layer-title">Reasoning &amp; Orchestration</h3>
-                <p class="layer-subtitle">Models operate over structured context through orchestrated workflows, not as freeform agents over raw data.</p>
-              </div>
-              <div class="layer-num-badge">3</div>
-            </div>
-            <div class="layer-tags">
-              <span class="layer-tag">Prompt Policy</span>
-              <span class="layer-tag">Workflow Coordination</span>
-              <span class="layer-tag">Retrieval Routing</span>
-              <span class="layer-tag">Tool Connectors</span>
-              <span class="layer-tag">Model Runtime</span>
-              <span class="layer-tag">Browser Execution</span>
-              <span class="layer-tag">Local Models</span>
-            </div>
-          </div>
-
-          <!-- THE FORK — Read Path vs Write Path -->
-          <div class="path-fork" aria-label="System output splits into read path and write path">
-            <div class="path-fork-label">Reads and writes diverge here.</div>
-          </div>
-
-          <!-- Read/Write Split -->
-          <div class="layer-split">
-
-            <!-- READ PATH -->
-            <div class="layer-card layer-card--read">
-              <div class="layer-card-top">
-                <div class="layer-card-meta">
-                  <p class="layer-eyebrow layer-eyebrow--read">Read Path</p>
-                  <h3 class="layer-title">Retrieval &amp; Synthesis</h3>
-                  <p class="layer-subtitle">Reads are permissive. The system retrieves context, synthesizes meaning, and surfaces candidate interpretations.</p>
-                </div>
-              </div>
-              <div class="layer-tags">
-                <span class="layer-tag layer-tag--read">Context Retrieval</span>
-                <span class="layer-tag layer-tag--read">Summarization</span>
-                <span class="layer-tag layer-tag--read">Narrative Synthesis</span>
-                <span class="layer-tag layer-tag--read">Session State</span>
-              </div>
-              <div class="path-arrow" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Chat, Briefings, UI</span>
-              </div>
-            </div>
-
-            <!-- WRITE PATH — the hard gate -->
-            <div class="layer-card layer-card--write">
-              <div class="layer-card-top">
-                <div class="layer-card-meta">
-                  <p class="layer-eyebrow layer-eyebrow--write">Write Path — Gated</p>
-                  <h3 class="layer-title">Verification &amp; Write Controls</h3>
-                  <p class="layer-subtitle">Writes are governed. Candidate meaning does not become durable state without passing every gate.</p>
-                </div>
-              </div>
-              <div class="layer-tags">
-                <span class="layer-tag layer-tag--write">Evidence Matching</span>
-                <span class="layer-tag layer-tag--write">Provenance Checks</span>
-                <span class="layer-tag layer-tag--write">Structured Validation</span>
-                <span class="layer-tag layer-tag--write">Mutation Policy</span>
-                <span class="layer-tag layer-tag--write">Human Escalation</span>
-              </div>
-              <div class="layer-callout">No provenance = no write</div>
-              <div class="path-arrow" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Approved Actions, Memory Updates</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Memory — shared, governed -->
-          <div class="layer-card layer-card--accent">
-            <div class="layer-card-top">
-              <div class="layer-card-meta">
-                <p class="layer-eyebrow">Persistent State</p>
-                <h3 class="layer-title">Governed Memory</h3>
-                <p class="layer-subtitle">Memory is not a prompt feature. It is a governed write system with distinct trust levels.</p>
-              </div>
-              <div class="layer-num-badge">M</div>
-            </div>
-            <div class="layer-tags">
-              <span class="layer-tag layer-tag--accent">Session State</span>
-              <span class="layer-tag layer-tag--accent">Persistent Memory</span>
-              <span class="layer-tag layer-tag--accent">Durable Structured State</span>
-              <span class="layer-tag layer-tag--accent">Audit Trace</span>
-            </div>
-            <div class="layer-callout">Reads are cheap. Writes are governed.</div>
-          </div>
-
+          <!-- Gradient mask — fades bottom half to background -->
+          <div class="btl-fade" aria-hidden="true"></div>
         </div>
 
-        <!-- Right Rail: Product Surfaces & Approved Actions -->
-        <aside class="stack-rail">
-          <p class="rail-label">Product Surfaces &amp; Approved Actions</p>
-          <p class="rail-desc">Interfaces, notifications, and actions downstream of verified system behavior.</p>
-          <div class="rail-items">
-            <div class="rail-item">AI Chat<span class="rail-num">E1</span></div>
-            <div class="rail-item">Daily Briefings<span class="rail-num">E2</span></div>
-            <div class="rail-item">Notifications<span class="rail-num">E3</span></div>
-            <div class="rail-item">UI Surfaces<span class="rail-num">E4</span></div>
-            <div class="rail-item">Review Queues<span class="rail-num">E5</span></div>
-            <div class="rail-item rail-item--write">Approved Actions<span class="rail-num">E6</span></div>
-            <div class="rail-item">Routing Logic<span class="rail-num">E7</span></div>
-            <div class="rail-item">Integrations<span class="rail-num">E8</span></div>
-          </div>
-          <!-- Fallback callout -->
-          <div class="rail-fallback">
-            <p class="rail-fallback-title">When confidence is insufficient:</p>
-            <p class="rail-fallback-line">Ask. Defer. Escalate. Do nothing.</p>
-          </div>
-        </aside>
+        <!-- CTA -->
+        <button class="blueprint-inspect-btn" id="blueprintBtn" aria-haspopup="dialog">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Inspect the Full Architecture
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
 
-      </div>
-
-      <!-- Footer callout -->
-      <div class="stack-footer fade-in">
-        <div class="stack-footer-text">
-          <p class="stack-footer-title">Built for production, not prototypes.</p>
-          <p class="stack-footer-desc">Every downstream read, write, and action is governed by evidence, provenance, validation, and fallback policy.</p>
-        </div>
-        <div class="stack-provenance-badge">No provenance = no write</div>
       </div>
 
     </div>
   </section>
+
+
+  <!-- ========================= -->
+  <!-- BLUEPRINT MODAL           -->
+  <!-- (Desktop only — triggered by #blueprintBtn) -->
+  <!-- ========================= -->
+  <div class="blueprint-modal" id="blueprintModal" role="dialog" aria-modal="true" aria-label="Production AI Blueprint — Full Architecture">
+    <div class="blueprint-modal-backdrop" id="blueprintBackdrop"></div>
+    <div class="blueprint-modal-inner">
+
+      <!-- Sticky modal header -->
+      <div class="blueprint-modal-header">
+        <div>
+          <span class="section-label" style="margin-bottom:0.25rem;display:block;">The Production AI Blueprint</span>
+          <p class="blueprint-modal-subtitle">Production AI is mostly systems engineering.</p>
+        </div>
+        <button class="blueprint-modal-close" id="blueprintClose" aria-label="Close blueprint">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          <span>Esc</span>
+        </button>
+      </div>
+
+      <!-- Full stack diagram -->
+      <div class="blueprint-modal-content">
+
+        <div class="stack-grid">
+
+          <!-- Left Rail: Structured Ingestion -->
+          <aside class="stack-rail">
+            <p class="rail-label">Structured Ingestion</p>
+            <p class="rail-desc">Typed source inputs with metadata and provenance captured at entry.</p>
+            <div class="rail-items">
+              <div class="rail-item">Email<span class="rail-num">01</span></div>
+              <div class="rail-item">Files<span class="rail-num">02</span></div>
+              <div class="rail-item">Images<span class="rail-num">03</span></div>
+              <div class="rail-item">Voice<span class="rail-num">04</span></div>
+              <div class="rail-item">Camera<span class="rail-num">05</span></div>
+              <div class="rail-item">APIs<span class="rail-num">06</span></div>
+              <div class="rail-item rail-item--meta">Source Metadata<span class="rail-num">—</span></div>
+              <div class="rail-item rail-item--meta">Provenance Capture<span class="rail-num">—</span></div>
+            </div>
+          </aside>
+
+          <!-- Center: Layer Cards -->
+          <div class="stack-layers">
+
+            <div class="layer-card">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow">Layer 1</p>
+                  <h3 class="layer-title">Deterministic Processing</h3>
+                  <p class="layer-subtitle">Noise is removed and structure is extracted before any model is asked to infer meaning.</p>
+                </div>
+                <div class="layer-num-badge">1</div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag">Cleaning &amp; Parsing</span><span class="layer-tag">Fingerprinting</span>
+                <span class="layer-tag">Normalization</span><span class="layer-tag">Entity Extraction</span>
+                <span class="layer-tag">Temporal Preprocessing</span><span class="layer-tag">Visual Structure Analysis</span>
+                <span class="layer-tag">Deduplication Cascade</span><span class="layer-tag">Provenance Tagging</span>
+              </div>
+            </div>
+
+            <div class="layer-card">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow">Layer 2</p>
+                  <h3 class="layer-title">Data &amp; Context Layer</h3>
+                  <p class="layer-subtitle">Multiple durable representations of source records, structured state, semantic retrieval, and relational context.</p>
+                </div>
+                <div class="layer-num-badge">2</div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag">Raw Cache</span><span class="layer-tag">Relational Store</span>
+                <span class="layer-tag">Vector Index</span><span class="layer-tag">Graph Context</span>
+                <span class="layer-tag">Timeline State</span><span class="layer-tag">Source References</span>
+              </div>
+            </div>
+
+            <div class="layer-card">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow">Layer 3</p>
+                  <h3 class="layer-title">Reasoning &amp; Orchestration</h3>
+                  <p class="layer-subtitle">Models operate over structured context through orchestrated workflows, not as freeform agents over raw data.</p>
+                </div>
+                <div class="layer-num-badge">3</div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag">Prompt Policy</span><span class="layer-tag">Workflow Coordination</span>
+                <span class="layer-tag">Retrieval Routing</span><span class="layer-tag">Tool Connectors</span>
+                <span class="layer-tag">Model Runtime</span><span class="layer-tag">Browser Execution</span>
+                <span class="layer-tag">Local Models</span>
+              </div>
+            </div>
+
+            <div class="path-fork" aria-label="System output splits into read path and write path">
+              <div class="path-fork-label">Reads and writes diverge here.</div>
+            </div>
+
+            <div class="layer-split">
+              <div class="layer-card layer-card--read">
+                <div class="layer-card-top">
+                  <div class="layer-card-meta">
+                    <p class="layer-eyebrow layer-eyebrow--read">Read Path</p>
+                    <h3 class="layer-title">Retrieval &amp; Synthesis</h3>
+                    <p class="layer-subtitle">Reads are permissive. The system retrieves context, synthesizes meaning, and surfaces candidate interpretations.</p>
+                  </div>
+                </div>
+                <div class="layer-tags">
+                  <span class="layer-tag layer-tag--read">Context Retrieval</span>
+                  <span class="layer-tag layer-tag--read">Summarization</span>
+                  <span class="layer-tag layer-tag--read">Narrative Synthesis</span>
+                  <span class="layer-tag layer-tag--read">Session State</span>
+                </div>
+                <div class="path-arrow" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Chat, Briefings, UI</span>
+                </div>
+              </div>
+              <div class="layer-card layer-card--write">
+                <div class="layer-card-top">
+                  <div class="layer-card-meta">
+                    <p class="layer-eyebrow layer-eyebrow--write">Write Path — Gated</p>
+                    <h3 class="layer-title">Verification &amp; Write Controls</h3>
+                    <p class="layer-subtitle">Writes are governed. Candidate meaning does not become durable state without passing every gate.</p>
+                  </div>
+                </div>
+                <div class="layer-tags">
+                  <span class="layer-tag layer-tag--write">Evidence Matching</span>
+                  <span class="layer-tag layer-tag--write">Provenance Checks</span>
+                  <span class="layer-tag layer-tag--write">Structured Validation</span>
+                  <span class="layer-tag layer-tag--write">Mutation Policy</span>
+                  <span class="layer-tag layer-tag--write">Human Escalation</span>
+                </div>
+                <div class="layer-callout">No provenance = no write</div>
+                <div class="path-arrow" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Approved Actions, Memory Updates</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="layer-card layer-card--accent">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow">Persistent State</p>
+                  <h3 class="layer-title">Governed Memory</h3>
+                  <p class="layer-subtitle">Memory is not a prompt feature. It is a governed write system with distinct trust levels.</p>
+                </div>
+                <div class="layer-num-badge">M</div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag layer-tag--accent">Session State</span>
+                <span class="layer-tag layer-tag--accent">Persistent Memory</span>
+                <span class="layer-tag layer-tag--accent">Durable Structured State</span>
+                <span class="layer-tag layer-tag--accent">Audit Trace</span>
+              </div>
+              <div class="layer-callout">Reads are cheap. Writes are governed.</div>
+            </div>
+
+          </div>
+
+          <!-- Right Rail -->
+          <aside class="stack-rail">
+            <p class="rail-label">Product Surfaces &amp; Approved Actions</p>
+            <p class="rail-desc">Interfaces, notifications, and actions downstream of verified system behavior.</p>
+            <div class="rail-items">
+              <div class="rail-item">AI Chat<span class="rail-num">E1</span></div>
+              <div class="rail-item">Daily Briefings<span class="rail-num">E2</span></div>
+              <div class="rail-item">Notifications<span class="rail-num">E3</span></div>
+              <div class="rail-item">UI Surfaces<span class="rail-num">E4</span></div>
+              <div class="rail-item">Review Queues<span class="rail-num">E5</span></div>
+              <div class="rail-item rail-item--write">Approved Actions<span class="rail-num">E6</span></div>
+              <div class="rail-item">Routing Logic<span class="rail-num">E7</span></div>
+              <div class="rail-item">Integrations<span class="rail-num">E8</span></div>
+            </div>
+            <div class="rail-fallback">
+              <p class="rail-fallback-title">When confidence is insufficient:</p>
+              <p class="rail-fallback-line">Ask. Defer. Escalate. Do nothing.</p>
+            </div>
+          </aside>
+
+        </div>
+
+        <div class="stack-footer">
+          <div class="stack-footer-text">
+            <p class="stack-footer-title">Built for production, not prototypes.</p>
+            <p class="stack-footer-desc">Every downstream read, write, and action is governed by evidence, provenance, validation, and fallback policy.</p>
+          </div>
+          <div class="stack-provenance-badge">No provenance = no write</div>
+        </div>
+
+      </div><!-- /.blueprint-modal-content -->
+    </div><!-- /.blueprint-modal-inner -->
+  </div><!-- /.blueprint-modal -->
 
   <!-- ========================= -->
   <!-- WHAT WE DO                -->
@@ -1052,6 +1104,34 @@
       onScroll();
       window.addEventListener('scroll',onScroll,{passive:true});
       window.addEventListener('resize',function(){ resize(); if(!isMobile) onScroll(); });
+    })();
+  </script>
+
+  <!-- Blueprint Modal JS -->
+  <script>
+    (function() {
+      var btn      = document.getElementById('blueprintBtn');
+      var modal    = document.getElementById('blueprintModal');
+      var closeBtn = document.getElementById('blueprintClose');
+      var backdrop = document.getElementById('blueprintBackdrop');
+      if (!btn || !modal) return;
+
+      function openModal() {
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        btn.focus();
+      }
+      btn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
     })();
   </script>
 </body>
