@@ -99,6 +99,9 @@
     <div class="gauntlet-track">
       <div class="gauntlet-sticky">
 
+        <!-- Permanent section label — always visible, never animated -->
+        <div class="gs-permanent-label" aria-hidden="true">— BUILD PRINCIPLES —</div>
+
         <!-- Phase 0: Big headline (starts active — JS takes over on scroll) -->
         <div class="gs-panel gs-0 gs-active">
           <div class="gs-center-content">
@@ -130,7 +133,7 @@
         <div class="gs-panel gs-2">
           <div class="gs-step-layout">
             <div class="gs-step-meta">
-              <span class="gs-step-tag gs-tag-det">Deterministic-First</span>
+              <span class="gs-step-tag gs-tag-det">Deterministic</span>
               <div class="gs-step-num" aria-hidden="true">02</div>
             </div>
             <div class="gs-step-copy">
@@ -174,7 +177,7 @@
           <p class="gmd-line">No provenance = No write.</p>
           <p class="gmd-line">No fallback = No ship.</p>
           <a href="#blueprint" class="gmd-cta">
-            View the Production AI Blueprint
+            View our AI Blueprint
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -202,8 +205,8 @@
 
       <div class="blueprint-header fade-in">
         <span class="section-label">The Production AI Blueprint</span>
-        <h2>Production AI is mostly systems engineering.</h2>
-        <p>We do not treat AI as the system. We treat it as one bounded component inside a larger production architecture. Raw inputs are structured before inference. Candidate meaning is verified before it becomes durable state. Product surfaces sit downstream of provenance, policy, and fallback logic.</p>
+        <h2>Production AI is systems engineering.</h2>
+        <p>The model is a component. Not the system. Inputs are typed and structured before inference touches them. Output is validated before it writes to state. Nothing reaches the product surface without passing provenance, policy, and guardrails.</p>
       </div>
 
       <!-- Blueprint teaser — ghost preview with gradient fade -->
@@ -247,7 +250,7 @@
         <!-- CTA -->
         <button class="blueprint-inspect-btn" id="blueprintBtn" aria-haspopup="dialog">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          Inspect the Full Architecture
+          View our AI Blueprint
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
 
@@ -268,8 +271,8 @@
       <!-- Sticky modal header -->
       <div class="blueprint-modal-header">
         <div>
-          <span class="section-label" style="margin-bottom:0.25rem;display:block;">The Production AI Blueprint</span>
-          <p class="blueprint-modal-subtitle">Production AI is mostly systems engineering.</p>
+          <h2 class="blueprint-modal-title">Production AI Blueprint</h2>
+          <p class="blueprint-modal-subtitle">Production AI is systems engineering.</p>
         </div>
         <button class="blueprint-modal-close" id="blueprintClose" aria-label="Close blueprint">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -515,7 +518,7 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             FALLBACK POLICY
           </div>
-          <p class="fallback-rail-desc">Every layer has an explicit failure mode and fallback. No silent failures. No undefined states.</p>
+          <p class="fallback-rail-desc">Every layer has an explicit failure mode and guardrails. No silent failures. No undefined states.</p>
           <div class="fallback-rail-grid">
             <div class="fallback-item"><span class="fallback-layer">L1</span>Reject malformed input</div>
             <div class="fallback-item"><span class="fallback-layer">L2</span>Serve stale context</div>
@@ -679,9 +682,8 @@
     <!-- M1: Hero -->
     <section class="m-section m-hero">
       <div class="m-container">
-        <p class="m-eyebrow">Hoot Ventures</p>
         <h1 class="m-hero-h1">AI is easy to demo.<br><span class="accent-word">Production</span> is hard.</h1>
-        <p class="m-hero-sub">We build AI systems that actually work in production. Then we build them for others.</p>
+        <p class="m-hero-sub">Hoot Ventures is a technology studio that turns AI potential into working products. We fuse enterprise data infrastructure with consumer-grade design to build software that actually scales.</p>
         <div class="m-ctas">
           <a href="#m-how-we-build" class="btn btn-primary">See How We Build</a>
           <a href="#m-product" class="btn btn-secondary">Explore Gist</a>
@@ -689,53 +691,103 @@
       </div>
     </section>
 
-    <!-- M2: How We Build — Principles -->
-    <section class="m-section m-principles" id="m-how-we-build">
-      <div class="m-container">
-        <span class="m-section-label">— How We Build —</span>
-        <h2 class="m-section-h2">80% of the code<br>never touches AI.</h2>
-        <p class="m-section-sub">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
+    <!-- M2: How We Build — Principles (sticky scrollytelling, mirrors desktop) -->
+    <section class="m-principles" id="m-how-we-build">
+      <div class="m-principles-sticky">
 
-        <div class="m-principles-list">
-          <div class="m-principle">
-            <div class="m-principle-meta">
-              <span class="m-principle-tag m-tag-det">Deterministic</span>
-              <span class="m-principle-num">01</span>
-            </div>
-            <h3 class="m-principle-h">Signal Processing Before Inference</h3>
-            <p class="m-principle-body">Clean it, fingerprint it, normalize it. The model should never see noise you could have removed deterministically.</p>
+        <!-- Permanent label — visible during phases 1-4 only -->
+        <div class="m-gs-permanent-label" aria-hidden="true">— BUILD PRINCIPLES —</div>
+
+        <!-- Phase 0: Headline -->
+        <div class="m-gs-panel m-gs-0 m-gs-active">
+          <div class="m-gs-center">
+            <span class="m-gs-eyebrow">— HOW WE BUILD —</span>
+            <h2 class="m-gs-headline">80% of the code<br>never touches AI.</h2>
+            <p class="m-gs-subtext">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
           </div>
-          <div class="m-principle">
-            <div class="m-principle-meta">
-              <span class="m-principle-tag m-tag-det">Deterministic-First</span>
-              <span class="m-principle-num">02</span>
-            </div>
-            <h3 class="m-principle-h">Multi-Signal Deduplication</h3>
-            <p class="m-principle-body">Cascading deterministic checks first. Only escalate to LLM when all else is genuinely ambiguous.</p>
-          </div>
-          <div class="m-principle">
-            <div class="m-principle-meta">
-              <span class="m-principle-tag m-tag-det">Deterministic</span>
-              <span class="m-principle-num">03</span>
-            </div>
-            <h3 class="m-principle-h">Context-First Temporal Resolution</h3>
-            <p class="m-principle-body">Accumulate all signals first. Resolve time and dates deterministically. Never let a model do arithmetic.</p>
-          </div>
-          <div class="m-principle">
-            <div class="m-principle-meta">
-              <span class="m-principle-tag m-tag-prob">Probabilistic</span>
-              <span class="m-principle-num">04</span>
-            </div>
-            <h3 class="m-principle-h m-principle-h--prob">AI-Powered Inference</h3>
-            <p class="m-principle-body">Use AI for what it does best — find meaning. But never let it write to the DB without provenance-based guardrails.</p>
+          <div class="m-gs-scroll-cue" id="mGsScrollCue">
+            <span>Scroll to explore</span>
+            <div class="m-gs-scroll-line"></div>
           </div>
         </div>
 
-        <div class="m-micdrop">
-          <p>No evidence = No meaning.</p>
-          <p>No provenance = No write.</p>
-          <p>No fallback = No ship.</p>
+        <!-- Phase 1: Signal Processing -->
+        <div class="m-gs-panel m-gs-1">
+          <div class="m-gs-step-layout">
+            <div class="m-gs-step-meta">
+              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
+              <div class="m-gs-step-num" aria-hidden="true">01</div>
+            </div>
+            <div class="m-gs-step-copy">
+              <h3 class="m-gs-step-h">Signal Processing Before Inference</h3>
+              <p class="m-gs-step-micro">Clean it, fingerprint it, normalize it. Extract what you know with certainty. The model should never see noise you could have removed deterministically.</p>
+            </div>
+          </div>
         </div>
+
+        <!-- Phase 2: Deduplication -->
+        <div class="m-gs-panel m-gs-2">
+          <div class="m-gs-step-layout">
+            <div class="m-gs-step-meta">
+              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
+              <div class="m-gs-step-num" aria-hidden="true">02</div>
+            </div>
+            <div class="m-gs-step-copy">
+              <h3 class="m-gs-step-h">Multi-Signal Deduplication Cascade</h3>
+              <p class="m-gs-step-micro">Build cascading deterministic checks. Only escalate to LLM when all else is genuinely ambiguous. Never let a model be the first line of dedup.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3: Temporal Resolution -->
+        <div class="m-gs-panel m-gs-3">
+          <div class="m-gs-step-layout">
+            <div class="m-gs-step-meta">
+              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
+              <div class="m-gs-step-num" aria-hidden="true">03</div>
+            </div>
+            <div class="m-gs-step-copy">
+              <h3 class="m-gs-step-h">Context-First Temporal Resolution</h3>
+              <p class="m-gs-step-micro">Accumulate all signals first. Then resolve time and dates deterministically with full context. Never ask a model to do arithmetic it will get wrong.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4: AI Inference -->
+        <div class="m-gs-panel m-gs-4">
+          <div class="m-gs-step-layout">
+            <div class="m-gs-step-meta">
+              <span class="m-gs-tag m-gs-tag-prob">Probabilistic</span>
+              <div class="m-gs-step-num m-gs-step-num--prob" aria-hidden="true">04</div>
+            </div>
+            <div class="m-gs-step-copy">
+              <h3 class="m-gs-step-h m-gs-step-h--prob">AI-Powered Inference</h3>
+              <p class="m-gs-step-micro">Use AI for what it does best — find meaning. Let it narrate. But never let it write to the DB without principles-based guardrails.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 5: Mic drop (canvas controls opacity) -->
+        <div class="m-gs-micdrop" aria-live="polite">
+          <p class="m-gmd-line">No evidence = No meaning.</p>
+          <p class="m-gmd-line">No provenance = No write.</p>
+          <p class="m-gmd-line">No fallback = No ship.</p>
+          <a href="#m-blueprint" class="m-gmd-cta">
+            View our AI Blueprint
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Progress dots (6 phases) -->
+        <div class="m-gs-dots" aria-hidden="true">
+          <div class="m-gs-dot active"></div>
+          <div class="m-gs-dot"></div>
+          <div class="m-gs-dot"></div>
+          <div class="m-gs-dot"></div>
+          <div class="m-gs-dot"></div>
+          <div class="m-gs-dot"></div>
+        </div>
+
       </div>
     </section>
 
@@ -743,8 +795,8 @@
     <section class="m-section m-blueprint" id="m-blueprint">
       <div class="m-container">
         <span class="m-section-label">— The Production AI Blueprint —</span>
-        <h2 class="m-section-h2">Production AI is mostly systems engineering.</h2>
-        <p class="m-section-sub">We treat AI as one bounded component inside a larger production architecture — not as the system itself.</p>
+        <h2 class="m-section-h2">Production AI is systems engineering.</h2>
+        <p class="m-section-sub">The model is a component. Not the system. Inputs are typed and structured before inference touches them. Output is validated before it writes to state. Nothing reaches the product surface without passing provenance, policy, and guardrails.</p>
 
         <div class="m-stack">
           <div class="m-stack-input">
@@ -827,6 +879,7 @@
       <div class="m-container">
         <span class="m-section-label">— What We Do —</span>
         <h2 class="m-section-h2">We run what we build.</h2>
+        <p class="m-section-sub">Gist is our own product — live in production, not a case study. Client work follows the same engineering standard. We don't recommend what we haven't shipped ourselves.</p>
 
         <div class="m-gist-card">
           <div class="m-gist-badge">
@@ -841,13 +894,16 @@
 
         <div class="m-studio-divider">Hire the builder, not the advisor.</div>
 
+        <p class="m-studio-intro">We work with a small number of organizations at a time. We do not write roadmaps and hand them off. We build systems, stay accountable for how they behave in production, and leave teams better than we found them.</p>
+
         <div class="m-studio-list">
           <div class="m-studio-item">
             <div class="m-studio-item-header">
               <span class="m-studio-num">01</span>
               <span class="m-studio-type">Full Product Build</span>
             </div>
-            <h4 class="m-studio-title">You have the vision. We own the system.</h4>
+            <h4 class="m-studio-title">You have the vision.<br>We own the system.</h4>
+            <p class="m-studio-desc">Architecture, data pipeline, deterministic processing, reasoning layer, verification, product surface — we take the full stack from first whiteboard to deployed product. No hand-offs. No gap between design and implementation.</p>
             <p class="m-studio-for">For teams with a product vision and no production AI team to execute it</p>
           </div>
           <div class="m-studio-item m-studio-item--featured">
@@ -855,15 +911,17 @@
               <span class="m-studio-num">02</span>
               <span class="m-studio-type">Embedded Architecture</span>
             </div>
-            <h4 class="m-studio-title">Your engineers build it. We design it right.</h4>
-            <p class="m-studio-for">For engineering teams building AI products who need the architecture sound</p>
+            <h4 class="m-studio-title">Your engineers build it.<br>We design it right.</h4>
+            <p class="m-studio-desc">We embed at the architecture level — not the sprint level. We design the system your team implements: ingestion boundary, deterministic preprocessing, reasoning scope, write controls, fallback policy. The difference between an AI product that works in production and one that doesn't is usually these decisions, made before a line of code is written.</p>
+            <p class="m-studio-for">For engineering teams building AI products who need the architecture sound before they build the wrong thing</p>
           </div>
           <div class="m-studio-item">
             <div class="m-studio-item-header">
               <span class="m-studio-num">03</span>
               <span class="m-studio-type">Production Rescue</span>
             </div>
-            <h4 class="m-studio-title">Your AI is live. Something is wrong.</h4>
+            <h4 class="m-studio-title">Your AI is live.<br>Something is wrong.</h4>
+            <p class="m-studio-desc">Hallucination, state corruption, unpredictable behavior, costs scaling faster than value. We diagnose what's actually failing — it's usually missing deterministic preprocessing, ungoverned writes, or no fallback logic — and fix it at the root, not the symptom.</p>
             <p class="m-studio-for">For teams with AI in production that is not behaving reliably</p>
           </div>
         </div>
@@ -1012,19 +1070,20 @@
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // ===========================
-    // Particle System — Hero → Gauntlet (one continuous canvas)
+    // Particle System — Hero → Gauntlet (one continuous canvas, desktop + mobile)
     // ===========================
     (function() {
       var canvas = document.getElementById('particleCanvas');
-      if(!canvas||window.innerWidth<769) return;
+      if(!canvas) return;
       var ctx=canvas.getContext('2d');
       var W=0,H=0,particles=[],avgDotR=4,masterAlpha=1;
       var NUM_P=55,NUM_TL=18,PHASES=6,currentProgress=0;
       var isMobile=window.innerWidth<769;
-      var track   = document.querySelector('.gauntlet-track');
-      var mdEl    = document.querySelector('.gs-micdrop');
-      var aiPanel = document.querySelector('.gs-4');
-      if(!track) return;
+      var track        = document.querySelector('.gauntlet-track');
+      var mobileTrack  = document.querySelector('.m-principles');
+      var mdEl         = document.querySelector('.gs-micdrop');
+      var mobileMdEl   = document.querySelector('.m-gs-micdrop');
+      var aiPanel      = document.querySelector('.gs-4');
 
       function eIO(t){ return t<0.5?2*t*t:-1+(4-2*t)*t; }
       function lrp(a,b,t){ return a+(b-a)*Math.max(0,Math.min(1,t)); }
@@ -1034,33 +1093,34 @@
       }
 
       function initParticles(){
+        var n=isMobile?28:55, nTL=isMobile?12:18;
+        NUM_P=n; NUM_TL=nTL;
         particles=[]; var lL=0.06*W,lR=0.94*W;
-        for(var i=0;i<NUM_P;i++){
+        for(var i=0;i<n;i++){
           var cx=(0.06+Math.random()*0.88)*W, cy=(0.06+Math.random()*0.88)*H;
-          var cols=9,rows=Math.ceil(NUM_P/cols);
+          var cols=9,rows=Math.ceil(n/cols);
           var gx=(0.1+(i%cols)/(cols-1)*0.8)*W, gy=(0.1+Math.floor(i/cols)/(rows-1)*0.8)*H;
-          var nC=12,cC=4,ci=Math.floor(i/(NUM_P/nC));
+          var nC=12,cC=4,ci=Math.floor(i/(n/nC));
           var mx=(0.15+(ci%cC)/(cC-1)*0.7)*W, my=(0.22+Math.floor(ci/cC)/2*0.56)*H;
-          var ti=Math.floor(i/(NUM_P/NUM_TL));
-          var tx=lL+ti/(NUM_TL-1)*(lR-lL), ty=0.4*H;
-          var r=1.6+Math.random()*2;
+          var ti=Math.floor(i/(n/nTL));
+          var tx=lL+ti/(nTL-1)*(lR-lL), ty=0.4*H;
+          var r=isMobile?(1.2+Math.random()*1.8):(1.6+Math.random()*2);
           particles.push({cx,cy,gx,gy,mx,my,tx,ty,r,
             alpha:0.18+Math.random()*0.45, phase:Math.random()*Math.PI*2,
-            speed:0.35+Math.random()*0.55, amp:8+Math.random()*18});
+            speed:0.35+Math.random()*0.55,
+            amp:isMobile?(5+Math.random()*12):(8+Math.random()*18)});
         }
         avgDotR=particles.reduce(function(s,p){return s+p.r;},0)/particles.length*1.6;
       }
 
       function resize(){
         isMobile=window.innerWidth<769;
-        // Fixed canvas → always sized to the viewport
         W=canvas.width=window.innerWidth;
         H=canvas.height=window.innerHeight;
         initParticles();
       }
 
       function render(){
-        if(isMobile) return;
         ctx.clearRect(0,0,W,H);
         if(masterAlpha<=0){ requestAnimationFrame(render); return; }
         ctx.globalAlpha=masterAlpha;
@@ -1124,8 +1184,9 @@
           }
           if(stretchT>0.45){
             var la=Math.min(1,(stretchT-0.45)/0.55);
-            var mdContentH=mdEl?mdEl.offsetHeight:200;
-            var mdBot=H/2+mdContentH/2+20;
+            var activeMdEl=isMobile?mobileMdEl:mdEl;
+            var mdRect=activeMdEl?activeMdEl.getBoundingClientRect():null;
+            var mdBot=mdRect?(mdRect.bottom+20):(H/2+100+20);
             var tgtW=Math.min(700,W*0.86);
             var curW=lrp(lR-lL,tgtW,eIO(slideT));
             var curY=lrp(lY,mdBot,eIO(slideT));
@@ -1133,12 +1194,18 @@
             ctx.fillStyle='rgba(255,255,255,'+(la*0.92)+')';
             ctx.fillRect(curX,curY-lineThick/2,curW,lineThick);
           }
-          if(mdEl){
+          if(!isMobile&&mdEl){
             mdEl.style.opacity=textT+'';
             mdEl.style.pointerEvents=textT>0?'auto':'none';
           }
-        }else if(mdEl){
+          if(isMobile&&mobileMdEl){
+            mobileMdEl.style.opacity=textT+'';
+            mobileMdEl.style.pointerEvents=textT>0?'auto':'none';
+          }
+        }else if(!isMobile&&mdEl){
           mdEl.style.opacity='0'; mdEl.style.pointerEvents='none';
+        }else if(isMobile&&mobileMdEl){
+          mobileMdEl.style.opacity='0'; mobileMdEl.style.pointerEvents='none';
         }
 
         ctx.globalAlpha=1;
@@ -1146,37 +1213,57 @@
       }
 
       function updatePanels(progress){
-        var panels=document.querySelectorAll('.gs-panel');
-        var dots=document.querySelectorAll('.gs-dot');
         var phase=Math.min(PHASES-1,Math.floor(progress*PHASES));
-        panels.forEach(function(panel,i){
-          if(phase===5&&i===4){
-            // render() controls opacity via inline style; ensure class is inactive
-            panel.classList.remove('gs-active');
-          }else{ panel.classList.toggle('gs-active',i===phase&&phase<5); }
-        });
-        dots.forEach(function(dot,i){ dot.classList.toggle('active',i===phase); });
-        var cue=document.getElementById('gsScrollCue');
-        if(cue) cue.style.opacity=progress<0.04?'1':'0';
+        if(isMobile){
+          var panels=document.querySelectorAll('.m-gs-panel');
+          var dots=document.querySelectorAll('.m-gs-dot');
+          panels.forEach(function(panel,i){
+            if(phase===5&&i===4){
+              panel.classList.remove('m-gs-active');
+            }else{ panel.classList.toggle('m-gs-active',i===phase&&phase<5); }
+          });
+          dots.forEach(function(dot,i){ dot.classList.toggle('active',i===phase); });
+          var cue=document.getElementById('mGsScrollCue');
+          if(cue) cue.style.opacity=progress<0.04?'1':'0';
+        }else{
+          var panels=document.querySelectorAll('.gs-panel');
+          var dots=document.querySelectorAll('.gs-dot');
+          panels.forEach(function(panel,i){
+            if(phase===5&&i===4){
+              panel.classList.remove('gs-active');
+            }else{ panel.classList.toggle('gs-active',i===phase&&phase<5); }
+          });
+          dots.forEach(function(dot,i){ dot.classList.toggle('active',i===phase); });
+          var cue=document.getElementById('gsScrollCue');
+          if(cue) cue.style.opacity=progress<0.04?'1':'0';
+        }
       }
 
       function onScroll(){
-        if(isMobile) return;
-        var rect=track.getBoundingClientRect();
-        var scrollable=track.offsetHeight-window.innerHeight;
-        var rawProgress=-rect.top/scrollable;
+        var rawProgress;
+        if(isMobile){
+          if(!mobileTrack){ masterAlpha=1; currentProgress=0; return; }
+          var rect=mobileTrack.getBoundingClientRect();
+          var scrollable=mobileTrack.offsetHeight-window.innerHeight;
+          rawProgress=-rect.top/scrollable;
+        }else{
+          if(!track){ masterAlpha=1; currentProgress=0; return; }
+          var rect=track.getBoundingClientRect();
+          var scrollable=track.offsetHeight-window.innerHeight;
+          rawProgress=-rect.top/scrollable;
+        }
 
         if(rawProgress<=0){
-          // Hero section: show chaos dots, no gauntlet animation yet
           masterAlpha=1;
           currentProgress=0;
         }else if(rawProgress<=1){
-          // Inside gauntlet: animate through phases
           masterAlpha=1;
           currentProgress=rawProgress;
         }else{
-          // Past gauntlet: clear canvas, let sticky container scroll off naturally
-          masterAlpha=0;
+          // Keep canvas alive until sticky fully scrolls off top — preserves the white line
+          var stickyEl=document.querySelector('.gauntlet-sticky');
+          var sRect=stickyEl?stickyEl.getBoundingClientRect():null;
+          masterAlpha=(sRect&&sRect.bottom>0)?1:0;
           currentProgress=1;
           if(aiPanel) aiPanel.style.opacity='';
         }
@@ -1187,7 +1274,7 @@
       requestAnimationFrame(render);
       onScroll();
       window.addEventListener('scroll',onScroll,{passive:true});
-      window.addEventListener('resize',function(){ resize(); if(!isMobile) onScroll(); });
+      window.addEventListener('resize',function(){ resize(); onScroll(); });
     })();
   </script>
 

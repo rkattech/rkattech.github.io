@@ -480,7 +480,7 @@ section[id] {
   animation: fadeUp 0.8s ease forwards;
 }
 
-.hero-content h1 .accent-word {
+.accent-word {
   color: var(--accent);
 }
 
@@ -818,6 +818,28 @@ section[id] {
 }
 
 /* Canvas removed from sticky — now lives as fixed #particleCanvas at body level */
+
+/* ── Permanent section label — fixed position above micdrop box, phases 1–5 ── */
+.gs-permanent-label {
+  position: absolute;
+  top: calc(50% - 195px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+/* Hide only during phase 0 (intro headline) */
+.gauntlet-sticky:has(.gs-0.gs-active) .gs-permanent-label {
+  opacity: 0;
+}
 
 /* ── Phase panels ── */
 .gs-panel {
@@ -1174,7 +1196,7 @@ section[id] {
 }
 
 .layer-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1183,32 +1205,35 @@ section[id] {
 }
 
 .layer-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
   line-height: 1.3;
 }
 
 .layer-subtitle {
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.65;
+  margin-top: 0.5rem;
 }
 
 .layer-num-badge {
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 1.625rem;
+  height: 1.625rem;
   border-radius: 50%;
-  border: 1px solid var(--card-border);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(196, 211, 230, 0.12);
+  background: rgba(255, 255, 255, 0.03);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--ink-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.55;
 }
 
 .layer-tags {
@@ -2479,8 +2504,9 @@ section[id] {
   /* ── General spacing — tighter on mobile ── */
   section { padding: var(--space-2xl) 0; }
 
-  /* ── Particle canvas: off on mobile ── */
-  #particleCanvas { display: none; }
+  /* ── Particle canvas: enabled on mobile, behind all content ── */
+  #particleCanvas { display: block; z-index: 0; }
+  .mobile-only { position: relative; z-index: 1; }
 
   /* ──────────────────────────────────────
      HERO — Full-bleed, centered manifesto
@@ -2522,6 +2548,7 @@ section[id] {
   .gauntlet-track { height: auto; }
   .gauntlet-sticky { position: static; height: auto; z-index: auto; }
   .gs-scroll-cue, .gs-dots { display: none; }
+  .gs-permanent-label { display: none; }
 
   /* All panels: base reset */
   .gs-panel {
@@ -2824,15 +2851,6 @@ section[id] {
 /* ── M1: Hero ── */
 .m-hero {
   padding: 5.5rem 0 3.5rem;
-  text-align: center;
-}
-.m-eyebrow {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
 }
 .m-hero-h1 {
   font-size: clamp(2.6rem, 11vw, 3.5rem);
@@ -2846,23 +2864,22 @@ section[id] {
   font-size: 0.975rem;
   line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 30ch;
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
 }
 .m-ctas {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  align-items: center;
 }
 .m-ctas .btn {
-  width: 100%;
-  max-width: 300px;
+  flex: 1 1 auto;
   justify-content: center;
+  min-width: 140px;
 }
 
-/* ── M2: Principles (How We Build) ── */
-.m-principles { border-top: 1px solid var(--card-border); }
+/* ── M2: Principles (How We Build) — now a sticky scrollytelling section ── */
+/* border-top removed: section has its own sticky structure */
 
 .m-principles-list {
   position: relative;
@@ -3190,6 +3207,12 @@ section[id] {
   line-height: 1.35;
   margin-bottom: 0.5rem;
 }
+.m-studio-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
 .m-studio-for {
   font-size: 0.775rem;
   color: var(--text-muted);
@@ -3197,6 +3220,13 @@ section[id] {
   line-height: 1.5;
   padding-top: 0.5rem;
   border-top: 1px solid rgba(196,211,230,0.07);
+}
+/* Studio intro */
+.m-studio-intro {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 /* Credentials */
 .m-creds { margin-bottom: 1.75rem; }
@@ -3426,17 +3456,26 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 0;
+  padding: 1.75rem 0 1.25rem;
   background: rgba(5, 8, 12, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--card-border);
   margin-bottom: 2.5rem;
 }
+.blueprint-modal-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
 .blueprint-modal-subtitle {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   font-weight: 400;
+  line-height: 1.5;
 }
 
 /* Close button */
@@ -3483,40 +3522,39 @@ section[id] {
 
 /* Observability rail */
 .observability-rail {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1.5rem;
-  padding: 0.875rem 1.25rem;
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.75rem;
   background: rgba(13, 183, 163, 0.04);
   border: 1px solid rgba(13, 183, 163, 0.18);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius-md);
-  flex-wrap: wrap;
 }
 .obs-rail-label {
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.58rem;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.6rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
   white-space: nowrap;
   flex-shrink: 0;
 }
 .obs-rail-desc {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  flex: 1;
-  min-width: 200px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 .obs-rail-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+  justify-content: flex-end;
   flex-shrink: 0;
 }
 .obs-rail-tags span {
@@ -3587,8 +3625,10 @@ section[id] {
 
 /* Per-layer fallback note */
 .layer-fallback-note {
-  margin-top: 0.75rem;
-  font-size: 0.72rem;
+  margin-top: 0.875rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 184, 107, 0.12);
+  font-size: 0.78rem;
   color: var(--highlight);
   opacity: 0.75;
   font-style: italic;
@@ -3715,3 +3755,244 @@ section[id] {
   color: #ff9c50;
   line-height: 1.5;
 }
+
+
+/* ══════════════════════════════════════════════
+   MOBILE GAUNTLET — sticky scrollytelling
+   Mirrors the desktop gauntlet experience
+   ══════════════════════════════════════════════ */
+
+/* Section is the scroll track — tall enough for 6 phases */
+.m-principles {
+  height: 600vh;
+  position: relative;
+}
+
+/* Sticky viewport panel */
+.m-principles-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh; /* dynamic viewport — excludes iOS browser chrome */
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Permanent label — visible during phases 1-4 */
+.m-gs-permanent-label {
+  position: absolute;
+  top: 4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  user-select: none;
+}
+.m-principles-sticky:has(.m-gs-0.m-gs-active) .m-gs-permanent-label { opacity: 0; }
+
+/* ── Phase panels ── */
+.m-gs-panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 1.75rem 2rem; /* top clears fixed nav; bottom breathing room */
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+.m-gs-panel.m-gs-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Phase 0 — centered headline */
+.m-gs-center {
+  text-align: center;
+  max-width: 100%;
+}
+.m-gs-eyebrow {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+.m-gs-headline {
+  font-size: clamp(2.4rem, 10vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+.m-gs-subtext {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.7;
+  max-width: 32ch;
+  margin: 0 auto;
+}
+
+/* Scroll cue */
+.m-gs-scroll-cue {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3);
+  transition: opacity 0.4s ease;
+}
+.m-gs-scroll-line {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.22), transparent);
+  animation: gsLineScroll 1.4s ease-in-out infinite;
+}
+
+/* Phases 1-4 — step layout: stacked mobile-first */
+.m-gs-step-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+/* Top row: tag pill on left, ghost number on right */
+.m-gs-step-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.m-gs-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.m-gs-tag-det {
+  color: var(--accent);
+  border-color: rgba(13,183,163,0.25);
+  background: rgba(13,183,163,0.08);
+}
+.m-gs-tag-prob {
+  color: #b48aff;
+  border-color: rgba(180,138,255,0.22);
+  background: rgba(180,138,255,0.06);
+}
+.m-gs-step-num {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.05);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.m-gs-step-num--prob { color: rgba(180,138,255,0.06); }
+/* Content: full width below meta row */
+.m-gs-step-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.m-gs-step-h {
+  font-size: clamp(2rem, 8.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.m-gs-step-h--prob { color: #b48aff; }
+.m-gs-step-micro {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.65;
+}
+
+/* Progress dots */
+.m-gs-dots {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 20;
+}
+.m-gs-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(196,211,230,0.25);
+  transition: background 0.35s ease, transform 0.35s ease;
+}
+.m-gs-dot.active {
+  background: var(--accent);
+  transform: scale(1.5);
+}
+
+/* Mic drop — mirrors desktop .gs-micdrop exactly */
+.m-gs-micdrop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(86vw, 100%);
+  padding: 2rem 1.75rem 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 15;
+  background: rgba(255,255,255,0.02);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.m-gmd-line {
+  font-size: clamp(1.3rem, 6vw, 1.75rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.m-gmd-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap 0.25s ease;
+}
+.m-gmd-cta:hover { gap: 0.85rem; }
