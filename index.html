@@ -56,14 +56,18 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#blueprint" onclick="closeMobileMenu()">AI Blueprint</a>
-    <a href="#product" onclick="closeMobileMenu()">What We Do</a>
+    <a href="#m-how-we-build" onclick="closeMobileMenu()">How We Build</a>
+    <a href="#m-blueprint" onclick="closeMobileMenu()">AI Blueprint</a>
+    <a href="#m-product" onclick="closeMobileMenu()">What We Do</a>
     <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   </div>
 
   <!-- ========================= -->
-  <!-- 1. HERO — COMPANY THESIS  -->
+  <!-- DESKTOP EXPERIENCE ONLY   -->
   <!-- ========================= -->
+  <div class="desktop-only">
+
+  <!-- 1. HERO — COMPANY THESIS  -->
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-grid">
@@ -521,6 +525,218 @@
 
     </div>
   </section>
+
+  </div><!-- /.desktop-only -->
+
+
+  <!-- ========================= -->
+  <!-- MOBILE EXPERIENCE ONLY    -->
+  <!-- ========================= -->
+  <div class="mobile-only">
+
+    <!-- M1: Hero -->
+    <section class="m-section m-hero">
+      <div class="m-container">
+        <p class="m-eyebrow">Hoot Ventures</p>
+        <h1 class="m-hero-h1">AI is easy to demo.<br><span class="accent-word">Production</span> is hard.</h1>
+        <p class="m-hero-sub">We build AI systems that actually work in production. Then we build them for others.</p>
+        <div class="m-ctas">
+          <a href="#m-how-we-build" class="btn btn-primary">See How We Build</a>
+          <a href="#m-product" class="btn btn-secondary">Explore Gist</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- M2: How We Build — Principles -->
+    <section class="m-section m-principles" id="m-how-we-build">
+      <div class="m-container">
+        <span class="m-section-label">— How We Build —</span>
+        <h2 class="m-section-h2">80% of the code<br>never touches AI.</h2>
+        <p class="m-section-sub">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
+
+        <div class="m-principles-list">
+          <div class="m-principle">
+            <div class="m-principle-meta">
+              <span class="m-principle-tag m-tag-det">Deterministic</span>
+              <span class="m-principle-num">01</span>
+            </div>
+            <h3 class="m-principle-h">Signal Processing Before Inference</h3>
+            <p class="m-principle-body">Clean it, fingerprint it, normalize it. The model should never see noise you could have removed deterministically.</p>
+          </div>
+          <div class="m-principle">
+            <div class="m-principle-meta">
+              <span class="m-principle-tag m-tag-det">Deterministic-First</span>
+              <span class="m-principle-num">02</span>
+            </div>
+            <h3 class="m-principle-h">Multi-Signal Deduplication</h3>
+            <p class="m-principle-body">Cascading deterministic checks first. Only escalate to LLM when all else is genuinely ambiguous.</p>
+          </div>
+          <div class="m-principle">
+            <div class="m-principle-meta">
+              <span class="m-principle-tag m-tag-det">Deterministic</span>
+              <span class="m-principle-num">03</span>
+            </div>
+            <h3 class="m-principle-h">Context-First Temporal Resolution</h3>
+            <p class="m-principle-body">Accumulate all signals first. Resolve time and dates deterministically. Never let a model do arithmetic.</p>
+          </div>
+          <div class="m-principle">
+            <div class="m-principle-meta">
+              <span class="m-principle-tag m-tag-prob">Probabilistic</span>
+              <span class="m-principle-num">04</span>
+            </div>
+            <h3 class="m-principle-h m-principle-h--prob">AI-Powered Inference</h3>
+            <p class="m-principle-body">Use AI for what it does best — find meaning. But never let it write to the DB without provenance-based guardrails.</p>
+          </div>
+        </div>
+
+        <div class="m-micdrop">
+          <p>No evidence = No meaning.</p>
+          <p>No provenance = No write.</p>
+          <p>No fallback = No ship.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- M3: Production AI Blueprint -->
+    <section class="m-section m-blueprint" id="m-blueprint">
+      <div class="m-container">
+        <span class="m-section-label">— The Production AI Blueprint —</span>
+        <h2 class="m-section-h2">Production AI is mostly systems engineering.</h2>
+        <p class="m-section-sub">We treat AI as one bounded component inside a larger production architecture — not as the system itself.</p>
+
+        <div class="m-stack">
+          <div class="m-stack-input">
+            <span class="m-stack-io-label">Inputs</span>
+            <div class="m-stack-io-chips">
+              <span>Email</span><span>Files</span><span>Images</span><span>Voice</span><span>APIs</span>
+            </div>
+          </div>
+
+          <div class="m-stack-arrow">↓</div>
+
+          <div class="m-stack-layer">
+            <span class="m-layer-num">1</span>
+            <div>
+              <p class="m-layer-name">Deterministic Processing</p>
+              <p class="m-layer-tags">Cleaning · Fingerprinting · Normalization · Deduplication · Provenance Tagging</p>
+            </div>
+          </div>
+
+          <div class="m-stack-arrow">↓</div>
+
+          <div class="m-stack-layer">
+            <span class="m-layer-num">2</span>
+            <div>
+              <p class="m-layer-name">Data &amp; Context Layer</p>
+              <p class="m-layer-tags">Raw Cache · Vector Index · Graph Context · Timeline State</p>
+            </div>
+          </div>
+
+          <div class="m-stack-arrow">↓</div>
+
+          <div class="m-stack-layer">
+            <span class="m-layer-num">3</span>
+            <div>
+              <p class="m-layer-name">Reasoning &amp; Orchestration</p>
+              <p class="m-layer-tags">Prompt Policy · Retrieval Routing · Model Runtime · Tool Connectors</p>
+            </div>
+          </div>
+
+          <div class="m-stack-fork">
+            <div class="m-stack-fork-line"></div>
+            <span>Reads and writes diverge here.</span>
+            <div class="m-stack-fork-line"></div>
+          </div>
+
+          <div class="m-stack-split">
+            <div class="m-stack-layer m-stack-layer--read">
+              <span class="m-layer-num m-layer-num--read">R</span>
+              <div>
+                <p class="m-layer-name">Retrieval &amp; Synthesis</p>
+                <p class="m-layer-tags">Permissive reads → Chat, Briefings, UI</p>
+              </div>
+            </div>
+            <div class="m-stack-layer m-stack-layer--write">
+              <span class="m-layer-num m-layer-num--write">W</span>
+              <div>
+                <p class="m-layer-name">Verification &amp; Write Controls</p>
+                <p class="m-layer-tags">Evidence · Provenance · Validation · Human Escalation</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="m-stack-arrow">↓</div>
+
+          <div class="m-stack-layer m-stack-layer--memory">
+            <span class="m-layer-num">M</span>
+            <div>
+              <p class="m-layer-name">Governed Memory</p>
+              <p class="m-layer-tags">Reads are cheap. Writes are governed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-blueprint-footer">No provenance = no write</div>
+      </div>
+    </section>
+
+    <!-- M4: What We Do -->
+    <section class="m-section m-whatwedo" id="m-product">
+      <div class="m-container">
+        <span class="m-section-label">— What We Do —</span>
+        <h2 class="m-section-h2">We build production AI systems.<br>Then we do it for others.</h2>
+
+        <div class="m-gist-card">
+          <div class="m-gist-badge">
+            <span class="launch-pulse"></span>
+            Launching April 2026
+          </div>
+          <h3 class="m-gist-name">Gist</h3>
+          <p class="m-gist-tagline">One inbox. Every kid. Nothing missed.</p>
+          <p class="m-gist-proof">Built on the Production AI Blueprint. Every architectural claim on this page runs in Gist.</p>
+          <a href="support.html" class="btn btn-accent">Learn More About Gist</a>
+        </div>
+
+        <div class="m-studio-divider">Hire the builder, not the advisor.</div>
+
+        <div class="m-studio-list">
+          <div class="m-studio-item">
+            <div class="m-studio-item-header">
+              <span class="m-studio-num">01</span>
+              <span class="m-studio-type">Full Product Build</span>
+            </div>
+            <h4 class="m-studio-title">You have the vision. We own the system.</h4>
+            <p class="m-studio-for">For teams with a product vision and no production AI team to execute it</p>
+          </div>
+          <div class="m-studio-item m-studio-item--featured">
+            <div class="m-studio-item-header">
+              <span class="m-studio-num">02</span>
+              <span class="m-studio-type">Embedded Architecture</span>
+            </div>
+            <h4 class="m-studio-title">Your engineers build it. We design it right.</h4>
+            <p class="m-studio-for">For engineering teams building AI products who need the architecture sound</p>
+          </div>
+          <div class="m-studio-item">
+            <div class="m-studio-item-header">
+              <span class="m-studio-num">03</span>
+              <span class="m-studio-type">Production Rescue</span>
+            </div>
+            <h4 class="m-studio-title">Your AI is live. Something is wrong.</h4>
+            <p class="m-studio-for">For teams with AI in production that is not behaving reliably</p>
+          </div>
+        </div>
+
+        <div class="m-creds">
+          <span class="m-creds-label">Prior work</span>
+          <div class="m-creds-list">Capital One · Visa · Anywhere Real Estate · Wharton · Georgia Tech</div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary m-cta-btn">Start a conversation</a>
+      </div>
+    </section>
+
+  </div><!-- /.mobile-only -->
+
 
   <!-- ========================= -->
   <!-- 10. CONTACT               -->
