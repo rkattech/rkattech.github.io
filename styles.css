@@ -3778,23 +3778,26 @@ section[id] {
   z-index: 2;
 }
 
-/* Permanent label — visible during phases 1-4 */
-.m-gs-permanent-label {
+/* Build Principles label — single element, fixed position, never animates */
+.m-gs-build-label {
   position: absolute;
-  top: 4.5rem;
+  top: calc(50% - 12rem);
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.58rem;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: var(--text-muted);
-  white-space: nowrap;
+  text-transform: uppercase;
+  color: var(--accent);
+  z-index: 15;
+  user-select: none;
   opacity: 1;
   transition: opacity 0.3s ease;
-  z-index: 5;
-  user-select: none;
 }
-.m-principles-sticky:has(.m-gs-0.m-gs-active) .m-gs-permanent-label { opacity: 0; }
+/* Hidden only during phase 0 */
+.m-principles-sticky:has(.m-gs-0.m-gs-active) .m-gs-build-label { opacity: 0; }
 
 /* ── Phase panels ── */
 .m-gs-panel {

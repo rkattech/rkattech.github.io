@@ -695,8 +695,8 @@
     <section class="m-principles" id="m-how-we-build">
       <div class="m-principles-sticky">
 
-        <!-- Permanent label — visible during phases 1-4 only -->
-        <div class="m-gs-permanent-label" aria-hidden="true">— BUILD PRINCIPLES —</div>
+        <!-- Permanent eyebrow — single element, fixed position, no animation -->
+        <div class="m-gs-build-label" aria-hidden="true">— BUILD PRINCIPLES —</div>
 
         <!-- Phase 0: Headline -->
         <div class="m-gs-panel m-gs-0 m-gs-active">
@@ -715,8 +715,8 @@
         <div class="m-gs-panel m-gs-1">
           <div class="m-gs-step-layout">
             <div class="m-gs-step-meta">
-              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
               <div class="m-gs-step-num" aria-hidden="true">01</div>
+              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
             </div>
             <div class="m-gs-step-copy">
               <h3 class="m-gs-step-h">Signal Processing Before Inference</h3>
@@ -729,8 +729,8 @@
         <div class="m-gs-panel m-gs-2">
           <div class="m-gs-step-layout">
             <div class="m-gs-step-meta">
-              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
               <div class="m-gs-step-num" aria-hidden="true">02</div>
+              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
             </div>
             <div class="m-gs-step-copy">
               <h3 class="m-gs-step-h">Multi-Signal Deduplication Cascade</h3>
@@ -743,8 +743,8 @@
         <div class="m-gs-panel m-gs-3">
           <div class="m-gs-step-layout">
             <div class="m-gs-step-meta">
-              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
               <div class="m-gs-step-num" aria-hidden="true">03</div>
+              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
             </div>
             <div class="m-gs-step-copy">
               <h3 class="m-gs-step-h">Context-First Temporal Resolution</h3>
@@ -757,8 +757,8 @@
         <div class="m-gs-panel m-gs-4">
           <div class="m-gs-step-layout">
             <div class="m-gs-step-meta">
-              <span class="m-gs-tag m-gs-tag-prob">Probabilistic</span>
               <div class="m-gs-step-num m-gs-step-num--prob" aria-hidden="true">04</div>
+              <span class="m-gs-tag m-gs-tag-prob">Probabilistic</span>
             </div>
             <div class="m-gs-step-copy">
               <h3 class="m-gs-step-h m-gs-step-h--prob">AI-Powered Inference</h3>
@@ -1261,7 +1261,9 @@
           currentProgress=rawProgress;
         }else{
           // Keep canvas alive until sticky fully scrolls off top — preserves the white line
-          var stickyEl=document.querySelector('.gauntlet-sticky');
+          var stickyEl=isMobile
+            ?document.querySelector('.m-principles-sticky')
+            :document.querySelector('.gauntlet-sticky');
           var sRect=stickyEl?stickyEl.getBoundingClientRect():null;
           masterAlpha=(sRect&&sRect.bottom>0)?1:0;
           currentProgress=1;
