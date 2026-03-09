@@ -3,33 +3,35 @@
    Production AI Studio Aesthetic
    =========================== */
 
-/* Variables */
+/* Variables — Dark Mode */
 :root {
-  --ink: #091226;
-  --ink-light: #1a2744;
-  --ink-muted: #3d4f6f;
-  --text-primary: #091226;
-  --text-secondary: #4a5568;
-  --text-muted: #8896ab;
-  --paper: #F6F2EA;
-  --paper-light: #FAF8F4;
-  --card-bg: #FFFFFF;
-  --card-border: rgba(9, 18, 38, 0.08);
+  --ink: #f4efe7;
+  --ink-light: #c8cdd5;
+  --ink-muted: #8896ab;
+  --text-primary: #f4efe7;
+  --text-secondary: #a6b4c6;
+  --text-muted: #738399;
+  --paper: #0d1116;
+  --paper-light: #121922;
+  --card-bg: #161f2b;
+  --card-border: rgba(196, 211, 230, 0.14);
   --accent: #0DB7A3;
-  --accent-dark: #0a9e8d;
-  --accent-light: #e6f9f6;
+  --accent-dark: #10d4bc;
+  --accent-light: rgba(13, 183, 163, 0.12);
   --highlight: #FFB86B;
-  --highlight-light: #FFF4E5;
-  --white: #FFFFFF;
+  --highlight-light: rgba(255, 184, 107, 0.12);
+  --white: #f4efe7;
+  --surface-dark: #0a0f14;
+  --surface-raised: #121922;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-2xl: 32px;
-  --shadow-sm: 0 1px 3px rgba(9, 18, 38, 0.06);
-  --shadow-md: 0 4px 16px rgba(9, 18, 38, 0.08);
-  --shadow-lg: 0 8px 32px rgba(9, 18, 38, 0.1);
-  --shadow-xl: 0 16px 48px rgba(9, 18, 38, 0.12);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.35);
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -57,10 +59,26 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1rem;
   font-weight: 400;
-  background: var(--paper);
-  color: var(--text-primary);
+  background:
+    radial-gradient(circle at top, rgba(142, 197, 255, 0.09), transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(216, 163, 106, 0.08), transparent 22%),
+    linear-gradient(180deg, #0a0f14 0%, #0d1116 18%, #0d1116 100%);
+  color: var(--text-secondary);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 88%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Typography */
@@ -140,7 +158,7 @@ section[id] {
 }
 
 .nav.scrolled {
-  background: rgba(246, 242, 234, 0.92);
+  background: rgba(13, 17, 22, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--card-border);
@@ -212,8 +230,8 @@ section[id] {
   align-items: center;
   gap: 0.4rem;
   padding: 0.55rem 1.25rem;
-  background: var(--ink);
-  color: var(--white) !important;
+  background: var(--accent);
+  color: var(--surface-dark) !important;
   border-radius: 100px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -241,7 +259,7 @@ section[id] {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--ink);
+  background: var(--white);
   border-radius: 2px;
   transition: transform 0.3s, opacity 0.3s;
 }
@@ -259,7 +277,7 @@ section[id] {
   display: flex;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(246, 242, 234, 0.98);
+  background: rgba(13, 17, 22, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 99;
@@ -278,7 +296,7 @@ section[id] {
 }
 
 .mobile-menu a {
-  color: var(--ink);
+  color: var(--white);
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -302,35 +320,34 @@ section[id] {
 }
 
 .btn-primary {
-  background: var(--ink);
-  color: var(--white);
-  box-shadow: var(--shadow-md);
+  background: var(--accent);
+  color: var(--surface-dark);
+  box-shadow: 0 4px 20px rgba(13, 183, 163, 0.3);
 }
 
 .btn-primary:hover {
-  color: var(--white);
-  background: var(--ink-light);
+  color: var(--surface-dark);
+  background: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 30px rgba(13, 183, 163, 0.4);
 }
 
 .btn-secondary {
-  background: var(--white);
-  color: var(--ink);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .btn-secondary:hover {
-  color: var(--ink);
-  background: var(--paper-light);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-accent {
   background: var(--accent);
-  color: var(--white);
+  color: var(--surface-dark);
   box-shadow: 0 4px 16px rgba(13, 183, 163, 0.3);
 }
 
@@ -343,7 +360,7 @@ section[id] {
 
 .btn-ghost {
   background: transparent;
-  color: var(--ink);
+  color: var(--text-secondary);
   padding: 0.85rem 0;
 }
 
@@ -401,7 +418,7 @@ section[id] {
   display: flex;
   align-items: center;
   padding: 8rem 0 var(--space-4xl);
-  background: var(--ink);
+  background: transparent;
   color: var(--white);
   position: relative;
   overflow: hidden;
@@ -425,9 +442,11 @@ section[id] {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-3xl);
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-xl);
   align-items: center;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
@@ -523,95 +542,30 @@ section[id] {
   letter-spacing: 0.02em;
 }
 
-/* Hero right side - abstract system visual */
+/* Hero right side - phone mockup */
 .hero-visual {
   position: relative;
   opacity: 0;
   animation: fadeUp 0.8s ease 0.3s forwards;
-}
-
-.hero-diagram {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-/* Animated node system in hero */
-.hero-node {
-  position: absolute;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  font-size: 0.78rem;
-  font-weight: 500;
-  animation: nodeFloat 6s ease-in-out infinite;
-  white-space: nowrap;
-}
-
-.hero-node-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
-.hero-node-icon svg {
-  width: 16px;
-  height: 16px;
+.hero-phone-wrap {
+  position: relative;
+  display: inline-block;
 }
 
-.hero-node.input {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
+.hero-phone-img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.6)) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
 }
 
-.hero-node.input .hero-node-icon {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.hero-node.agent {
-  background: rgba(13, 183, 163, 0.1);
-  border: 1px solid rgba(13, 183, 163, 0.2);
-  color: var(--accent);
-}
-
-.hero-node.agent .hero-node-icon {
-  background: rgba(13, 183, 163, 0.15);
-}
-
-.hero-node.output {
-  background: rgba(255, 184, 107, 0.1);
-  border: 1px solid rgba(255, 184, 107, 0.2);
-  color: var(--highlight);
-}
-
-.hero-node.output .hero-node-icon {
-  background: rgba(255, 184, 107, 0.15);
-}
-
-/* Node positions */
-.hero-node:nth-child(1) { top: 5%; left: 0%; animation-delay: 0s; }
-.hero-node:nth-child(2) { top: 18%; left: 55%; animation-delay: 0.8s; }
-.hero-node:nth-child(3) { top: 32%; left: 8%; animation-delay: 1.6s; }
-.hero-node:nth-child(4) { top: 45%; left: 40%; animation-delay: 0.4s; }
-.hero-node:nth-child(5) { top: 58%; left: 5%; animation-delay: 1.2s; }
-.hero-node:nth-child(6) { top: 70%; left: 50%; animation-delay: 2s; }
-.hero-node:nth-child(7) { top: 82%; left: 15%; animation-delay: 0.6s; }
-
-@keyframes nodeFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* Connecting lines (SVG) */
+/* Connecting lines (SVG) — kept for potential reuse */
 .hero-lines {
   position: absolute;
   top: 0; left: 0;
@@ -684,7 +638,7 @@ section[id] {
 
 .proof-card:nth-child(1) .proof-card-accent { background: var(--accent); }
 .proof-card:nth-child(2) .proof-card-accent { background: var(--highlight); }
-.proof-card:nth-child(3) .proof-card-accent { background: var(--ink); }
+.proof-card:nth-child(3) .proof-card-accent { background: var(--surface-raised); }
 
 /* Metric callouts inside proof cards */
 .proof-metrics {
@@ -707,7 +661,7 @@ section[id] {
    Problem Section
    =========================== */
 .problem-section {
-  background: var(--white);
+  background: var(--surface-raised);
   border-top: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
 }
@@ -790,7 +744,7 @@ section[id] {
 
 .compare-demo {
   background: var(--paper-light);
-  border: 1px dashed rgba(9, 18, 38, 0.15);
+  border: 1px dashed rgba(196, 211, 230, 0.15);
 }
 
 .compare-demo .problem-compare-label {
@@ -798,13 +752,13 @@ section[id] {
 }
 
 .compare-demo .problem-compare-flow span:not(.arrow) {
-  background: var(--white);
+  background: var(--card-bg);
   color: var(--text-secondary);
   border: 1px solid var(--card-border);
 }
 
 .compare-production {
-  background: var(--ink);
+  background: var(--surface-raised);
 }
 
 .compare-production .problem-compare-label {
@@ -857,7 +811,7 @@ section[id] {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  background: var(--white);
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
   display: flex;
   align-items: center;
@@ -896,7 +850,7 @@ section[id] {
    Blueprint Section (Centerpiece)
    =========================== */
 .blueprint-section {
-  background: var(--white);
+  background: var(--surface-raised);
   border-top: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
   padding: var(--space-4xl) 0;
@@ -930,7 +884,7 @@ section[id] {
 /* Zone 1: Chaos */
 .blueprint-chaos {
   background: var(--paper);
-  border: 1px dashed rgba(9, 18, 38, 0.12);
+  border: 1px dashed rgba(196, 211, 230, 0.12);
   border-radius: var(--radius-xl);
   padding: var(--space-lg);
   display: flex;
@@ -965,7 +919,7 @@ section[id] {
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 0.7rem;
-  background: var(--white);
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
@@ -1003,7 +957,7 @@ section[id] {
   left: calc(100% + 8px);
   top: 50%;
   transform: translateY(-50%);
-  background: var(--white);
+  background: var(--card-bg);
   color: var(--text-secondary);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-sm);
@@ -1026,7 +980,7 @@ section[id] {
 
 /* Zone 2: Engine */
 .blueprint-engine {
-  background: var(--ink);
+  background: var(--surface-raised);
   border-radius: var(--radius-xl);
   padding: var(--space-lg);
   display: flex;
@@ -1178,8 +1132,8 @@ section[id] {
   left: calc(100% + 12px);
   top: 50%;
   transform: translateY(-50%);
-  background: var(--white);
-  color: var(--ink);
+  background: var(--card-bg);
+  color: var(--text-primary);
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   width: 280px;
@@ -1198,7 +1152,7 @@ section[id] {
   transform: translateY(-50%) rotate(45deg);
   width: 12px;
   height: 12px;
-  background: var(--white);
+  background: var(--card-bg);
   border-left: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
 }
@@ -1486,7 +1440,7 @@ section[id] {
    Products Section
    =========================== */
 .products-section {
-  background: var(--white);
+  background: var(--surface-raised);
   border-top: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
 }
@@ -1551,7 +1505,7 @@ section[id] {
 /* Phone Mockup */
 .phone-mockup {
   width: 300px;
-  background: var(--ink);
+  background: var(--surface-raised);
   border-radius: 36px;
   padding: 12px;
   box-shadow: var(--shadow-xl);
@@ -1686,7 +1640,7 @@ section[id] {
    Culture Section
    =========================== */
 .culture-section {
-  background: var(--ink);
+  background: var(--surface-raised);
   color: var(--white);
 }
 
@@ -1859,7 +1813,7 @@ section[id] {
 .form-submit {
   width: 100%;
   padding: 0.85rem;
-  background: var(--ink);
+  background: var(--surface-raised);
   color: var(--white);
   border: none;
   border-radius: var(--radius-sm);
@@ -1880,7 +1834,7 @@ section[id] {
    Footer
    =========================== */
 .footer {
-  background: var(--ink);
+  background: var(--surface-raised);
   color: var(--white);
   padding: var(--space-2xl) 0 var(--space-lg);
 }
