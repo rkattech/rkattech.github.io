@@ -31,6 +31,9 @@
 </head>
 <body>
 
+  <!-- Single fixed particle canvas — spans hero + gauntlet as one continuous system -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -43,7 +46,7 @@
       <ul class="nav-links">
         <li><a href="#blueprint">AI Blueprint</a></li>
         <li><a href="#product">What We Do</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -55,7 +58,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#blueprint" onclick="closeMobileMenu()">AI Blueprint</a>
     <a href="#product" onclick="closeMobileMenu()">What We Do</a>
-    <a href="#about" onclick="closeMobileMenu()">About Us</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   </div>
 
   <!-- ========================= -->
@@ -82,404 +85,349 @@
     </div>
   </section>
 
-  <!-- ========================= -->
-  <!-- 2. PROOF AT A GLANCE      -->
-  <!-- ========================= -->
-  <section class="proof-section">
-    <div class="container">
-      <div class="proof-grid">
-        <div class="proof-card fade-in">
-          <div class="proof-card-accent"></div>
-          <p class="proof-card-label">Flagship Product</p>
-          <h3>Gist</h3>
-          <p>A family inbox that reads every school email, activity update, and calendar invite — then tells you only what you need to do today.</p>
-          <a href="#product" class="btn btn-ghost">See Gist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-        <div class="proof-card fade-in">
-          <div class="proof-card-accent"></div>
-          <p class="proof-card-label">Operating Pedigree</p>
-          <h3>Enterprise Muscle</h3>
-          <p>$1.3B in portfolio decisions at Capital One. Data infrastructure at Visa's global scale. A product org built from zero to sixty-five.</p>
-          <div class="proof-metrics">
-            <span class="proof-metric">$1.3B portfolio</span>
-            <span class="proof-metric">65-person org</span>
-          </div>
-        </div>
-        <div class="proof-card fade-in">
-          <div class="proof-card-accent"></div>
-          <p class="proof-card-label">Measured Outcomes</p>
-          <h3>Outcomes, Not Decks</h3>
-          <p>23% organic search growth. 18-month delivery cycles cut to 6. Per-customer profit up 70%. Those weren't projections — they shipped.</p>
-          <div class="proof-metrics">
-            <span class="proof-metric">23% growth</span>
-            <span class="proof-metric">3x faster</span>
-            <span class="proof-metric">+70% profit</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ========================= -->
-  <!-- 3. THE PROBLEM WITH AI    -->
+  <!-- HOW WE BUILD — GAUNTLET   -->
   <!-- ========================= -->
-  <section class="problem-section" id="problem">
-    <div class="container">
-      <div class="problem-grid">
-        <div class="problem-text fade-in">
-          <span class="section-label">The Problem</span>
-          <h2>Most AI projects never make it to production.</h2>
-          <p>The internet is full of impressive AI demos. But most organizations discover the real difficulty after the prototype:</p>
-          <ul class="problem-list">
-            <li>connecting messy real-world data</li>
-            <li>building reliable pipelines</li>
-            <li>managing model drift</li>
-            <li>creating trustworthy user experiences</li>
-            <li>operating systems that run every day without failure</li>
-          </ul>
-          <p>The gap between <strong>AI demo</strong> and <strong>AI product</strong> is where most projects fail.</p>
-          <p class="problem-punchline">That gap is where we work.</p>
-        </div>
-        <div class="problem-visual fade-in">
-          <div class="problem-compare compare-demo">
-            <p class="problem-compare-label">Typical AI Demo</p>
-            <div class="problem-compare-flow">
-              <span>prompt</span>
-              <span class="arrow">&rarr;</span>
-              <span>model</span>
-              <span class="arrow">&rarr;</span>
-              <span>output</span>
-            </div>
+  <section class="gauntlet-section" id="how-we-build">
+
+    <!-- Scrollytelling track — sticky panel lives inside here -->
+    <div class="gauntlet-track">
+      <div class="gauntlet-sticky">
+
+        <!-- Phase 0: Big headline (starts active — JS takes over on scroll) -->
+        <div class="gs-panel gs-0 gs-active">
+          <div class="gs-center-content">
+            <span class="gs-eyebrow">— HOW WE BUILD —</span>
+            <h2 class="gs-headline">80% of the code<br>never touches AI.</h2>
+            <p class="gs-subtext">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
           </div>
-          <div class="problem-compare compare-production">
-            <p class="problem-compare-label">Production AI</p>
-            <div class="problem-compare-flow">
-              <span>data</span>
-              <span class="arrow">&rarr;</span>
-              <span>pipelines</span>
-              <span class="arrow">&rarr;</span>
-              <span>agents</span>
-              <span class="arrow">&rarr;</span>
-              <span>orchestration</span>
-              <span class="arrow">&rarr;</span>
-              <span>monitoring</span>
-              <span class="arrow">&rarr;</span>
-              <span>product</span>
+          <div class="gs-scroll-cue" id="gsScrollCue">
+            <span>Scroll to explore</span>
+            <div class="gs-scroll-line"></div>
+          </div>
+        </div>
+
+        <!-- Phase 1: Signal Processing -->
+        <div class="gs-panel gs-1">
+          <div class="gs-step-layout">
+            <div class="gs-step-meta">
+              <span class="gs-step-tag gs-tag-det">Deterministic</span>
+              <div class="gs-step-num" aria-hidden="true">01</div>
+            </div>
+            <div class="gs-step-copy">
+              <h3 class="gs-step-h">Signal Processing Before Inference</h3>
+              <p class="gs-step-micro">Clean it, fingerprint it, normalize it. Extract what you know with certainty. The model should never see noise you could have removed deterministically.</p>
             </div>
           </div>
         </div>
+
+        <!-- Phase 2: Deduplication -->
+        <div class="gs-panel gs-2">
+          <div class="gs-step-layout">
+            <div class="gs-step-meta">
+              <span class="gs-step-tag gs-tag-det">Deterministic-First</span>
+              <div class="gs-step-num" aria-hidden="true">02</div>
+            </div>
+            <div class="gs-step-copy">
+              <h3 class="gs-step-h">Multi-Signal Deduplication Cascade</h3>
+              <p class="gs-step-micro">Build cascading deterministic checks. Only escalate to LLM when all else is genuinely ambiguous. Never let a model be the first line of dedup.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3: Temporal Resolution -->
+        <div class="gs-panel gs-3">
+          <div class="gs-step-layout">
+            <div class="gs-step-meta">
+              <span class="gs-step-tag gs-tag-det">Deterministic</span>
+              <div class="gs-step-num" aria-hidden="true">03</div>
+            </div>
+            <div class="gs-step-copy">
+              <h3 class="gs-step-h">Context-First Temporal Resolution</h3>
+              <p class="gs-step-micro">Accumulate all signals first. Then resolve time and dates deterministically with full context. Never ask a model to do arithmetic it will get wrong.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4: Probabilistic / AI-Powered -->
+        <div class="gs-panel gs-4">
+          <div class="gs-step-layout">
+            <div class="gs-step-meta">
+              <span class="gs-step-tag gs-tag-prob">Probabilistic</span>
+              <div class="gs-step-num gs-step-num--prob" aria-hidden="true">04</div>
+            </div>
+            <div class="gs-step-copy">
+              <h3 class="gs-step-h gs-step-h--prob">AI-Powered Inference</h3>
+              <p class="gs-step-micro">Use AI for what it does best — find meaning. Let it narrate. But never let it write to the DB without principles-based guardrails.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mic drop — glass bubble, revealed by canvas in phase 5 -->
+        <div class="gs-micdrop" aria-live="polite">
+          <p class="gmd-line">No evidence = No meaning.</p>
+          <p class="gmd-line">No provenance = No write.</p>
+          <p class="gmd-line">No fallback = No ship.</p>
+          <a href="#blueprint" class="gmd-cta">
+            View the Production AI Blueprint
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Progress dots (6 phases) -->
+        <div class="gs-dots" aria-hidden="true">
+          <div class="gs-dot active"></div>
+          <div class="gs-dot"></div>
+          <div class="gs-dot"></div>
+          <div class="gs-dot"></div>
+          <div class="gs-dot"></div>
+          <div class="gs-dot"></div>
+        </div>
+
       </div>
     </div>
+
   </section>
 
   <!-- ========================= -->
-  <!-- 4. THE HOOT APPROACH      -->
-  <!-- ========================= -->
-  <section class="approach-section">
-    <div class="container">
-      <div class="approach-content fade-in">
-        <span class="section-label">Our Approach</span>
-        <h2>Build the system.<br>Then build the product.</h2>
-        <p>At Hoot Ventures, we treat AI as a system problem, not just a model problem. Real AI products require structured data pipelines, multi-step reasoning workflows, robust orchestration layers, human-centered interfaces, and governance and monitoring.</p>
-        <p>When these pieces work together, AI stops being a novelty and becomes infrastructure.</p>
-      </div>
-      <div class="approach-pillars fade-in">
-        <div class="approach-pillar">
-          <div class="approach-pillar-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-          </div>
-          <span class="approach-pillar-text">Data</span>
-        </div>
-        <div class="approach-pillar">
-          <div class="approach-pillar-icon">
-            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <span class="approach-pillar-text">Pipelines</span>
-        </div>
-        <div class="approach-pillar">
-          <div class="approach-pillar-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-          </div>
-          <span class="approach-pillar-text">Agents</span>
-        </div>
-        <div class="approach-pillar">
-          <div class="approach-pillar-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          </div>
-          <span class="approach-pillar-text">Product UX</span>
-        </div>
-        <div class="approach-pillar">
-          <div class="approach-pillar-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <span class="approach-pillar-text">Monitoring</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================= -->
-  <!-- 5. PRODUCTION BLUEPRINT   -->
+  <!-- 5. PRODUCTION AI BLUEPRINT -->
   <!-- ========================= -->
   <section class="blueprint-section" id="blueprint">
     <div class="container">
+
       <div class="blueprint-header fade-in">
-        <span class="section-label">Signature Asset</span>
-        <h2>The Production AI Blueprint</h2>
-        <p>From messy inputs to reliable product outcomes — a consistent architecture we reuse across products.</p>
+        <span class="section-label">The Production AI Blueprint</span>
+        <h2>Production AI is mostly systems engineering.</h2>
+        <p>We do not treat AI as the system. We treat it as one bounded component inside a larger production architecture. Raw inputs are structured before inference. Candidate meaning is verified before it becomes durable state. Product surfaces sit downstream of provenance, policy, and fallback logic.</p>
       </div>
 
-      <div class="blueprint-diagram fade-in">
-        <!-- Zone 1: Chaos -->
-        <div class="blueprint-chaos">
-          <p class="blueprint-zone-title">Real-World Inputs</p>
-          <p class="blueprint-zone-subtitle">Messy, fragmented information humans struggle to manage.</p>
-          <div class="chaos-nodes">
-            <div class="chaos-node" style="transform: rotate(-3deg)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Email
-              <span class="chaos-tooltip">Subject: Field Trip — Permission slip due 3/10. Body: Please sign &amp; return.</span>
+      <div class="stack-grid fade-in">
+
+        <!-- Left Rail: Structured Ingestion -->
+        <aside class="stack-rail">
+          <p class="rail-label">Structured Ingestion</p>
+          <p class="rail-desc">Typed source inputs with metadata and provenance captured at entry.</p>
+          <div class="rail-items">
+            <div class="rail-item">Email<span class="rail-num">01</span></div>
+            <div class="rail-item">Files<span class="rail-num">02</span></div>
+            <div class="rail-item">Images<span class="rail-num">03</span></div>
+            <div class="rail-item">Voice<span class="rail-num">04</span></div>
+            <div class="rail-item">Camera<span class="rail-num">05</span></div>
+            <div class="rail-item">APIs<span class="rail-num">06</span></div>
+            <div class="rail-item rail-item--meta">Source Metadata<span class="rail-num">—</span></div>
+            <div class="rail-item rail-item--meta">Provenance Capture<span class="rail-num">—</span></div>
+          </div>
+        </aside>
+
+        <!-- Center: Layer Cards -->
+        <div class="stack-layers">
+
+          <!-- Layer 1: Deterministic Processing -->
+          <div class="layer-card">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Layer 1</p>
+                <h3 class="layer-title">Deterministic Processing</h3>
+                <p class="layer-subtitle">Noise is removed and structure is extracted before any model is asked to infer meaning.</p>
+              </div>
+              <div class="layer-num-badge">1</div>
             </div>
-            <div class="chaos-node" style="transform: rotate(2deg)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              Documents
-              <span class="chaos-tooltip">PDF: Immunization form — signed copy required.</span>
-            </div>
-            <div class="chaos-node" style="transform: rotate(-1deg)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Messages
-              <span class="chaos-tooltip">PTA thread: new volunteer request for bake sale.</span>
-            </div>
-            <div class="chaos-node" style="transform: rotate(3deg)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Calendars
-              <span class="chaos-tooltip">iCal event: School picture day — Mar 12.</span>
-            </div>
-            <div class="chaos-node" style="transform: rotate(-2deg)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-              Forms
-              <span class="chaos-tooltip">Registration: Summer camp — spots limited.</span>
-            </div>
-            <div class="chaos-node" style="transform: rotate(1deg)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              APIs
-              <span class="chaos-tooltip">School system webhook: new announcement posted.</span>
+            <div class="layer-tags">
+              <span class="layer-tag">Cleaning &amp; Parsing</span>
+              <span class="layer-tag">Fingerprinting</span>
+              <span class="layer-tag">Normalization</span>
+              <span class="layer-tag">Entity Extraction</span>
+              <span class="layer-tag">Temporal Preprocessing</span>
+              <span class="layer-tag">Visual Structure Analysis</span>
+              <span class="layer-tag">Deduplication Cascade</span>
+              <span class="layer-tag">Provenance Tagging</span>
             </div>
           </div>
+
+          <!-- Layer 2: Data & Context -->
+          <div class="layer-card">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Layer 2</p>
+                <h3 class="layer-title">Data &amp; Context Layer</h3>
+                <p class="layer-subtitle">Multiple durable representations of source records, structured state, semantic retrieval, and relational context.</p>
+              </div>
+              <div class="layer-num-badge">2</div>
+            </div>
+            <div class="layer-tags">
+              <span class="layer-tag">Raw Cache</span>
+              <span class="layer-tag">Relational Store</span>
+              <span class="layer-tag">Vector Index</span>
+              <span class="layer-tag">Graph Context</span>
+              <span class="layer-tag">Timeline State</span>
+              <span class="layer-tag">Source References</span>
+            </div>
+          </div>
+
+          <!-- Layer 3: Reasoning & Orchestration -->
+          <div class="layer-card">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Layer 3</p>
+                <h3 class="layer-title">Reasoning &amp; Orchestration</h3>
+                <p class="layer-subtitle">Models operate over structured context through orchestrated workflows, not as freeform agents over raw data.</p>
+              </div>
+              <div class="layer-num-badge">3</div>
+            </div>
+            <div class="layer-tags">
+              <span class="layer-tag">Prompt Policy</span>
+              <span class="layer-tag">Workflow Coordination</span>
+              <span class="layer-tag">Retrieval Routing</span>
+              <span class="layer-tag">Tool Connectors</span>
+              <span class="layer-tag">Model Runtime</span>
+              <span class="layer-tag">Browser Execution</span>
+              <span class="layer-tag">Local Models</span>
+            </div>
+          </div>
+
+          <!-- THE FORK — Read Path vs Write Path -->
+          <div class="path-fork" aria-label="System output splits into read path and write path">
+            <div class="path-fork-label">Reads and writes diverge here.</div>
+          </div>
+
+          <!-- Read/Write Split -->
+          <div class="layer-split">
+
+            <!-- READ PATH -->
+            <div class="layer-card layer-card--read">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow layer-eyebrow--read">Read Path</p>
+                  <h3 class="layer-title">Retrieval &amp; Synthesis</h3>
+                  <p class="layer-subtitle">Reads are permissive. The system retrieves context, synthesizes meaning, and surfaces candidate interpretations.</p>
+                </div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag layer-tag--read">Context Retrieval</span>
+                <span class="layer-tag layer-tag--read">Summarization</span>
+                <span class="layer-tag layer-tag--read">Narrative Synthesis</span>
+                <span class="layer-tag layer-tag--read">Session State</span>
+              </div>
+              <div class="path-arrow" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Chat, Briefings, UI</span>
+              </div>
+            </div>
+
+            <!-- WRITE PATH — the hard gate -->
+            <div class="layer-card layer-card--write">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow layer-eyebrow--write">Write Path — Gated</p>
+                  <h3 class="layer-title">Verification &amp; Write Controls</h3>
+                  <p class="layer-subtitle">Writes are governed. Candidate meaning does not become durable state without passing every gate.</p>
+                </div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag layer-tag--write">Evidence Matching</span>
+                <span class="layer-tag layer-tag--write">Provenance Checks</span>
+                <span class="layer-tag layer-tag--write">Structured Validation</span>
+                <span class="layer-tag layer-tag--write">Mutation Policy</span>
+                <span class="layer-tag layer-tag--write">Human Escalation</span>
+              </div>
+              <div class="layer-callout">No provenance = no write</div>
+              <div class="path-arrow" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Approved Actions, Memory Updates</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Memory — shared, governed -->
+          <div class="layer-card layer-card--accent">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Persistent State</p>
+                <h3 class="layer-title">Governed Memory</h3>
+                <p class="layer-subtitle">Memory is not a prompt feature. It is a governed write system with distinct trust levels.</p>
+              </div>
+              <div class="layer-num-badge">M</div>
+            </div>
+            <div class="layer-tags">
+              <span class="layer-tag layer-tag--accent">Session State</span>
+              <span class="layer-tag layer-tag--accent">Persistent Memory</span>
+              <span class="layer-tag layer-tag--accent">Durable Structured State</span>
+              <span class="layer-tag layer-tag--accent">Audit Trace</span>
+            </div>
+            <div class="layer-callout">Reads are cheap. Writes are governed.</div>
+          </div>
+
         </div>
 
-        <!-- Zone 2: Engine -->
-        <div class="blueprint-engine">
-          <p class="blueprint-zone-title">Hoot Intelligence Engine</p>
-          <p class="blueprint-zone-subtitle">Structured, modular, engineered for production.</p>
-
-          <div class="engine-layer">
-            <div class="engine-layer-num">1</div>
-            <div class="engine-layer-content">
-              <p class="engine-layer-title">Data Layer &amp; Connectors</p>
-              <p class="engine-layer-desc">Secure ingestion from real-world sources</p>
-              <div class="engine-modules">
-                <span class="engine-module">Email Parser</span>
-                <span class="engine-module">Doc Ingestion</span>
-                <span class="engine-module">API Connectors</span>
-              </div>
-            </div>
-            <span class="engine-layer-chevron">&rsaquo;</span>
-            <div class="engine-tooltip">
-              <p class="engine-tooltip-title">Data Connectors</p>
-              <p class="engine-tooltip-body">Secure connectors ingest emails, docs, and webhooks. We normalize schema at ingest to minimize downstream handling.</p>
-            </div>
+        <!-- Right Rail: Product Surfaces & Approved Actions -->
+        <aside class="stack-rail">
+          <p class="rail-label">Product Surfaces &amp; Approved Actions</p>
+          <p class="rail-desc">Interfaces, notifications, and actions downstream of verified system behavior.</p>
+          <div class="rail-items">
+            <div class="rail-item">AI Chat<span class="rail-num">E1</span></div>
+            <div class="rail-item">Daily Briefings<span class="rail-num">E2</span></div>
+            <div class="rail-item">Notifications<span class="rail-num">E3</span></div>
+            <div class="rail-item">UI Surfaces<span class="rail-num">E4</span></div>
+            <div class="rail-item">Review Queues<span class="rail-num">E5</span></div>
+            <div class="rail-item rail-item--write">Approved Actions<span class="rail-num">E6</span></div>
+            <div class="rail-item">Routing Logic<span class="rail-num">E7</span></div>
+            <div class="rail-item">Integrations<span class="rail-num">E8</span></div>
           </div>
-
-          <div class="engine-layer">
-            <div class="engine-layer-num">2</div>
-            <div class="engine-layer-content">
-              <p class="engine-layer-title">Semantic Understanding</p>
-              <p class="engine-layer-desc">Entity extraction and intent detection</p>
-              <div class="engine-modules">
-                <span class="engine-module">NER</span>
-                <span class="engine-module">Classification</span>
-                <span class="engine-module">Summarization</span>
-                <span class="engine-module">Intent</span>
-              </div>
-            </div>
-            <span class="engine-layer-chevron">&rsaquo;</span>
-            <div class="engine-tooltip">
-              <p class="engine-tooltip-title">Understanding Layer</p>
-              <p class="engine-tooltip-body">Entity extraction and intent detection convert raw text into canonical facts — child, date, action type, urgency.</p>
-            </div>
+          <!-- Fallback callout -->
+          <div class="rail-fallback">
+            <p class="rail-fallback-title">When confidence is insufficient:</p>
+            <p class="rail-fallback-line">Ask. Defer. Escalate. Do nothing.</p>
           </div>
+        </aside>
 
-          <div class="engine-layer">
-            <div class="engine-layer-num">3</div>
-            <div class="engine-layer-content">
-              <p class="engine-layer-title">Agent Pipelines</p>
-              <p class="engine-layer-desc">Specialized agents collaborate on complex workflows</p>
-              <div class="engine-agent-chain">
-                <span class="engine-agent-node">Extract</span>
-                <span class="engine-agent-line"></span>
-                <span class="engine-agent-node">Classify</span>
-                <span class="engine-agent-line"></span>
-                <span class="engine-agent-node">Summarize</span>
-                <span class="engine-agent-line"></span>
-                <span class="engine-agent-node">Act</span>
-              </div>
-            </div>
-            <span class="engine-layer-chevron">&rsaquo;</span>
-            <div class="engine-tooltip">
-              <p class="engine-tooltip-title">Task-Oriented Agents</p>
-              <p class="engine-tooltip-body">Modular agents run discrete tasks — extract deadlines, classify messages, propose actions, and trigger calendar updates. Modularity enables fallback and explainability.</p>
-            </div>
-          </div>
+      </div>
 
-          <div class="engine-layer">
-            <div class="engine-layer-num">4</div>
-            <div class="engine-layer-content">
-              <p class="engine-layer-title">Semantic Context Engine</p>
-              <p class="engine-layer-desc">Persistent knowledge across time and interactions</p>
-              <div class="engine-chips">
-                <span class="engine-chip">Vector Search</span>
-                <span class="engine-chip">Semantic Memory</span>
-                <span class="engine-chip">Historical Context</span>
-              </div>
-            </div>
-            <span class="engine-layer-chevron">&rsaquo;</span>
-            <div class="engine-tooltip">
-              <p class="engine-tooltip-title">Persistent Context</p>
-              <p class="engine-tooltip-body">Persistent, versioned semantic memory stores context across time — who, where, prior decisions. Stable retrieval with reproducible results.</p>
-            </div>
-          </div>
-
-          <div class="engine-layer">
-            <div class="engine-layer-num">5</div>
-            <div class="engine-layer-content">
-              <p class="engine-layer-title">Orchestration &amp; Governance</p>
-              <p class="engine-layer-desc">Coordination, fallback logic, cost controls</p>
-              <div class="engine-modules">
-                <span class="engine-module">Workflow Orchestrator</span>
-                <span class="engine-module">Latency Optimizer</span>
-                <span class="engine-module">Fallback Logic</span>
-              </div>
-            </div>
-            <span class="engine-layer-chevron">&rsaquo;</span>
-            <div class="engine-tooltip">
-              <p class="engine-tooltip-title">Control Plane</p>
-              <p class="engine-tooltip-body">A control plane coordinates agents, enforces fallbacks, and optimizes for latency and cost. Monitoring, human reviews, and privacy controls ensure auditable production behavior.</p>
-            </div>
-          </div>
-
-          <div class="engine-governance">
-            <span class="engine-governance-label">Guardrails</span>
-            <div class="engine-governance-items">
-              <span>Monitoring</span>
-              <span>Human feedback</span>
-              <span>Safety checks</span>
-              <span>Privacy controls</span>
-            </div>
-          </div>
+      <!-- Footer callout -->
+      <div class="stack-footer fade-in">
+        <div class="stack-footer-text">
+          <p class="stack-footer-title">Built for production, not prototypes.</p>
+          <p class="stack-footer-desc">Every downstream read, write, and action is governed by evidence, provenance, validation, and fallback policy.</p>
         </div>
-
-        <!-- Zone 3: Experiences -->
-        <div class="blueprint-experiences">
-          <div class="experience-card primary">
-            <p class="experience-card-label">Live Product</p>
-            <h3>Gist</h3>
-            <p>Daily intelligence briefing for families. Action items, deadlines, and events — organized by child.</p>
-            <ul class="experience-card-bullets">
-              <li>Actions detected</li>
-              <li>Deadlines surfaced</li>
-              <li>Events organized</li>
-            </ul>
-          </div>
-          <div class="experience-card">
-            <p class="experience-card-label">Roadmap</p>
-            <h3>Future Experiences</h3>
-            <p>AI-powered consumer and enterprise products built on the same production engine.</p>
-          </div>
-          <div class="experience-card">
-            <p class="experience-card-label">Platform</p>
-            <h3>Partner Integrations</h3>
-            <p>APIs and SDKs to embed extraction and orchestration into partner applications.</p>
-          </div>
-        </div>
+        <div class="stack-provenance-badge">No provenance = no write</div>
       </div>
 
-      <div class="blueprint-footer fade-in">
-        <p>Most AI companies focus on models. <strong>We build the systems that turn models into reliable products.</strong></p>
-      </div>
-
-      <!-- Technical brief -->
-      <div class="blueprint-brief fade-in">
-        <h3>Technical Brief</h3>
-        <p>We build production AI by separating <strong>task decomposition</strong> from <strong>model execution</strong>. Raw inputs flow through secure connectors into lightweight parser agents; extracted entities and canonical representations are persisted in a versioned semantic store. An orchestrator composes agent outputs into product responses; MLOps layers provide rollout controls, observability, and automated rollback. We prioritize data lineage, human-in-the-loop corrections, and ephemeral demos to keep production safe and auditable.</p>
-      </div>
     </div>
   </section>
 
   <!-- ========================= -->
-  <!-- 6. CREDIBILITY / PROOF    -->
+  <!-- WHAT WE DO                -->
   <!-- ========================= -->
-  <section class="credibility-section" id="about">
+  <section class="whatwedo-section" id="product">
     <div class="container">
-      <div class="credibility-grid">
-        <div class="credibility-text fade-in">
-          <span class="section-label">Built by Operators</span>
-          <h2>Built by people who have run real systems.</h2>
-          <p>Before founding Hoot Ventures, our team built and operated products across large organizations.</p>
-          <ul>
-            <li>Managing a $1.3B portfolio at a major financial institution</li>
-            <li>Building global data platforms at enterprise scale</li>
-            <li>Leading a 65-person consumer product organization</li>
-            <li>Launching production analytics systems used by millions</li>
-          </ul>
-          <p>These experiences shaped how we build today.</p>
-          <div class="founder-line">
-            <p class="founder-name">Rohit Kapoor</p>
-            <p class="founder-title">Founder, Hoot Ventures</p>
-            <p class="founder-tagline">Engineer by training. Product builder by trade.</p>
-          </div>
-        </div>
-        <div class="fade-in">
-          <div class="metrics-strip">
-            <div class="metric-item">
-              <p class="metric-value">23%</p>
-              <p class="metric-label">Organic search growth delivered</p>
-            </div>
-            <div class="metric-item">
-              <p class="metric-value">3x</p>
-              <p class="metric-label">Faster delivery cycles</p>
-            </div>
-            <div class="metric-item">
-              <p class="metric-value">70%</p>
-              <p class="metric-label">Per-customer profit increase</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========================= -->
-  <!-- 7. PRODUCT — GIST         -->
-  <!-- ========================= -->
-  <section class="products-section" id="product">
-    <div class="container">
-      <div class="product-showcase">
-        <div class="product-info fade-in">
-          <span class="section-label">Products</span>
-          <h2>Gist</h2>
-          <p class="product-tagline">One inbox. Every kid. Nothing missed.</p>
-          <p class="product-desc">Your kids' schools, sports leagues, and activities all send email to different accounts. Important deadlines get buried under newsletters and reply-alls. Gist pulls everything into one place, figures out what needs action, and organizes it by child — so you see exactly what matters for Emma today, and what can wait.</p>
-          <ul class="product-features">
-            <li>Connects all your email accounts into one feed</li>
-            <li>Spots deadlines, permission slips, and sign-ups buried in long emails</li>
-            <li>Daily briefing organized by child — Emma's day, Jake's day, all separate</li>
-            <li>Syncs school events, practice schedules, and due dates to your calendar</li>
-            <li>Share with your co-parent, nanny, or grandparents so everyone sees the same plan</li>
-          </ul>
-          <a href="support.html" class="btn btn-accent">Learn More</a>
+      <!-- Section header -->
+      <div class="whatwedo-header fade-in">
+        <span class="section-label">What We Do</span>
+        <h2>We build production AI systems.<br>Then we do it for others.</h2>
+        <p class="whatwedo-subhead">Gist is the proof. The studio is the offer. Everything we sell, we have already built for ourselves.</p>
+      </div>
+
+      <!-- Gist Product Showcase -->
+      <div class="gist-showcase fade-in">
+
+        <div class="gist-info">
+          <div class="gist-launch-badge">
+            <span class="launch-pulse"></span>
+            Launching April 2026
+          </div>
+          <h3 class="gist-name">Gist</h3>
+          <p class="gist-tagline">One inbox. Every kid. Nothing missed.</p>
+          <p class="gist-desc">Schools, sports leagues, and activity providers scatter deadlines across inboxes. Gist connects to your email, extracts every deadline and action item, and organizes everything by child — presented as a clean daily briefing so nothing gets buried.</p>
+          <div class="gist-proof-callout">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Built on the Production AI Blueprint. Every architectural claim on this page runs in Gist.
+          </div>
+          <a href="support.html" class="btn btn-accent">Learn More About Gist</a>
         </div>
-        <div class="product-visual fade-in">
+
+        <div class="gist-visual">
           <div class="phone-mockup">
             <div class="phone-screen">
               <div class="mock-header">
@@ -506,55 +454,71 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========================= -->
-  <!-- 8. SERVICES               -->
-  <!-- ========================= -->
-  <section class="services-section" id="services">
-    <div class="container">
-      <div class="fade-in" style="max-width: 640px;">
-        <span class="section-label">What We Build</span>
-        <h2>Hire the builder, not the advisor.</h2>
-        <p class="section-subtitle">Everything we sell, we've built for ourselves first. From architecture to App Store — no decks, no hand-waving.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card fade-in">
-          <h3>AI Products, Built</h3>
-          <p>We've shipped multi-agent systems, semantic search, and intelligent automation — not as demos, but as production software. Bring us the problem. We'll build and deploy the answer.</p>
-        </div>
-        <div class="service-card fade-in">
-          <h3>Data Infrastructure</h3>
-          <p>Data architecture, ML pipelines, and analytics platforms that survive contact with real users and real volume. We've built these systems at Visa and Capital One. We know what holds up.</p>
-        </div>
-        <div class="service-card fade-in">
-          <h3>AI Strategy</h3>
-          <p>Most AI roadmaps are fiction. We help leadership teams figure out what's real — what you can build now, what will actually change your numbers, and what's not worth touching yet.</p>
-        </div>
-      </div>
-      <p class="services-note fade-in">We partner selectively with organizations building ambitious products.</p>
-    </div>
-  </section>
 
-  <!-- ========================= -->
-  <!-- 9. CULTURE / HIRING       -->
-  <!-- ========================= -->
-  <section class="culture-section">
-    <div class="container">
-      <div class="culture-content fade-in">
-        <span class="section-label" style="color: var(--accent);">Team</span>
-        <h2>A small team building serious technology.</h2>
-        <p>We believe the best systems are built by small groups of experienced builders.</p>
-        <ul class="culture-values">
-          <li>Engineers who understand product.</li>
-          <li>Product leaders who understand data.</li>
-          <li>Designers who understand systems.</li>
-        </ul>
-        <p>If that sounds like you, we'd love to talk.</p>
-        <a href="mailto:contact@hootventures.ai" class="btn btn-accent">Work with us</a>
+      <!-- Studio divider -->
+      <div class="studio-divider fade-in">
+        <div class="studio-divider-line"></div>
+        <span class="studio-divider-text">Hire the builder, not the advisor.</span>
+        <div class="studio-divider-line"></div>
       </div>
+
+      <!-- Studio intro -->
+      <div class="studio-intro fade-in">
+        <p>We work with a small number of organizations at a time. We do not write roadmaps and hand them off. We build systems, stay accountable for how they behave in production, and leave teams better than we found them.</p>
+      </div>
+
+      <!-- Three engagement modes -->
+      <div class="studio-modes fade-in">
+
+        <div class="studio-mode">
+          <div class="mode-header">
+            <span class="mode-num" aria-hidden="true">01</span>
+            <span class="mode-type">Full Product Build</span>
+          </div>
+          <h4 class="mode-title">You have the vision.<br>We own the system.</h4>
+          <p class="mode-desc">Architecture, data pipeline, deterministic processing, reasoning layer, verification, product surface — we take the full stack from first whiteboard to deployed product. No hand-offs. No gap between design and implementation.</p>
+          <p class="mode-for">For teams with a product vision and no production AI team to execute it</p>
+        </div>
+
+        <div class="studio-mode studio-mode--featured">
+          <div class="mode-header">
+            <span class="mode-num" aria-hidden="true">02</span>
+            <span class="mode-type">Embedded Architecture</span>
+          </div>
+          <h4 class="mode-title">Your engineers build it.<br>We design it right.</h4>
+          <p class="mode-desc">We embed at the architecture level — not the sprint level. We design the system your team implements: ingestion boundary, deterministic preprocessing, reasoning scope, write controls, fallback policy. The difference between an AI product that works in production and one that doesn't is usually these decisions, made before a line of code is written.</p>
+          <p class="mode-for">For engineering teams building AI products who need the architecture sound before they build the wrong thing</p>
+        </div>
+
+        <div class="studio-mode">
+          <div class="mode-header">
+            <span class="mode-num" aria-hidden="true">03</span>
+            <span class="mode-type">Production Rescue</span>
+          </div>
+          <h4 class="mode-title">Your AI is live.<br>Something is wrong.</h4>
+          <p class="mode-desc">Hallucination, state corruption, unpredictable behavior, costs scaling faster than value. We diagnose what's actually failing — it's usually missing deterministic preprocessing, ungoverned writes, or no fallback logic — and fix it at the root, not the symptom.</p>
+          <p class="mode-for">For teams with AI in production that is not behaving reliably</p>
+        </div>
+
+      </div>
+
+      <!-- Credentials + CTA -->
+      <div class="studio-footer fade-in">
+        <div class="studio-creds">
+          <span class="creds-label">Prior work</span>
+          <div class="creds-list">
+            <span>Capital One</span><span class="cred-sep">·</span>
+            <span>Visa</span><span class="cred-sep">·</span>
+            <span>Anywhere Real Estate</span><span class="cred-sep">·</span>
+            <span>Wharton</span><span class="cred-sep">·</span>
+            <span>Georgia Tech</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Start a conversation</a>
+      </div>
+
     </div>
   </section>
 
@@ -618,7 +582,7 @@
           <div class="footer-links-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
               <li><a href="#product">Gist</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -688,6 +652,191 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ===========================
+    // Particle System — Hero → Gauntlet (one continuous canvas)
+    // ===========================
+    (function() {
+      var canvas = document.getElementById('particleCanvas');
+      if(!canvas||window.innerWidth<769) return;
+      var ctx=canvas.getContext('2d');
+      var W=0,H=0,particles=[],avgDotR=4,masterAlpha=1;
+      var NUM_P=55,NUM_TL=18,PHASES=6,currentProgress=0;
+      var isMobile=window.innerWidth<769;
+      var track   = document.querySelector('.gauntlet-track');
+      var mdEl    = document.querySelector('.gs-micdrop');
+      var aiPanel = document.querySelector('.gs-4');
+      if(!track) return;
+
+      function eIO(t){ return t<0.5?2*t*t:-1+(4-2*t)*t; }
+      function lrp(a,b,t){ return a+(b-a)*Math.max(0,Math.min(1,t)); }
+      var SIL=[196,211,230], WHT=[255,255,255];
+      function lCol(A,B,t){
+        return[Math.round(lrp(A[0],B[0],t)),Math.round(lrp(A[1],B[1],t)),Math.round(lrp(A[2],B[2],t))];
+      }
+
+      function initParticles(){
+        particles=[]; var lL=0.06*W,lR=0.94*W;
+        for(var i=0;i<NUM_P;i++){
+          var cx=(0.06+Math.random()*0.88)*W, cy=(0.06+Math.random()*0.88)*H;
+          var cols=9,rows=Math.ceil(NUM_P/cols);
+          var gx=(0.1+(i%cols)/(cols-1)*0.8)*W, gy=(0.1+Math.floor(i/cols)/(rows-1)*0.8)*H;
+          var nC=12,cC=4,ci=Math.floor(i/(NUM_P/nC));
+          var mx=(0.15+(ci%cC)/(cC-1)*0.7)*W, my=(0.22+Math.floor(ci/cC)/2*0.56)*H;
+          var ti=Math.floor(i/(NUM_P/NUM_TL));
+          var tx=lL+ti/(NUM_TL-1)*(lR-lL), ty=0.4*H;
+          var r=1.6+Math.random()*2;
+          particles.push({cx,cy,gx,gy,mx,my,tx,ty,r,
+            alpha:0.18+Math.random()*0.45, phase:Math.random()*Math.PI*2,
+            speed:0.35+Math.random()*0.55, amp:8+Math.random()*18});
+        }
+        avgDotR=particles.reduce(function(s,p){return s+p.r;},0)/particles.length*1.6;
+      }
+
+      function resize(){
+        isMobile=window.innerWidth<769;
+        // Fixed canvas → always sized to the viewport
+        W=canvas.width=window.innerWidth;
+        H=canvas.height=window.innerHeight;
+        initParticles();
+      }
+
+      function render(){
+        if(isMobile) return;
+        ctx.clearRect(0,0,W,H);
+        if(masterAlpha<=0){ requestAnimationFrame(render); return; }
+        ctx.globalAlpha=masterAlpha;
+        var p=currentProgress;
+        var phase=Math.min(PHASES-1,Math.floor(p*PHASES));
+        var sub=(p*PHASES)-phase;
+        var t=Date.now()*0.001;
+        var lL=0.06*W,lR=0.94*W,lY=0.4*H;
+        var spacing=(lR-lL)/(NUM_TL-1);
+
+        if(phase<5){
+          particles.forEach(function(pt){
+            var x,y,r,alpha,col;
+            if(phase===0){
+              x=pt.cx+Math.sin(t*pt.speed+pt.phase)*pt.amp;
+              y=pt.cy+Math.cos(t*pt.speed*0.7+pt.phase)*pt.amp*0.6;
+              r=pt.r; alpha=pt.alpha; col=SIL;
+            }else if(phase===1){
+              var ea=eIO(sub),df=1-sub;
+              x=lrp(pt.cx+Math.sin(t*pt.speed+pt.phase)*pt.amp*df,pt.gx,ea);
+              y=lrp(pt.cy+Math.cos(t*pt.speed*0.7+pt.phase)*pt.amp*0.6*df,pt.gy,ea);
+              r=pt.r; alpha=pt.alpha; col=SIL;
+            }else if(phase===2){
+              var ea2=eIO(sub);
+              x=lrp(pt.gx,pt.mx,ea2); y=lrp(pt.gy,pt.my,ea2);
+              r=lrp(pt.r,pt.r*2.2,ea2);
+              alpha=lrp(pt.alpha,Math.min(0.85,pt.alpha*1.8),ea2); col=SIL;
+            }else if(phase===3){
+              var ea3=eIO(sub);
+              x=lrp(pt.mx,pt.tx,ea3); y=lrp(pt.my,pt.ty,ea3);
+              r=lrp(pt.r*2.2,pt.r*1.6,ea3); alpha=0.72;
+              col=lCol(SIL,WHT,eIO(sub));
+            }else{
+              x=pt.tx; y=pt.ty; r=pt.r*1.6; alpha=0.88; col=WHT;
+            }
+            ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2);
+            ctx.fillStyle='rgba('+col[0]+','+col[1]+','+col[2]+','+alpha+')';
+            ctx.fill();
+          });
+          if(aiPanel) aiPanel.style.opacity='';
+        }
+
+        if(phase===5){
+          var stretchT=Math.min(1,sub/0.30);
+          var slideT  =sub<0.30?0:Math.min(1,(sub-0.30)/0.38);
+          var textT   =sub<0.60?0:Math.min(1,(sub-0.60)/0.30);
+          if(aiPanel) aiPanel.style.opacity=Math.max(0,1-stretchT*2.5)+'';
+          var lineThick=avgDotR*2;
+          if(stretchT<0.96){
+            var maxRX=spacing/2+3;
+            particles.forEach(function(pt){
+              var rx=lrp(pt.r*1.6,maxRX,eIO(stretchT));
+              var ry=pt.r*1.6;
+              ctx.save();
+              ctx.translate(pt.tx,lY); ctx.scale(rx/Math.max(ry,0.1),1);
+              ctx.beginPath(); ctx.arc(0,0,ry,0,Math.PI*2);
+              ctx.restore();
+              ctx.fillStyle='rgba(255,255,255,0.88)';
+              ctx.fill();
+            });
+          }
+          if(stretchT>0.45){
+            var la=Math.min(1,(stretchT-0.45)/0.55);
+            var mdContentH=mdEl?mdEl.offsetHeight:200;
+            var mdBot=H/2+mdContentH/2+20;
+            var tgtW=Math.min(700,W*0.86);
+            var curW=lrp(lR-lL,tgtW,eIO(slideT));
+            var curY=lrp(lY,mdBot,eIO(slideT));
+            var curX=W/2-curW/2;
+            ctx.save();
+            ctx.shadowBlur=18; ctx.shadowColor='rgba(255,255,255,0.3)';
+            ctx.fillStyle='rgba(255,255,255,'+(la*0.18)+')';
+            ctx.fillRect(curX,curY-lineThick,curW,lineThick*2);
+            ctx.restore();
+            ctx.fillStyle='rgba(255,255,255,'+(la*0.92)+')';
+            ctx.fillRect(curX,curY-lineThick/2,curW,lineThick);
+          }
+          if(mdEl){
+            mdEl.style.opacity=textT+'';
+            mdEl.style.pointerEvents=textT>0?'auto':'none';
+          }
+        }else if(mdEl){
+          mdEl.style.opacity='0'; mdEl.style.pointerEvents='none';
+        }
+
+        ctx.globalAlpha=1;
+        requestAnimationFrame(render);
+      }
+
+      function updatePanels(progress){
+        var panels=document.querySelectorAll('.gs-panel');
+        var dots=document.querySelectorAll('.gs-dot');
+        var phase=Math.min(PHASES-1,Math.floor(progress*PHASES));
+        panels.forEach(function(panel,i){
+          if(phase===5&&i===4){
+            // render() controls opacity via inline style; ensure class is inactive
+            panel.classList.remove('gs-active');
+          }else{ panel.classList.toggle('gs-active',i===phase&&phase<5); }
+        });
+        dots.forEach(function(dot,i){ dot.classList.toggle('active',i===phase); });
+        var cue=document.getElementById('gsScrollCue');
+        if(cue) cue.style.opacity=progress<0.04?'1':'0';
+      }
+
+      function onScroll(){
+        if(isMobile) return;
+        var rect=track.getBoundingClientRect();
+        var scrollable=track.offsetHeight-window.innerHeight;
+        var rawProgress=-rect.top/scrollable;
+
+        if(rawProgress<=0){
+          // Hero section: show chaos dots, no gauntlet animation yet
+          masterAlpha=1;
+          currentProgress=0;
+        }else if(rawProgress<=1){
+          // Inside gauntlet: animate through phases
+          masterAlpha=1;
+          currentProgress=rawProgress;
+        }else{
+          // Past gauntlet: immediately clear canvas; sections below take over
+          masterAlpha=0;
+          currentProgress=1;
+          if(mdEl){ mdEl.style.opacity='0'; mdEl.style.pointerEvents='none'; }
+          if(aiPanel) aiPanel.style.opacity='';
+        }
+        updatePanels(currentProgress);
+      }
+
+      resize();
+      requestAnimationFrame(render);
+      onScroll();
+      window.addEventListener('scroll',onScroll,{passive:true});
+      window.addEventListener('resize',function(){ resize(); if(!isMobile) onScroll(); });
+    })();
   </script>
 </body>
 </html>
