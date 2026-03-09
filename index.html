@@ -273,19 +273,30 @@
         </div>
         <button class="blueprint-modal-close" id="blueprintClose" aria-label="Close blueprint">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-          <span>Esc</span>
         </button>
       </div>
 
       <!-- Full stack diagram -->
       <div class="blueprint-modal-content">
 
+        <!-- Observability rail — cross-cutting, spans full diagram width -->
+        <div class="observability-rail">
+          <div class="obs-rail-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            OBSERVABILITY
+          </div>
+          <p class="obs-rail-desc">Every request carries a full trace — input record, context retrieved, model call, output score, write decision, and audit log. No inference is unobserved.</p>
+          <div class="obs-rail-tags">
+            <span>Request Tracing</span><span>Inference Logs</span><span>Confidence Monitoring</span><span>Cost Tracking</span><span>Anomaly Detection</span><span>Audit Trail</span><span>Latency Metrics</span>
+          </div>
+        </div>
+
         <div class="stack-grid">
 
           <!-- Left Rail: Structured Ingestion -->
           <aside class="stack-rail">
             <p class="rail-label">Structured Ingestion</p>
-            <p class="rail-desc">Typed source inputs with metadata and provenance captured at entry.</p>
+            <p class="rail-desc">Each input is typed at entry. Every record carries source metadata and provenance before it enters the pipeline.</p>
             <div class="rail-items">
               <div class="rail-item">Email<span class="rail-num">01</span></div>
               <div class="rail-item">Files<span class="rail-num">02</span></div>
@@ -296,34 +307,44 @@
               <div class="rail-item rail-item--meta">Source Metadata<span class="rail-num">—</span></div>
               <div class="rail-item rail-item--meta">Provenance Capture<span class="rail-num">—</span></div>
             </div>
+            <div class="rail-memory-read">
+              <div class="rail-memory-arrow">↑ reads context</div>
+              <div class="rail-memory-label">Governed Memory feeds Layer 2</div>
+            </div>
           </aside>
 
           <!-- Center: Layer Cards -->
           <div class="stack-layers">
 
+            <!-- Layer 1: fixed subtitle, renamed Content Fingerprinting, removed VSA -->
             <div class="layer-card">
               <div class="layer-card-top">
                 <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Layer 1</p>
+                  <p class="layer-eyebrow">Layer 1 <span class="layer-cost-label layer-cost-det">Deterministic</span></p>
                   <h3 class="layer-title">Deterministic Processing</h3>
-                  <p class="layer-subtitle">Noise is removed and structure is extracted before any model is asked to infer meaning.</p>
+                  <p class="layer-subtitle">Each input is normalized to a typed, provenance-tagged record with a known schema. Noise is removed before any model sees it. The rest of the pipeline trusts this contract.</p>
                 </div>
                 <div class="layer-num-badge">1</div>
               </div>
               <div class="layer-tags">
-                <span class="layer-tag">Cleaning &amp; Parsing</span><span class="layer-tag">Fingerprinting</span>
-                <span class="layer-tag">Normalization</span><span class="layer-tag">Entity Extraction</span>
-                <span class="layer-tag">Temporal Preprocessing</span><span class="layer-tag">Visual Structure Analysis</span>
-                <span class="layer-tag">Deduplication Cascade</span><span class="layer-tag">Provenance Tagging</span>
+                <span class="layer-tag">Cleaning &amp; Parsing</span>
+                <span class="layer-tag">Content Fingerprinting</span>
+                <span class="layer-tag">Normalization</span>
+                <span class="layer-tag">Entity Extraction</span>
+                <span class="layer-tag">Temporal Preprocessing</span>
+                <span class="layer-tag">Deduplication Cascade</span>
+                <span class="layer-tag">Provenance Tagging</span>
               </div>
+              <div class="layer-fallback-note">Fallback: Reject malformed input — return error with source reference</div>
             </div>
 
+            <!-- Layer 2: add Memory Read tag and fallback note -->
             <div class="layer-card">
               <div class="layer-card-top">
                 <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Layer 2</p>
+                  <p class="layer-eyebrow">Layer 2 <span class="layer-cost-label layer-cost-det">Deterministic</span></p>
                   <h3 class="layer-title">Data &amp; Context Layer</h3>
-                  <p class="layer-subtitle">Multiple durable representations of source records, structured state, semantic retrieval, and relational context.</p>
+                  <p class="layer-subtitle">Multiple durable representations of source records — structured state, semantic retrieval, and relational context. Governed Memory is read here to populate inference context.</p>
                 </div>
                 <div class="layer-num-badge">2</div>
               </div>
@@ -331,30 +352,60 @@
                 <span class="layer-tag">Raw Cache</span><span class="layer-tag">Relational Store</span>
                 <span class="layer-tag">Vector Index</span><span class="layer-tag">Graph Context</span>
                 <span class="layer-tag">Timeline State</span><span class="layer-tag">Source References</span>
+                <span class="layer-tag">Memory Read</span>
               </div>
+              <div class="layer-fallback-note">Fallback: Serve stale context with staleness flag — do not block inference</div>
             </div>
 
-            <div class="layer-card">
+            <!-- Layer 3: rewritten subtitle, renamed Instruction Schema, Document Structure Parsing moved here -->
+            <div class="layer-card layer-card--inference">
               <div class="layer-card-top">
                 <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Layer 3</p>
+                  <p class="layer-eyebrow">Layer 3 <span class="layer-cost-label layer-cost-ai">AI Cost Zone</span></p>
                   <h3 class="layer-title">Reasoning &amp; Orchestration</h3>
-                  <p class="layer-subtitle">Models operate over structured context through orchestrated workflows, not as freeform agents over raw data.</p>
+                  <p class="layer-subtitle">Models operate over structured context, not raw data. Instruction schemas define which model handles which query, what constraints govern its output, and what format is expected. Agents are orchestrated as coordinated workflows, not freeform processes.</p>
                 </div>
                 <div class="layer-num-badge">3</div>
               </div>
               <div class="layer-tags">
-                <span class="layer-tag">Prompt Policy</span><span class="layer-tag">Workflow Coordination</span>
-                <span class="layer-tag">Retrieval Routing</span><span class="layer-tag">Tool Connectors</span>
-                <span class="layer-tag">Model Runtime</span><span class="layer-tag">Browser Execution</span>
+                <span class="layer-tag">Instruction Schema</span>
+                <span class="layer-tag">Workflow Coordination</span>
+                <span class="layer-tag">Retrieval Routing</span>
+                <span class="layer-tag">Tool Connectors</span>
+                <span class="layer-tag">Model Runtime</span>
+                <span class="layer-tag">Document Structure Parsing</span>
                 <span class="layer-tag">Local Models</span>
               </div>
+              <div class="layer-fallback-note">Fallback: Reduce scope, retry with smaller model, or defer to human queue</div>
             </div>
 
+            <!-- Layer 4: NEW — Output Validation & Confidence Scoring -->
+            <div class="layer-card layer-card--inference layer-card--validation">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow">Layer 4 <span class="layer-cost-label layer-cost-ai">AI Cost Zone</span></p>
+                  <h3 class="layer-title">Output Validation &amp; Confidence Scoring</h3>
+                  <p class="layer-subtitle">Model output is validated against expected schemas and scored for confidence before it reaches any read or write path. Low-confidence outputs are flagged, retried, or escalated — never silently passed through.</p>
+                </div>
+                <div class="layer-num-badge">4</div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag">Schema Enforcement</span>
+                <span class="layer-tag">Confidence Scoring</span>
+                <span class="layer-tag">Hallucination Detection</span>
+                <span class="layer-tag">Output Parsing</span>
+                <span class="layer-tag">Retry Policy</span>
+                <span class="layer-tag">Format Validation</span>
+              </div>
+              <div class="layer-fallback-note">Fallback: Return low-confidence flag — escalate to human review or discard</div>
+            </div>
+
+            <!-- Fork — now earned after 4 layers -->
             <div class="path-fork" aria-label="System output splits into read path and write path">
               <div class="path-fork-label">Reads and writes diverge here.</div>
             </div>
 
+            <!-- Read/Write split -->
             <div class="layer-split">
               <div class="layer-card layer-card--read">
                 <div class="layer-card-top">
@@ -380,7 +431,7 @@
                   <div class="layer-card-meta">
                     <p class="layer-eyebrow layer-eyebrow--write">Write Path — Gated</p>
                     <h3 class="layer-title">Verification &amp; Write Controls</h3>
-                    <p class="layer-subtitle">Writes are governed. Candidate meaning does not become durable state without passing every gate.</p>
+                    <p class="layer-subtitle">Writes are governed. Candidate meaning does not become durable state without passing every gate. Committed state writes back to Governed Memory.</p>
                   </div>
                 </div>
                 <div class="layer-tags">
@@ -389,6 +440,7 @@
                   <span class="layer-tag layer-tag--write">Structured Validation</span>
                   <span class="layer-tag layer-tag--write">Mutation Policy</span>
                   <span class="layer-tag layer-tag--write">Human Escalation</span>
+                  <span class="layer-tag layer-tag--write">Memory Write</span>
                 </div>
                 <div class="layer-callout">No provenance = no write</div>
                 <div class="path-arrow" aria-hidden="true">
@@ -396,24 +448,6 @@
                   <span>Approved Actions, Memory Updates</span>
                 </div>
               </div>
-            </div>
-
-            <div class="layer-card layer-card--accent">
-              <div class="layer-card-top">
-                <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Persistent State</p>
-                  <h3 class="layer-title">Governed Memory</h3>
-                  <p class="layer-subtitle">Memory is not a prompt feature. It is a governed write system with distinct trust levels.</p>
-                </div>
-                <div class="layer-num-badge">M</div>
-              </div>
-              <div class="layer-tags">
-                <span class="layer-tag layer-tag--accent">Session State</span>
-                <span class="layer-tag layer-tag--accent">Persistent Memory</span>
-                <span class="layer-tag layer-tag--accent">Durable Structured State</span>
-                <span class="layer-tag layer-tag--accent">Audit Trace</span>
-              </div>
-              <div class="layer-callout">Reads are cheap. Writes are governed.</div>
             </div>
 
           </div>
@@ -436,16 +470,72 @@
               <p class="rail-fallback-title">When confidence is insufficient:</p>
               <p class="rail-fallback-line">Ask. Defer. Escalate. Do nothing.</p>
             </div>
+            <div class="rail-memory-write">
+              <div class="rail-memory-arrow">↓ writes committed state</div>
+              <div class="rail-memory-label">Write path → Governed Memory</div>
+            </div>
           </aside>
 
         </div>
 
+        <!-- Governed Memory — bidirectional shared store, outside linear stack -->
+        <div class="memory-store">
+          <div class="memory-store-connectors">
+            <div class="memory-connector memory-connector--read">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              reads context → Layer 2
+            </div>
+            <div class="memory-store-body">
+              <div class="memory-store-header">
+                <div class="layer-num-badge" style="background:rgba(13,183,163,0.15);color:var(--accent);flex-shrink:0;">M</div>
+                <div>
+                  <p class="layer-eyebrow" style="color:var(--accent);">Persistent State — Bidirectional</p>
+                  <h3 class="layer-title">Governed Memory</h3>
+                </div>
+              </div>
+              <p class="layer-subtitle" style="margin-top:0.5rem;">Session state feeds inference. Committed state writes back. Memory is not a prompt feature — it is a governed store with distinct read and write trust levels. The feedback loop is explicit and controlled at both ends.</p>
+              <div class="layer-tags" style="margin-top:0.75rem;">
+                <span class="layer-tag layer-tag--accent">Session State</span>
+                <span class="layer-tag layer-tag--accent">Persistent Memory</span>
+                <span class="layer-tag layer-tag--accent">Durable Structured State</span>
+                <span class="layer-tag layer-tag--accent">Audit Trace</span>
+              </div>
+              <div class="layer-callout" style="margin-top:0.875rem;">Reads are cheap. Writes are governed.</div>
+            </div>
+            <div class="memory-connector memory-connector--write">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              Write path commits state ↓
+            </div>
+          </div>
+        </div>
+
+        <!-- Fallback policy rail — cross-cutting -->
+        <div class="fallback-rail">
+          <div class="fallback-rail-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            FALLBACK POLICY
+          </div>
+          <p class="fallback-rail-desc">Every layer has an explicit failure mode and fallback. No silent failures. No undefined states.</p>
+          <div class="fallback-rail-grid">
+            <div class="fallback-item"><span class="fallback-layer">L1</span>Reject malformed input</div>
+            <div class="fallback-item"><span class="fallback-layer">L2</span>Serve stale context</div>
+            <div class="fallback-item"><span class="fallback-layer">L3</span>Reduce scope, retry</div>
+            <div class="fallback-item"><span class="fallback-layer">L4</span>Flag low confidence</div>
+            <div class="fallback-item"><span class="fallback-layer">W</span>Hold candidate, escalate</div>
+          </div>
+        </div>
+
+        <!-- Three-rule covenant footer -->
         <div class="stack-footer">
           <div class="stack-footer-text">
             <p class="stack-footer-title">Built for production, not prototypes.</p>
             <p class="stack-footer-desc">Every downstream read, write, and action is governed by evidence, provenance, validation, and fallback policy.</p>
           </div>
-          <div class="stack-provenance-badge">No provenance = no write</div>
+          <div class="blueprint-covenant">
+            <p>No provenance = no write.</p>
+            <p>No schema = no inference.</p>
+            <p>No fallback = no ship.</p>
+          </div>
         </div>
 
       </div><!-- /.blueprint-modal-content -->
@@ -461,8 +551,8 @@
       <!-- Section header -->
       <div class="whatwedo-header fade-in">
         <span class="section-label">What We Do</span>
-        <h2>We build production AI systems.<br>Then we do it for others.</h2>
-        <p class="whatwedo-subhead">Gist is the proof. The studio is the offer. Everything we sell, we have already built for ourselves.</p>
+        <h2>We run what we build.</h2>
+        <p class="whatwedo-subhead">Gist is our own product — live in production, not a case study. Client work follows the same engineering standard. We don't recommend what we haven't shipped ourselves.</p>
       </div>
 
       <!-- Gist Product Showcase -->
@@ -736,7 +826,7 @@
     <section class="m-section m-whatwedo" id="m-product">
       <div class="m-container">
         <span class="m-section-label">— What We Do —</span>
-        <h2 class="m-section-h2">We build production AI systems.<br>Then we do it for others.</h2>
+        <h2 class="m-section-h2">We run what we build.</h2>
 
         <div class="m-gist-card">
           <div class="m-gist-badge">
@@ -1040,11 +1130,6 @@
             var curW=lrp(lR-lL,tgtW,eIO(slideT));
             var curY=lrp(lY,mdBot,eIO(slideT));
             var curX=W/2-curW/2;
-            ctx.save();
-            ctx.shadowBlur=18; ctx.shadowColor='rgba(255,255,255,0.3)';
-            ctx.fillStyle='rgba(255,255,255,'+(la*0.18)+')';
-            ctx.fillRect(curX,curY-lineThick,curW,lineThick*2);
-            ctx.restore();
             ctx.fillStyle='rgba(255,255,255,'+(la*0.92)+')';
             ctx.fillRect(curX,curY-lineThick/2,curW,lineThick);
           }
@@ -1090,10 +1175,9 @@
           masterAlpha=1;
           currentProgress=rawProgress;
         }else{
-          // Past gauntlet: immediately clear canvas; sections below take over
+          // Past gauntlet: clear canvas, let sticky container scroll off naturally
           masterAlpha=0;
           currentProgress=1;
-          if(mdEl){ mdEl.style.opacity='0'; mdEl.style.pointerEvents='none'; }
           if(aiPanel) aiPanel.style.opacity='';
         }
         updatePanels(currentProgress);

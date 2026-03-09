@@ -3475,3 +3475,243 @@ section[id] {
   .blueprint-modal { display: none !important; }
   .blueprint-teaser { display: none; }
 }
+
+
+/* =====================================================
+   BLUEPRINT IMPROVEMENTS — v2 CTO + Design Director
+   ===================================================== */
+
+/* Observability rail */
+.observability-rail {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.875rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background: rgba(13, 183, 163, 0.04);
+  border: 1px solid rgba(13, 183, 163, 0.18);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+.obs-rail-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.obs-rail-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+  min-width: 200px;
+}
+.obs-rail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+.obs-rail-tags span {
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: 3px;
+  background: rgba(13, 183, 163, 0.08);
+  border: 1px solid rgba(13, 183, 163, 0.18);
+  color: var(--accent);
+}
+
+/* Fallback rail */
+.fallback-rail {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.875rem 1.25rem;
+  margin-top: 1.5rem;
+  background: rgba(255, 184, 107, 0.03);
+  border: 1px solid rgba(255, 184, 107, 0.15);
+  border-left: 3px solid var(--highlight);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+.fallback-rail-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.fallback-rail-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+  min-width: 160px;
+}
+.fallback-rail-grid {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.fallback-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 184, 107, 0.06);
+  border: 1px solid rgba(255, 184, 107, 0.12);
+  border-radius: 4px;
+}
+.fallback-layer {
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: var(--highlight);
+  letter-spacing: 0.05em;
+}
+
+/* Per-layer fallback note */
+.layer-fallback-note {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--highlight);
+  opacity: 0.75;
+  font-style: italic;
+  padding-top: 0.625rem;
+  border-top: 1px solid rgba(255, 184, 107, 0.1);
+}
+
+/* Cost zone labels on layer eyebrows */
+.layer-cost-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.45rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.layer-cost-det {
+  background: rgba(196, 211, 230, 0.07);
+  color: var(--text-muted);
+  border: 1px solid rgba(196, 211, 230, 0.12);
+}
+.layer-cost-ai {
+  background: rgba(255, 184, 107, 0.1);
+  color: var(--highlight);
+  border: 1px solid rgba(255, 184, 107, 0.2);
+}
+
+/* Layer 3+4: inference card left-border amber tint */
+.layer-card--inference {
+  border-left: 2px solid rgba(255, 184, 107, 0.3);
+}
+
+/* Layer 4: validation card — slightly distinguished */
+.layer-card--validation {
+  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 184, 107, 0.03) 100%);
+}
+
+/* Governed Memory — bidirectional store */
+.memory-store {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(13, 183, 163, 0.04);
+  border: 1px solid rgba(13, 183, 163, 0.2);
+  border-radius: var(--radius-lg);
+}
+.memory-store-connectors {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+.memory-connector {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 0.5rem;
+  writing-mode: vertical-lr;
+  flex-shrink: 0;
+}
+.memory-connector--read {
+  color: var(--accent);
+  border-left: 2px solid rgba(13, 183, 163, 0.3);
+  transform: rotate(180deg);
+}
+.memory-connector--write {
+  color: #ff9c50;
+  border-right: 2px solid rgba(255, 156, 80, 0.3);
+}
+.memory-store-body { flex: 1; }
+.memory-store-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Rail memory annotations */
+.rail-memory-read, .rail-memory-write {
+  margin-top: 1rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.68rem;
+}
+.rail-memory-read {
+  background: rgba(13, 183, 163, 0.06);
+  border: 1px solid rgba(13, 183, 163, 0.15);
+}
+.rail-memory-write {
+  background: rgba(255, 156, 80, 0.06);
+  border: 1px solid rgba(255, 156, 80, 0.15);
+}
+.rail-memory-arrow {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+.rail-memory-write .rail-memory-arrow { color: #ff9c50; }
+.rail-memory-label {
+  color: var(--text-muted);
+  font-size: 0.62rem;
+}
+
+/* Blueprint covenant — three-rule footer */
+.blueprint-covenant {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 156, 80, 0.05);
+  border: 1px solid rgba(255, 156, 80, 0.2);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+.blueprint-covenant p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ff9c50;
+  line-height: 1.5;
+}
