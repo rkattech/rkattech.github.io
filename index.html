@@ -72,11 +72,11 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>AI is easy to demo.<br><span class="accent-word">Production</span> is hard.</h1>
-          <p class="hero-subtitle">Hoot Ventures is a technology studio that turns AI potential into working products. We fuse enterprise data infrastructure with consumer-grade design to build software that actually scales.</p>
+          <h1 data-copy-html="hero.headline">AI is easy to demo.<br><span class="accent-word">Production</span> is hard.</h1>
+          <p class="hero-subtitle" data-copy-html="hero.subtitle">Hoot Ventures is a technology studio that turns AI potential into working products. We fuse enterprise data infrastructure with consumer-grade design to build software that actually scales.</p>
           <div class="hero-cta">
-            <a href="#blueprint" class="btn btn-primary">See How We Build</a>
-            <a href="#product" class="btn btn-secondary">Explore Gist</a>
+            <a href="#how-we-build" class="btn btn-primary" data-copy="hero.ctaPrimary">See How We Build</a>
+            <a href="#product" class="btn btn-secondary" data-copy="hero.ctaSecondary">Explore Gist</a>
           </div>
         </div>
 
@@ -99,97 +99,62 @@
     <div class="gauntlet-track">
       <div class="gauntlet-sticky">
 
-        <!-- Permanent section label — always visible, never animated -->
-        <div class="gs-permanent-label" aria-hidden="true">— BUILD PRINCIPLES —</div>
-
-        <!-- Phase 0: Big headline (starts active — JS takes over on scroll) -->
+        <!-- Hook — centered statement -->
         <div class="gs-panel gs-0 gs-active">
           <div class="gs-center-content">
-            <span class="gs-eyebrow">— HOW WE BUILD —</span>
-            <h2 class="gs-headline">80% of the code<br>never touches AI.</h2>
-            <p class="gs-subtext">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
-          </div>
-          <div class="gs-scroll-cue" id="gsScrollCue">
-            <span>Scroll to explore</span>
-            <div class="gs-scroll-line"></div>
+            <span class="gs-eyebrow" data-copy="gauntlet.phase0.eyebrow">— The Hidden Systems Behind Production AI —</span>
+            <h2 class="gs-headline" data-copy-html="gauntlet.phase0.headline">80% of the code<br>never touches AI.</h2>
+            <p class="gs-subtext" data-copy="gauntlet.phase0.subtext">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
           </div>
         </div>
 
-        <!-- Phase 1: Signal Processing -->
-        <div class="gs-panel gs-1">
-          <div class="gs-step-layout">
-            <div class="gs-step-meta">
-              <span class="gs-step-tag gs-tag-det">Deterministic</span>
-              <div class="gs-step-num" aria-hidden="true">01</div>
+        <!-- Unified Pipeline Panel -->
+        <div class="gs-pipeline-panel">
+        <div class="gs-principles-grid">
+
+          <div class="gs-panel gs-1" data-copy-group="gauntlet.phases">
+            <div class="gs-card-header">
+              <span class="gs-card-num">01</span>
+              <span class="gs-step-tag gs-tag-det" data-copy-field="tag">Deterministic</span>
             </div>
-            <div class="gs-step-copy">
-              <h3 class="gs-step-h">Signal Processing Before Inference</h3>
-              <p class="gs-step-micro">Clean it, fingerprint it, normalize it. Extract what you know with certainty. The model should never see noise you could have removed deterministically.</p>
-            </div>
+            <h3 class="gs-step-h" data-copy-field="title">Signal Processing</h3>
+            <p class="gs-step-micro" data-copy-field="body">Clean it. Fingerprint it. Normalize it.</p>
           </div>
-        </div>
 
-        <!-- Phase 2: Deduplication -->
-        <div class="gs-panel gs-2">
-          <div class="gs-step-layout">
-            <div class="gs-step-meta">
-              <span class="gs-step-tag gs-tag-det">Deterministic</span>
-              <div class="gs-step-num" aria-hidden="true">02</div>
+          <div class="gs-panel gs-2" data-copy-group="gauntlet.phases">
+            <div class="gs-card-header">
+              <span class="gs-card-num">02</span>
+              <span class="gs-step-tag gs-tag-det" data-copy-field="tag">Deterministic</span>
             </div>
-            <div class="gs-step-copy">
-              <h3 class="gs-step-h">Multi-Signal Deduplication Cascade</h3>
-              <p class="gs-step-micro">Build cascading deterministic checks. Only escalate to LLM when all else is genuinely ambiguous. Never let a model be the first line of dedup.</p>
-            </div>
+            <h3 class="gs-step-h" data-copy-field="title">Deduplication Cascade</h3>
+            <p class="gs-step-micro" data-copy-field="body">Never let a model be your first line of defense against bad data.</p>
           </div>
-        </div>
 
-        <!-- Phase 3: Temporal Resolution -->
-        <div class="gs-panel gs-3">
-          <div class="gs-step-layout">
-            <div class="gs-step-meta">
-              <span class="gs-step-tag gs-tag-det">Deterministic</span>
-              <div class="gs-step-num" aria-hidden="true">03</div>
+          <div class="gs-panel gs-3" data-copy-group="gauntlet.phases">
+            <div class="gs-card-header">
+              <span class="gs-card-num">03</span>
+              <span class="gs-step-tag gs-tag-det" data-copy-field="tag">Deterministic</span>
             </div>
-            <div class="gs-step-copy">
-              <h3 class="gs-step-h">Context-First Temporal Resolution</h3>
-              <p class="gs-step-micro">Accumulate all signals first. Then resolve time and dates deterministically with full context. Never ask a model to do arithmetic it will get wrong.</p>
-            </div>
+            <h3 class="gs-step-h" data-copy-field="title">Temporal Resolution</h3>
+            <p class="gs-step-micro" data-copy-field="body">Resolve time and dates with hard logic, not hallucinations.</p>
           </div>
-        </div>
 
-        <!-- Phase 4: Probabilistic / AI-Powered -->
-        <div class="gs-panel gs-4">
-          <div class="gs-step-layout">
-            <div class="gs-step-meta">
-              <span class="gs-step-tag gs-tag-prob">Probabilistic</span>
-              <div class="gs-step-num gs-step-num--prob" aria-hidden="true">04</div>
+          <div class="gs-panel gs-4" data-copy-group="gauntlet.phases">
+            <div class="gs-card-header">
+              <span class="gs-card-num gs-card-num--ai">04</span>
+              <span class="gs-step-tag gs-tag-ai" data-copy-field="tag">AI Inference</span>
             </div>
-            <div class="gs-step-copy">
-              <h3 class="gs-step-h gs-step-h--prob">AI-Powered Inference</h3>
-              <p class="gs-step-micro">Use AI for what it does best — find meaning. Let it narrate. But never let it write to the DB without principles-based guardrails.</p>
-            </div>
+            <h3 class="gs-step-h gs-step-h--ai" data-copy-field="title">The AI Threshold</h3>
+            <p class="gs-step-micro" data-copy-field="body">The model enters here to synthesize and narrate—but it never writes to the database blindly.</p>
           </div>
-        </div>
 
-        <!-- Mic drop — glass bubble, revealed by canvas in phase 5 -->
-        <div class="gs-micdrop" aria-live="polite">
-          <p class="gmd-line">No evidence = No meaning.</p>
-          <p class="gmd-line">No provenance = No write.</p>
-          <p class="gmd-line">No fallback = No ship.</p>
-          <a href="#blueprint" class="gmd-cta">
-            View our AI Blueprint
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
         </div>
+        </div><!-- /.gs-pipeline-panel -->
 
-        <!-- Progress dots (6 phases) -->
-        <div class="gs-dots" aria-hidden="true">
-          <div class="gs-dot active"></div>
-          <div class="gs-dot"></div>
-          <div class="gs-dot"></div>
-          <div class="gs-dot"></div>
-          <div class="gs-dot"></div>
-          <div class="gs-dot"></div>
+        <!-- Mic drop -->
+        <div class="gs-micdrop">
+          <p class="gmd-line" data-copy="gauntlet.micdrop.lines.0">No provenance = No write.</p>
+          <p class="gmd-line" data-copy="gauntlet.micdrop.lines.1">No fallback = No ship.</p>
         </div>
 
       </div>
@@ -204,16 +169,16 @@
     <div class="container">
 
       <div class="blueprint-header fade-in">
-        <span class="section-label">The Production AI Blueprint</span>
-        <h2>Production AI is systems engineering.</h2>
-        <p>The model is a component. Not the system. Inputs are typed and structured before inference touches them. Output is validated before it writes to state. Nothing reaches the product surface without passing provenance, policy, and guardrails.</p>
+        <span class="section-label" data-copy="blueprint.eyebrow">The Production AI Blueprint</span>
+        <h2 data-copy="blueprint.headline">Production AI is systems engineering.</h2>
+        <p data-copy="blueprint.body">The model is a component. Not the system. Inputs are typed and structured before inference touches them. Output is validated before it writes to state. Nothing reaches the product surface without passing provenance, policy, and guardrails.</p>
       </div>
 
       <!-- Blueprint teaser — ghost preview with gradient fade -->
       <div class="blueprint-teaser fade-in">
 
         <!-- Ghost layer cards — visual suggestion of the full diagram -->
-        <div class="btl-preview" aria-hidden="true">
+        <div class="btl-preview" id="blueprintPreview" role="button" tabindex="0" aria-label="Open AI Blueprint" style="cursor:pointer;">
           <div class="btl-rail btl-rail--left">
             <span>Email</span><span>Files</span><span>Images</span><span>Voice</span><span>APIs</span>
           </div>
@@ -249,8 +214,7 @@
 
         <!-- CTA -->
         <button class="blueprint-inspect-btn" id="blueprintBtn" aria-haspopup="dialog">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          View our AI Blueprint
+          Click to View Our AI Blueprint
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
 
@@ -284,249 +248,219 @@
 
         <!-- Observability rail — cross-cutting, spans full diagram width -->
         <div class="observability-rail">
-          <div class="obs-rail-label">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-            OBSERVABILITY
+          <div class="obs-header">
+            <div class="obs-rail-label">Provenance &amp; Observability</div>
+            <p class="obs-rail-desc">Every request carries a full trace — input record, context retrieved, model call, output score, write decision, and audit log. No inference is unobserved.</p>
           </div>
-          <p class="obs-rail-desc">Every request carries a full trace — input record, context retrieved, model call, output score, write decision, and audit log. No inference is unobserved.</p>
-          <div class="obs-rail-tags">
-            <span>Request Tracing</span><span>Inference Logs</span><span>Confidence Monitoring</span><span>Cost Tracking</span><span>Anomaly Detection</span><span>Audit Trail</span><span>Latency Metrics</span>
+          <div class="obs-traces">
+            <div class="obs-trace">
+              <span class="obs-trace-dir">Input → Outputs</span>
+              <span class="obs-trace-stmt">Any input can be traced forward to every output it has influenced — across all sessions and time.</span>
+            </div>
+            <div class="obs-trace">
+              <span class="obs-trace-dir">Output → Source</span>
+              <span class="obs-trace-stmt">Any output can be traced back to the exact inputs, context window, and inference call that produced it.</span>
+            </div>
           </div>
         </div>
 
-        <div class="stack-grid">
+        <!-- Section connector -->
+        <div class="bp-flow-connector" aria-hidden="true"></div>
 
-          <!-- Left Rail: Structured Ingestion -->
-          <aside class="stack-rail">
-            <p class="rail-label">Structured Ingestion</p>
-            <p class="rail-desc">Each input is typed at entry. Every record carries source metadata and provenance before it enters the pipeline.</p>
-            <div class="rail-items">
-              <div class="rail-item">Email<span class="rail-num">01</span></div>
-              <div class="rail-item">Files<span class="rail-num">02</span></div>
-              <div class="rail-item">Images<span class="rail-num">03</span></div>
-              <div class="rail-item">Voice<span class="rail-num">04</span></div>
-              <div class="rail-item">Camera<span class="rail-num">05</span></div>
-              <div class="rail-item">APIs<span class="rail-num">06</span></div>
-              <div class="rail-item rail-item--meta">Source Metadata<span class="rail-num">—</span></div>
-              <div class="rail-item rail-item--meta">Provenance Capture<span class="rail-num">—</span></div>
+        <!-- Real World Inputs: full-width horizontal -->
+        <div class="bp-rail bp-rail--inputs">
+          <div class="bp-rail-header">
+            <p class="rail-label">Real World Inputs</p>
+            <p class="rail-desc">Every record carries source metadata and provenance before it enters the pipeline.</p>
+          </div>
+          <div class="bp-rail-pills">
+            <div class="rail-item">Email</div>
+            <div class="rail-item">Files</div>
+            <div class="rail-item">Images</div>
+            <div class="rail-item">Voice</div>
+            <div class="rail-item">Camera</div>
+            <div class="rail-item">3rd Party Data</div>
+            <div class="rail-item">...</div>
+            <div class="rail-item">Other Data</div>
+          </div>
+        </div>
+
+        <!-- Section connector -->
+        <div class="bp-flow-connector" aria-hidden="true"></div>
+
+        <!-- Layer stack: full-width -->
+        <div class="bp-layer-stack">
+
+          <div class="layer-card">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Layer 1 <span class="layer-cost-label layer-cost-det">Deterministic</span></p>
+                <h3 class="layer-title">Deterministic Processing</h3>
+                <p class="layer-subtitle">Each input is normalized to a typed, provenance-tagged record with a known schema. Noise is removed before any model sees it. The rest of the pipeline trusts this contract.</p>
+              </div>
+              <div class="layer-num-badge">1</div>
             </div>
-            <div class="rail-memory-read">
-              <div class="rail-memory-arrow">↑ reads context</div>
-              <div class="rail-memory-label">Governed Memory feeds Layer 2</div>
+            <div class="layer-tags">
+              <span class="layer-tag">Cleaning &amp; Parsing</span>
+              <span class="layer-tag">Content Fingerprinting</span>
+              <span class="layer-tag">Normalization</span>
+              <span class="layer-tag">Entity Extraction</span>
+              <span class="layer-tag">Temporal Preprocessing</span>
+              <span class="layer-tag">Deduplication Cascade</span>
+              <span class="layer-tag">Provenance Tagging</span>
             </div>
-          </aside>
-
-          <!-- Center: Layer Cards -->
-          <div class="stack-layers">
-
-            <!-- Layer 1: fixed subtitle, renamed Content Fingerprinting, removed VSA -->
-            <div class="layer-card">
-              <div class="layer-card-top">
-                <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Layer 1 <span class="layer-cost-label layer-cost-det">Deterministic</span></p>
-                  <h3 class="layer-title">Deterministic Processing</h3>
-                  <p class="layer-subtitle">Each input is normalized to a typed, provenance-tagged record with a known schema. Noise is removed before any model sees it. The rest of the pipeline trusts this contract.</p>
-                </div>
-                <div class="layer-num-badge">1</div>
-              </div>
-              <div class="layer-tags">
-                <span class="layer-tag">Cleaning &amp; Parsing</span>
-                <span class="layer-tag">Content Fingerprinting</span>
-                <span class="layer-tag">Normalization</span>
-                <span class="layer-tag">Entity Extraction</span>
-                <span class="layer-tag">Temporal Preprocessing</span>
-                <span class="layer-tag">Deduplication Cascade</span>
-                <span class="layer-tag">Provenance Tagging</span>
-              </div>
-              <div class="layer-fallback-note">Fallback: Reject malformed input — return error with source reference</div>
-            </div>
-
-            <!-- Layer 2: add Memory Read tag and fallback note -->
-            <div class="layer-card">
-              <div class="layer-card-top">
-                <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Layer 2 <span class="layer-cost-label layer-cost-det">Deterministic</span></p>
-                  <h3 class="layer-title">Data &amp; Context Layer</h3>
-                  <p class="layer-subtitle">Multiple durable representations of source records — structured state, semantic retrieval, and relational context. Governed Memory is read here to populate inference context.</p>
-                </div>
-                <div class="layer-num-badge">2</div>
-              </div>
-              <div class="layer-tags">
-                <span class="layer-tag">Raw Cache</span><span class="layer-tag">Relational Store</span>
-                <span class="layer-tag">Vector Index</span><span class="layer-tag">Graph Context</span>
-                <span class="layer-tag">Timeline State</span><span class="layer-tag">Source References</span>
-                <span class="layer-tag">Memory Read</span>
-              </div>
-              <div class="layer-fallback-note">Fallback: Serve stale context with staleness flag — do not block inference</div>
-            </div>
-
-            <!-- Layer 3: rewritten subtitle, renamed Instruction Schema, Document Structure Parsing moved here -->
-            <div class="layer-card layer-card--inference">
-              <div class="layer-card-top">
-                <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Layer 3 <span class="layer-cost-label layer-cost-ai">AI Cost Zone</span></p>
-                  <h3 class="layer-title">Reasoning &amp; Orchestration</h3>
-                  <p class="layer-subtitle">Models operate over structured context, not raw data. Instruction schemas define which model handles which query, what constraints govern its output, and what format is expected. Agents are orchestrated as coordinated workflows, not freeform processes.</p>
-                </div>
-                <div class="layer-num-badge">3</div>
-              </div>
-              <div class="layer-tags">
-                <span class="layer-tag">Instruction Schema</span>
-                <span class="layer-tag">Workflow Coordination</span>
-                <span class="layer-tag">Retrieval Routing</span>
-                <span class="layer-tag">Tool Connectors</span>
-                <span class="layer-tag">Model Runtime</span>
-                <span class="layer-tag">Document Structure Parsing</span>
-                <span class="layer-tag">Local Models</span>
-              </div>
-              <div class="layer-fallback-note">Fallback: Reduce scope, retry with smaller model, or defer to human queue</div>
-            </div>
-
-            <!-- Layer 4: NEW — Output Validation & Confidence Scoring -->
-            <div class="layer-card layer-card--inference layer-card--validation">
-              <div class="layer-card-top">
-                <div class="layer-card-meta">
-                  <p class="layer-eyebrow">Layer 4 <span class="layer-cost-label layer-cost-ai">AI Cost Zone</span></p>
-                  <h3 class="layer-title">Output Validation &amp; Confidence Scoring</h3>
-                  <p class="layer-subtitle">Model output is validated against expected schemas and scored for confidence before it reaches any read or write path. Low-confidence outputs are flagged, retried, or escalated — never silently passed through.</p>
-                </div>
-                <div class="layer-num-badge">4</div>
-              </div>
-              <div class="layer-tags">
-                <span class="layer-tag">Schema Enforcement</span>
-                <span class="layer-tag">Confidence Scoring</span>
-                <span class="layer-tag">Hallucination Detection</span>
-                <span class="layer-tag">Output Parsing</span>
-                <span class="layer-tag">Retry Policy</span>
-                <span class="layer-tag">Format Validation</span>
-              </div>
-              <div class="layer-fallback-note">Fallback: Return low-confidence flag — escalate to human review or discard</div>
-            </div>
-
-            <!-- Fork — now earned after 4 layers -->
-            <div class="path-fork" aria-label="System output splits into read path and write path">
-              <div class="path-fork-label">Reads and writes diverge here.</div>
-            </div>
-
-            <!-- Read/Write split -->
-            <div class="layer-split">
-              <div class="layer-card layer-card--read">
-                <div class="layer-card-top">
-                  <div class="layer-card-meta">
-                    <p class="layer-eyebrow layer-eyebrow--read">Read Path</p>
-                    <h3 class="layer-title">Retrieval &amp; Synthesis</h3>
-                    <p class="layer-subtitle">Reads are permissive. The system retrieves context, synthesizes meaning, and surfaces candidate interpretations.</p>
-                  </div>
-                </div>
-                <div class="layer-tags">
-                  <span class="layer-tag layer-tag--read">Context Retrieval</span>
-                  <span class="layer-tag layer-tag--read">Summarization</span>
-                  <span class="layer-tag layer-tag--read">Narrative Synthesis</span>
-                  <span class="layer-tag layer-tag--read">Session State</span>
-                </div>
-                <div class="path-arrow" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Chat, Briefings, UI</span>
-                </div>
-              </div>
-              <div class="layer-card layer-card--write">
-                <div class="layer-card-top">
-                  <div class="layer-card-meta">
-                    <p class="layer-eyebrow layer-eyebrow--write">Write Path — Gated</p>
-                    <h3 class="layer-title">Verification &amp; Write Controls</h3>
-                    <p class="layer-subtitle">Writes are governed. Candidate meaning does not become durable state without passing every gate. Committed state writes back to Governed Memory.</p>
-                  </div>
-                </div>
-                <div class="layer-tags">
-                  <span class="layer-tag layer-tag--write">Evidence Matching</span>
-                  <span class="layer-tag layer-tag--write">Provenance Checks</span>
-                  <span class="layer-tag layer-tag--write">Structured Validation</span>
-                  <span class="layer-tag layer-tag--write">Mutation Policy</span>
-                  <span class="layer-tag layer-tag--write">Human Escalation</span>
-                  <span class="layer-tag layer-tag--write">Memory Write</span>
-                </div>
-                <div class="layer-callout">No provenance = no write</div>
-                <div class="path-arrow" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Approved Actions, Memory Updates</span>
-                </div>
-              </div>
-            </div>
-
+            <div class="layer-fallback-note">Fallback: Reject malformed input — return error with source reference</div>
           </div>
 
-          <!-- Right Rail -->
-          <aside class="stack-rail">
-            <p class="rail-label">Product Surfaces &amp; Approved Actions</p>
-            <p class="rail-desc">Interfaces, notifications, and actions downstream of verified system behavior.</p>
-            <div class="rail-items">
-              <div class="rail-item">AI Chat<span class="rail-num">E1</span></div>
-              <div class="rail-item">Daily Briefings<span class="rail-num">E2</span></div>
-              <div class="rail-item">Notifications<span class="rail-num">E3</span></div>
-              <div class="rail-item">UI Surfaces<span class="rail-num">E4</span></div>
-              <div class="rail-item">Review Queues<span class="rail-num">E5</span></div>
-              <div class="rail-item rail-item--write">Approved Actions<span class="rail-num">E6</span></div>
-              <div class="rail-item">Routing Logic<span class="rail-num">E7</span></div>
-              <div class="rail-item">Integrations<span class="rail-num">E8</span></div>
+          <div class="layer-card">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Layer 2 <span class="layer-cost-label layer-cost-det">Deterministic</span></p>
+                <h3 class="layer-title">Data &amp; Context Layer</h3>
+                <p class="layer-subtitle">Multiple durable representations of source records — structured state, semantic retrieval, and relational context. Governed Memory is read here to populate inference context.</p>
+              </div>
+              <div class="layer-num-badge">2</div>
             </div>
-            <div class="rail-fallback">
-              <p class="rail-fallback-title">When confidence is insufficient:</p>
-              <p class="rail-fallback-line">Ask. Defer. Escalate. Do nothing.</p>
+            <div class="layer-tags">
+              <span class="layer-tag">Raw Cache</span>
+              <span class="layer-tag">Relational Store</span>
+              <span class="layer-tag">Vector Index</span>
+              <span class="layer-tag">Graph Context</span>
+              <span class="layer-tag">Timeline State</span>
+              <span class="layer-tag">Source References</span>
+              <span class="layer-tag">Memory Read</span>
             </div>
-            <div class="rail-memory-write">
-              <div class="rail-memory-arrow">↓ writes committed state</div>
-              <div class="rail-memory-label">Write path → Governed Memory</div>
+            <div class="layer-fallback-note">Fallback: Serve stale context with staleness flag — do not block inference</div>
+          </div>
+
+          <div class="layer-card">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Layer 3</p>
+                <h3 class="layer-title">Reasoning &amp; Orchestration</h3>
+                <p class="layer-subtitle">Models operate over structured context, not raw data. Instruction schemas define which model handles which query, what constraints govern its output, and what format is expected. Agents are orchestrated as coordinated workflows, not freeform processes.</p>
+              </div>
+              <div class="layer-num-badge">3</div>
             </div>
-          </aside>
+            <div class="layer-tags">
+              <span class="layer-tag">Instruction Schema</span>
+              <span class="layer-tag">Workflow Coordination</span>
+              <span class="layer-tag">Retrieval Routing</span>
+              <span class="layer-tag">Tool Connectors</span>
+              <span class="layer-tag">Model Runtime</span>
+              <span class="layer-tag">Document Structure Parsing</span>
+              <span class="layer-tag">Local Models</span>
+            </div>
+            <div class="layer-fallback-note">Fallback Option Set: Reduce scope; Retry with larger model; Escalate to human queue</div>
+          </div>
+
+          <div class="layer-card">
+            <div class="layer-card-top">
+              <div class="layer-card-meta">
+                <p class="layer-eyebrow">Layer 4</p>
+                <h3 class="layer-title">Output Validation &amp; Confidence Scoring</h3>
+                <p class="layer-subtitle">Model output is validated against expected schemas and scored for confidence before it reaches any read or write path. Low-confidence outputs are flagged, retried, or escalated — never silently passed through.</p>
+              </div>
+              <div class="layer-num-badge">4</div>
+            </div>
+            <div class="layer-tags">
+              <span class="layer-tag">Schema Enforcement</span>
+              <span class="layer-tag">Confidence Scoring</span>
+              <span class="layer-tag">Hallucination Detection</span>
+              <span class="layer-tag">Output Parsing</span>
+              <span class="layer-tag">Retry Policy</span>
+              <span class="layer-tag">Format Validation</span>
+            </div>
+            <div class="layer-fallback-note">Fallback: Return low-confidence flag — escalate to human review or discard</div>
+          </div>
+
+          <div class="path-fork" aria-label="System output splits into read path and write path">
+            <div class="path-fork-label">Reads and writes diverge here.</div>
+          </div>
+
+          <div class="layer-split">
+            <div class="layer-card layer-card--read">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow layer-eyebrow--read">Read Path</p>
+                  <h3 class="layer-title">Retrieval &amp; Synthesis</h3>
+                  <p class="layer-subtitle">Reads are permissive. The system retrieves context, synthesizes meaning, and surfaces candidate interpretations.</p>
+                </div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag layer-tag--read">Context Retrieval</span>
+                <span class="layer-tag layer-tag--read">Summarization</span>
+                <span class="layer-tag layer-tag--read">Narrative Synthesis</span>
+                <span class="layer-tag layer-tag--read">Session State</span>
+              </div>
+            </div>
+            <div class="layer-card layer-card--write">
+              <div class="layer-card-top">
+                <div class="layer-card-meta">
+                  <p class="layer-eyebrow layer-eyebrow--write">Write Path — Gated</p>
+                  <h3 class="layer-title">Verification &amp; Write Controls</h3>
+                  <p class="layer-subtitle">Writes are governed. Candidate meaning does not become durable state without passing every gate. Committed state writes back to Governed Memory.</p>
+                </div>
+              </div>
+              <div class="layer-tags">
+                <span class="layer-tag layer-tag--write">Evidence Matching</span>
+                <span class="layer-tag layer-tag--write">Provenance Checks</span>
+                <span class="layer-tag layer-tag--write">Structured Validation</span>
+                <span class="layer-tag layer-tag--write">Mutation Policy</span>
+              </div>
+              <div class="layer-callout">No provenance = no write</div>
+            </div>
+          </div>
 
         </div>
 
-        <!-- Governed Memory — bidirectional shared store, outside linear stack -->
+        <!-- Section connector: write path → governed memory -->
+        <div class="bp-flow-connector bp-flow-connector--write" aria-hidden="true"></div>
+
+        <!-- Governed Memory: full-width -->
         <div class="memory-store">
-          <div class="memory-store-connectors">
-            <div class="memory-connector memory-connector--read">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-              reads context → Layer 2
-            </div>
-            <div class="memory-store-body">
-              <div class="memory-store-header">
-                <div class="layer-num-badge" style="background:rgba(13,183,163,0.15);color:var(--accent);flex-shrink:0;">M</div>
-                <div>
-                  <p class="layer-eyebrow" style="color:var(--accent);">Persistent State — Bidirectional</p>
-                  <h3 class="layer-title">Governed Memory</h3>
-                </div>
+          <div class="memory-store-body">
+            <div class="memory-store-header">
+              <div class="layer-num-badge" style="background:rgba(13,183,163,0.15);color:var(--accent);flex-shrink:0;">M</div>
+              <div>
+                <p class="layer-eyebrow" style="color:var(--accent);">Persistent State — Bidirectional</p>
+                <h3 class="layer-title">Governed Memory</h3>
               </div>
-              <p class="layer-subtitle" style="margin-top:0.5rem;">Session state feeds inference. Committed state writes back. Memory is not a prompt feature — it is a governed store with distinct read and write trust levels. The feedback loop is explicit and controlled at both ends.</p>
-              <div class="layer-tags" style="margin-top:0.75rem;">
-                <span class="layer-tag layer-tag--accent">Session State</span>
-                <span class="layer-tag layer-tag--accent">Persistent Memory</span>
-                <span class="layer-tag layer-tag--accent">Durable Structured State</span>
-                <span class="layer-tag layer-tag--accent">Audit Trace</span>
-              </div>
-              <div class="layer-callout" style="margin-top:0.875rem;">Reads are cheap. Writes are governed.</div>
             </div>
-            <div class="memory-connector memory-connector--write">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-              Write path commits state ↓
+            <p class="layer-subtitle" style="margin-top:0.5rem;">Session state feeds inference. Committed state writes back. Memory is not a prompt feature — it is a governed store with distinct read and write trust levels. The feedback loop is explicit and controlled at both ends.</p>
+            <div class="layer-tags" style="margin-top:0.75rem;">
+              <span class="layer-tag layer-tag--accent">Session State</span>
+              <span class="layer-tag layer-tag--accent">Persistent Memory</span>
+              <span class="layer-tag layer-tag--accent">Durable Structured State</span>
+              <span class="layer-tag layer-tag--accent">Audit Trace</span>
             </div>
+            <div class="layer-callout" style="margin-top:0.875rem;">Reads are cheap. Writes are governed.</div>
           </div>
         </div>
 
-        <!-- Fallback policy rail — cross-cutting -->
-        <div class="fallback-rail">
-          <div class="fallback-rail-label">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            FALLBACK POLICY
+        <!-- Section connector -->
+        <div class="bp-flow-connector" aria-hidden="true"></div>
+
+        <!-- Experience Layers: full-width horizontal -->
+        <div class="bp-rail bp-rail--outputs">
+          <div class="bp-rail-header">
+            <p class="rail-label">Experience Layers</p>
+            <p class="rail-desc">Current, emerging, and new experiences that are not just consumed but also make the system better.</p>
           </div>
-          <p class="fallback-rail-desc">Every layer has an explicit failure mode and guardrails. No silent failures. No undefined states.</p>
-          <div class="fallback-rail-grid">
-            <div class="fallback-item"><span class="fallback-layer">L1</span>Reject malformed input</div>
-            <div class="fallback-item"><span class="fallback-layer">L2</span>Serve stale context</div>
-            <div class="fallback-item"><span class="fallback-layer">L3</span>Reduce scope, retry</div>
-            <div class="fallback-item"><span class="fallback-layer">L4</span>Flag low confidence</div>
-            <div class="fallback-item"><span class="fallback-layer">W</span>Hold candidate, escalate</div>
+          <div class="bp-rail-pills">
+            <div class="rail-item">AI Chat</div>
+            <div class="rail-item">Daily Briefings</div>
+            <div class="rail-item">Notifications</div>
+            <div class="rail-item">Gestures</div>
+            <div class="rail-item">AI Action Reviews</div>
+            <div class="rail-item">Semantic Search</div>
+            <div class="rail-item">AI Re-Steer</div>
           </div>
         </div>
+
+
+        <!-- Section connector -->
+        <div class="bp-flow-connector" aria-hidden="true"></div>
 
         <!-- Three-rule covenant footer -->
         <div class="stack-footer">
@@ -536,7 +470,6 @@
           </div>
           <div class="blueprint-covenant">
             <p>No provenance = no write.</p>
-            <p>No schema = no inference.</p>
             <p>No fallback = no ship.</p>
           </div>
         </div>
@@ -546,37 +479,21 @@
   </div><!-- /.blueprint-modal -->
 
   <!-- ========================= -->
-  <!-- WHAT WE DO                -->
+  <!-- REFERENCE IMPLEMENTATION  -->
   <!-- ========================= -->
-  <section class="whatwedo-section" id="product">
+  <section class="ref-impl-section" id="product">
     <div class="container">
+      <div class="ref-impl-grid fade-in">
 
-      <!-- Section header -->
-      <div class="whatwedo-header fade-in">
-        <span class="section-label">What We Do</span>
-        <h2>We run what we build.</h2>
-        <p class="whatwedo-subhead">Gist is our own product — live in production, not a case study. Client work follows the same engineering standard. We don't recommend what we haven't shipped ourselves.</p>
-      </div>
-
-      <!-- Gist Product Showcase -->
-      <div class="gist-showcase fade-in">
-
-        <div class="gist-info">
-          <div class="gist-launch-badge">
-            <span class="launch-pulse"></span>
-            Launching April 2026
-          </div>
-          <h3 class="gist-name">Gist</h3>
-          <p class="gist-tagline">One inbox. Every kid. Nothing missed.</p>
-          <p class="gist-desc">Schools, sports leagues, and activity providers scatter deadlines across inboxes. Gist connects to your email, extracts every deadline and action item, and organizes everything by child — presented as a clean daily briefing so nothing gets buried.</p>
-          <div class="gist-proof-callout">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Built on the Production AI Blueprint. Every architectural claim on this page runs in Gist.
-          </div>
-          <a href="support.html" class="btn btn-accent">Learn More About Gist</a>
+        <div class="ref-impl-text">
+          <span class="section-label">— Live in Production —</span>
+          <h2>Our Reference Architecture: Gist</h2>
+          <p class="ref-impl-body">We only recommend architecture we run ourselves. Every deterministic fallback, ingestion pipeline, and governed write control in the blueprint above is live in production, powering our consumer product, Gist.</p>
+          <p class="ref-impl-body">Gist is our live stress-test for unstructured data. We use NLP, multi-modal AI, and agentic workflows to unify fragmented inputs into strict, normalized schemas.</p>
+          <p class="ref-impl-proof">&#10003; Built on the Production AI Blueprint.</p>
         </div>
 
-        <div class="gist-visual">
+        <div class="ref-impl-visual">
           <div class="phone-mockup">
             <div class="phone-screen">
               <div class="mock-header">
@@ -605,69 +522,69 @@
         </div>
 
       </div>
+    </div>
+  </section>
 
-      <!-- Studio divider -->
-      <div class="studio-divider fade-in">
-        <div class="studio-divider-line"></div>
-        <span class="studio-divider-text">Hire the builder, not the advisor.</span>
-        <div class="studio-divider-line"></div>
+  <!-- ========================= -->
+  <!-- ENGAGEMENT MODELS         -->
+  <!-- ========================= -->
+  <section class="engagement-section fade-in">
+    <div class="container">
+      <div class="engagement-header">
+        <span class="section-label">— Engagement Models —</span>
+        <h2>How we work with clients.</h2>
       </div>
+      <div class="engagement-grid">
 
-      <!-- Studio intro -->
-      <div class="studio-intro fade-in">
-        <p>We work with a small number of organizations at a time. We do not write roadmaps and hand them off. We build systems, stay accountable for how they behave in production, and leave teams better than we found them.</p>
-      </div>
-
-      <!-- Three engagement modes -->
-      <div class="studio-modes fade-in">
-
-        <div class="studio-mode">
-          <div class="mode-header">
-            <span class="mode-num" aria-hidden="true">01</span>
-            <span class="mode-type">Full Product Build</span>
-          </div>
-          <h4 class="mode-title">You have the vision.<br>We own the system.</h4>
-          <p class="mode-desc">Architecture, data pipeline, deterministic processing, reasoning layer, verification, product surface — we take the full stack from first whiteboard to deployed product. No hand-offs. No gap between design and implementation.</p>
-          <p class="mode-for">For teams with a product vision and no production AI team to execute it</p>
+        <div class="engagement-card">
+          <h3 class="engagement-title">01 / Full-Stack Implementation</h3>
+          <p class="engagement-body">We build the complete system—from data ingestion pipelines and deterministic processing layers to the final product surfaces.</p>
         </div>
 
-        <div class="studio-mode studio-mode--featured">
-          <div class="mode-header">
-            <span class="mode-num" aria-hidden="true">02</span>
-            <span class="mode-type">Embedded Architecture</span>
-          </div>
-          <h4 class="mode-title">Your engineers build it.<br>We design it right.</h4>
-          <p class="mode-desc">We embed at the architecture level — not the sprint level. We design the system your team implements: ingestion boundary, deterministic preprocessing, reasoning scope, write controls, fallback policy. The difference between an AI product that works in production and one that doesn't is usually these decisions, made before a line of code is written.</p>
-          <p class="mode-for">For engineering teams building AI products who need the architecture sound before they build the wrong thing</p>
+        <div class="engagement-card">
+          <h3 class="engagement-title">02 / Architectural Design</h3>
+          <p class="engagement-body">We partner with your engineers to define the system. We establish ingestion boundaries, fallback policies, and strict write controls prior to implementation.</p>
         </div>
 
-        <div class="studio-mode">
-          <div class="mode-header">
-            <span class="mode-num" aria-hidden="true">03</span>
-            <span class="mode-type">Production Rescue</span>
-          </div>
-          <h4 class="mode-title">Your AI is live.<br>Something is wrong.</h4>
-          <p class="mode-desc">Hallucination, state corruption, unpredictable behavior, costs scaling faster than value. We diagnose what's actually failing — it's usually missing deterministic preprocessing, ungoverned writes, or no fallback logic — and fix it at the root, not the symptom.</p>
-          <p class="mode-for">For teams with AI in production that is not behaving reliably</p>
+        <div class="engagement-card">
+          <h3 class="engagement-title">03 / Production Remediation</h3>
+          <p class="engagement-body">We audit live AI systems experiencing unpredictable behavior, state corruption, or scaling issues, and integrate the missing deterministic guardrails.</p>
         </div>
 
       </div>
+    </div>
+  </section>
 
-      <!-- Credentials + CTA -->
-      <div class="studio-footer fade-in">
-        <div class="studio-creds">
-          <span class="creds-label">Prior work</span>
-          <div class="creds-list">
-            <span>Capital One</span><span class="cred-sep">·</span>
-            <span>Visa</span><span class="cred-sep">·</span>
-            <span>Anywhere Real Estate</span><span class="cred-sep">·</span>
-            <span>Wharton</span><span class="cred-sep">·</span>
-            <span>Georgia Tech</span>
+  <!-- ========================= -->
+  <!-- ABOUT THE FOUNDER         -->
+  <!-- ========================= -->
+  <section class="founder-section fade-in">
+    <div class="container">
+      <div class="founder-grid">
+
+        <div class="founder-narrative">
+          <h2>About the Founder</h2>
+          <p class="founder-bio">Rohit Kapoor brings 20+ years of experience bridging software engineering and enterprise product leadership. His track record includes managing a $1.3B portfolio at Capital One, serving as Global Head of Data Products at Visa, and scaling product organizations to 65+ professionals.</p>
+          <p class="founder-bio" style="margin-top: 1rem;">Starting his career building mainframe services in TAL/COBOL, his focus at Hoot Ventures is applying strict operational rigor and systems engineering to AI.</p>
+        </div>
+
+        <div class="founder-facts">
+          <div class="founder-fact-block">
+            <span class="founder-fact-label">Education</span>
+            <p class="founder-fact-line">MS Industrial Engineering, Georgia Institute of Technology.</p>
+            <p class="founder-fact-line">MBA, The Wharton School.</p>
+            <p class="founder-fact-line">BE Production Engineering, Punjab Engineering College.</p>
+          </div>
+          <div class="founder-fact-block">
+            <span class="founder-fact-label">Prior Experience</span>
+            <p class="founder-fact-line">Anywhere Real Estate</p>
+            <p class="founder-fact-line">Visa Inc.</p>
+            <p class="founder-fact-line">Capital One</p>
+            <p class="founder-fact-line">Tata Consultancy Services</p>
           </div>
         </div>
-        <a href="#contact" class="btn btn-primary">Start a conversation</a>
-      </div>
 
+      </div>
     </div>
   </section>
 
@@ -682,11 +599,11 @@
     <!-- M1: Hero -->
     <section class="m-section m-hero">
       <div class="m-container">
-        <h1 class="m-hero-h1">AI is easy to demo.<br><span class="accent-word">Production</span> is hard.</h1>
-        <p class="m-hero-sub">Hoot Ventures is a technology studio that turns AI potential into working products. We fuse enterprise data infrastructure with consumer-grade design to build software that actually scales.</p>
+        <h1 class="m-hero-h1" data-copy-html="hero.headline">AI is easy to demo.<br><span class="accent-word">Production</span> is hard.</h1>
+        <p class="m-hero-sub" data-copy-html="hero.subtitle">Hoot Ventures is a technology studio that turns AI potential into working products. We fuse enterprise data infrastructure with consumer-grade design to build software that actually scales.</p>
         <div class="m-ctas">
-          <a href="#m-how-we-build" class="btn btn-primary">See How We Build</a>
-          <a href="#m-product" class="btn btn-secondary">Explore Gist</a>
+          <a href="#m-how-we-build" class="btn btn-primary" data-copy="hero.ctaPrimary">See How We Build</a>
+          <a href="#m-product" class="btn btn-secondary" data-copy="hero.ctaSecondary">Explore Gist</a>
         </div>
       </div>
     </section>
@@ -695,87 +612,60 @@
     <section class="m-principles" id="m-how-we-build">
       <div class="m-principles-sticky">
 
-        <!-- Permanent eyebrow — single element, fixed position, no animation -->
-        <div class="m-gs-build-label" aria-hidden="true">— BUILD PRINCIPLES —</div>
-
-        <!-- Phase 0: Headline -->
+        <!-- Hook -->
         <div class="m-gs-panel m-gs-0 m-gs-active">
           <div class="m-gs-center">
-            <span class="m-gs-eyebrow">— HOW WE BUILD —</span>
-            <h2 class="m-gs-headline">80% of the code<br>never touches AI.</h2>
-            <p class="m-gs-subtext">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
-          </div>
-          <div class="m-gs-scroll-cue" id="mGsScrollCue">
-            <span>Scroll to explore</span>
-            <div class="m-gs-scroll-line"></div>
+            <span class="m-gs-eyebrow" data-copy="gauntlet.phase0.eyebrow">— The Hidden Systems Behind Production AI —</span>
+            <h2 class="m-gs-headline" data-copy-html="gauntlet.phase0.headline">80% of the code<br>never touches AI.</h2>
+            <p class="m-gs-subtext" data-copy="gauntlet.phase0.subtext">We follow a strict engineering principle — use AI for what it does best. Everything else is deterministic by design.</p>
           </div>
         </div>
 
-        <!-- Phase 1: Signal Processing -->
-        <div class="m-gs-panel m-gs-1">
-          <div class="m-gs-step-layout">
-            <div class="m-gs-step-meta">
-              <div class="m-gs-step-num" aria-hidden="true">01</div>
-              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
+        <!-- Principles timeline -->
+        <div class="m-gs-principles-stack">
+
+          <div class="m-gs-panel m-gs-1" data-copy-group="gauntlet.phases">
+            <div class="m-gs-card-header">
+              <span class="m-gs-card-num">01</span>
+              <span class="m-gs-tag m-gs-tag-det" data-copy-field="tag">Deterministic</span>
             </div>
-            <div class="m-gs-step-copy">
-              <h3 class="m-gs-step-h">Signal Processing Before Inference</h3>
-              <p class="m-gs-step-micro">Clean it, fingerprint it, normalize it. Extract what you know with certainty. The model should never see noise you could have removed deterministically.</p>
-            </div>
+            <h3 class="m-gs-step-h" data-copy-field="title">Signal Processing</h3>
+            <p class="m-gs-step-micro" data-copy-field="body">Clean it. Fingerprint it. Normalize it.</p>
           </div>
+
+          <div class="m-gs-panel m-gs-2" data-copy-group="gauntlet.phases">
+            <div class="m-gs-card-header">
+              <span class="m-gs-card-num">02</span>
+              <span class="m-gs-tag m-gs-tag-det" data-copy-field="tag">Deterministic</span>
+            </div>
+            <h3 class="m-gs-step-h" data-copy-field="title">Deduplication Cascade</h3>
+            <p class="m-gs-step-micro" data-copy-field="body">Never let a model be your first line of defense against bad data.</p>
+          </div>
+
+          <div class="m-gs-panel m-gs-3" data-copy-group="gauntlet.phases">
+            <div class="m-gs-card-header">
+              <span class="m-gs-card-num">03</span>
+              <span class="m-gs-tag m-gs-tag-det" data-copy-field="tag">Deterministic</span>
+            </div>
+            <h3 class="m-gs-step-h" data-copy-field="title">Temporal Resolution</h3>
+            <p class="m-gs-step-micro" data-copy-field="body">Resolve time and dates with hard logic, not hallucinations.</p>
+          </div>
+
+          <div class="m-gs-panel m-gs-4" data-copy-group="gauntlet.phases">
+            <div class="m-gs-card-header">
+              <span class="m-gs-card-num m-gs-card-num--ai">04</span>
+              <span class="m-gs-tag m-gs-tag-ai" data-copy-field="tag">AI Inference</span>
+            </div>
+            <h3 class="m-gs-step-h m-gs-step-h--ai" data-copy-field="title">The AI Threshold</h3>
+            <p class="m-gs-step-micro" data-copy-field="body">The model enters here to synthesize and narrate—but it never writes to the database blindly.</p>
+          </div>
+
         </div>
 
-        <!-- Phase 2: Deduplication -->
-        <div class="m-gs-panel m-gs-2">
-          <div class="m-gs-step-layout">
-            <div class="m-gs-step-meta">
-              <div class="m-gs-step-num" aria-hidden="true">02</div>
-              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
-            </div>
-            <div class="m-gs-step-copy">
-              <h3 class="m-gs-step-h">Multi-Signal Deduplication Cascade</h3>
-              <p class="m-gs-step-micro">Build cascading deterministic checks. Only escalate to LLM when all else is genuinely ambiguous. Never let a model be the first line of dedup.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 3: Temporal Resolution -->
-        <div class="m-gs-panel m-gs-3">
-          <div class="m-gs-step-layout">
-            <div class="m-gs-step-meta">
-              <div class="m-gs-step-num" aria-hidden="true">03</div>
-              <span class="m-gs-tag m-gs-tag-det">Deterministic</span>
-            </div>
-            <div class="m-gs-step-copy">
-              <h3 class="m-gs-step-h">Context-First Temporal Resolution</h3>
-              <p class="m-gs-step-micro">Accumulate all signals first. Then resolve time and dates deterministically with full context. Never ask a model to do arithmetic it will get wrong.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 4: AI Inference -->
-        <div class="m-gs-panel m-gs-4">
-          <div class="m-gs-step-layout">
-            <div class="m-gs-step-meta">
-              <div class="m-gs-step-num m-gs-step-num--prob" aria-hidden="true">04</div>
-              <span class="m-gs-tag m-gs-tag-prob">Probabilistic</span>
-            </div>
-            <div class="m-gs-step-copy">
-              <h3 class="m-gs-step-h m-gs-step-h--prob">AI-Powered Inference</h3>
-              <p class="m-gs-step-micro">Use AI for what it does best — find meaning. Let it narrate. But never let it write to the DB without principles-based guardrails.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase 5: Mic drop (canvas controls opacity) -->
-        <div class="m-gs-micdrop" aria-live="polite">
-          <p class="m-gmd-line">No evidence = No meaning.</p>
-          <p class="m-gmd-line">No provenance = No write.</p>
-          <p class="m-gmd-line">No fallback = No ship.</p>
-          <a href="#m-blueprint" class="m-gmd-cta">
-            View our AI Blueprint
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+        <!-- Mic drop -->
+        <div class="m-gs-micdrop">
+          <p class="m-gmd-line" data-copy="gauntlet.micdrop.lines.0">No provenance = No write.</p>
+          <p class="m-gmd-line" data-copy="gauntlet.micdrop.lines.1">No fallback = No ship.</p>
         </div>
 
         <!-- Progress dots (6 phases) -->
@@ -794,144 +684,256 @@
     <!-- M3: Production AI Blueprint -->
     <section class="m-section m-blueprint" id="m-blueprint">
       <div class="m-container">
-        <span class="m-section-label">— The Production AI Blueprint —</span>
-        <h2 class="m-section-h2">Production AI is systems engineering.</h2>
-        <p class="m-section-sub">The model is a component. Not the system. Inputs are typed and structured before inference touches them. Output is validated before it writes to state. Nothing reaches the product surface without passing provenance, policy, and guardrails.</p>
+        <span class="m-section-label" data-copy="blueprint.eyebrow">The Production AI Blueprint</span>
+        <h2 class="m-section-h2" data-copy="blueprint.headline">Production AI is systems engineering.</h2>
+        <p class="m-section-sub" data-copy="blueprint.body">The model is a component. Not the system. Inputs are typed and structured before inference touches them. Output is validated before it writes to state. Nothing reaches the product surface without passing provenance, policy, and guardrails.</p>
 
-        <div class="m-stack">
-          <div class="m-stack-input">
-            <span class="m-stack-io-label">Inputs</span>
-            <div class="m-stack-io-chips">
-              <span>Email</span><span>Files</span><span>Images</span><span>Voice</span><span>APIs</span>
+        <!-- Teaser: ghost preview of the architecture -->
+        <div class="m-bp-teaser" id="mBlueprintPreview" role="button" tabindex="0" aria-label="Open AI Blueprint">
+          <div class="m-bp-teaser-layers">
+            <div class="m-bp-teaser-row"><span class="m-bp-t-num">1</span><span class="m-bp-t-name">Deterministic Processing</span><span class="m-bp-t-tag">Deterministic</span></div>
+            <div class="m-bp-teaser-row"><span class="m-bp-t-num">2</span><span class="m-bp-t-name">Data &amp; Context Layer</span><span class="m-bp-t-tag">Deterministic</span></div>
+            <div class="m-bp-teaser-row"><span class="m-bp-t-num">3</span><span class="m-bp-t-name">Reasoning &amp; Orchestration</span><span class="m-bp-t-tag m-bp-t-tag--ai">AI</span></div>
+            <div class="m-bp-teaser-row"><span class="m-bp-t-num">4</span><span class="m-bp-t-name">Output Validation &amp; Confidence</span><span class="m-bp-t-tag m-bp-t-tag--ai">AI</span></div>
+            <div class="m-bp-teaser-fork">Reads and writes diverge here.</div>
+            <div class="m-bp-teaser-split">
+              <div class="m-bp-teaser-half m-bp-teaser-half--read"><span class="m-bp-t-num m-bp-t-num--read">R</span><span class="m-bp-t-name">Retrieval &amp; Synthesis</span></div>
+              <div class="m-bp-teaser-half m-bp-teaser-half--write"><span class="m-bp-t-num m-bp-t-num--write">W</span><span class="m-bp-t-name">Verification &amp; Write Controls</span></div>
             </div>
+            <div class="m-bp-teaser-row m-bp-teaser-row--memory"><span class="m-bp-t-num m-bp-t-num--memory">M</span><span class="m-bp-t-name">Governed Memory</span></div>
           </div>
+          <div class="m-bp-teaser-fade" aria-hidden="true"></div>
+        </div>
 
-          <div class="m-stack-arrow">↓</div>
+        <button class="m-bp-open-btn" id="mBlueprintBtn">
+          View Full AI Blueprint
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
 
-          <div class="m-stack-layer">
-            <span class="m-layer-num">1</span>
-            <div>
-              <p class="m-layer-name">Deterministic Processing</p>
-              <p class="m-layer-tags">Cleaning · Fingerprinting · Normalization · Deduplication · Provenance Tagging</p>
-            </div>
-          </div>
+        <!-- HIDDEN: full blueprint — revealed by button above -->
+        <div class="m-bp-full" id="mBlueprintFull" aria-hidden="true">
 
-          <div class="m-stack-arrow">↓</div>
+        <!-- Observability status bar -->
+        <div class="m-bp-observability">
+          <span class="m-bp-obs-label">Provenance &amp; Observability</span>
+          <p class="m-bp-obs-desc">Every request carries a full trace — input record, context retrieved, model call, output score, write decision, and audit log. No inference is unobserved.</p>
+        </div>
 
-          <div class="m-stack-layer">
-            <span class="m-layer-num">2</span>
-            <div>
-              <p class="m-layer-name">Data &amp; Context Layer</p>
-              <p class="m-layer-tags">Raw Cache · Vector Index · Graph Context · Timeline State</p>
-            </div>
-          </div>
+        <div class="m-bp-connector" aria-hidden="true"></div>
 
-          <div class="m-stack-arrow">↓</div>
-
-          <div class="m-stack-layer">
-            <span class="m-layer-num">3</span>
-            <div>
-              <p class="m-layer-name">Reasoning &amp; Orchestration</p>
-              <p class="m-layer-tags">Prompt Policy · Retrieval Routing · Model Runtime · Tool Connectors</p>
-            </div>
-          </div>
-
-          <div class="m-stack-fork">
-            <div class="m-stack-fork-line"></div>
-            <span>Reads and writes diverge here.</span>
-            <div class="m-stack-fork-line"></div>
-          </div>
-
-          <div class="m-stack-split">
-            <div class="m-stack-layer m-stack-layer--read">
-              <span class="m-layer-num m-layer-num--read">R</span>
-              <div>
-                <p class="m-layer-name">Retrieval &amp; Synthesis</p>
-                <p class="m-layer-tags">Permissive reads → Chat, Briefings, UI</p>
-              </div>
-            </div>
-            <div class="m-stack-layer m-stack-layer--write">
-              <span class="m-layer-num m-layer-num--write">W</span>
-              <div>
-                <p class="m-layer-name">Verification &amp; Write Controls</p>
-                <p class="m-layer-tags">Evidence · Provenance · Validation · Human Escalation</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="m-stack-arrow">↓</div>
-
-          <div class="m-stack-layer m-stack-layer--memory">
-            <span class="m-layer-num">M</span>
-            <div>
-              <p class="m-layer-name">Governed Memory</p>
-              <p class="m-layer-tags">Reads are cheap. Writes are governed.</p>
-            </div>
+        <!-- Real World Inputs -->
+        <div class="m-bp-rail m-bp-rail--inputs">
+          <span class="m-bp-rail-label">Real World Inputs</span>
+          <p class="m-bp-rail-desc">Every record carries source metadata and provenance before it enters the pipeline.</p>
+          <div class="m-bp-chips">
+            <span>Email</span><span>Files</span><span>Images</span><span>Voice</span><span>Camera</span><span>3rd Party Data</span><span>Other Data</span>
           </div>
         </div>
 
-        <div class="m-blueprint-footer">No provenance = no write</div>
+        <div class="m-bp-connector" aria-hidden="true"></div>
+
+        <!-- Core layer stack -->
+        <div class="m-bp-layers">
+
+          <div class="m-bp-layer">
+            <div class="m-bp-layer-top">
+              <div class="m-bp-layer-meta">
+                <p class="m-bp-layer-eyebrow">Layer 1 <span class="m-bp-cost-label m-bp-cost-det">Deterministic</span></p>
+                <h3 class="m-bp-layer-title">Deterministic Processing</h3>
+              </div>
+              <span class="m-bp-layer-num">1</span>
+            </div>
+            <p class="m-bp-layer-desc">Each input is normalized to a typed, provenance-tagged record with a known schema. Noise is removed before any model sees it.</p>
+            <div class="m-bp-chips m-bp-chips--layer">
+              <span>Cleaning &amp; Parsing</span><span>Normalization</span><span>Entity Extraction</span><span>Deduplication Cascade</span><span>Provenance Tagging</span>
+            </div>
+            <p class="m-bp-fallback">Fallback: Reject malformed input — return error with source reference</p>
+          </div>
+
+          <div class="m-bp-layer-connector" aria-hidden="true"></div>
+
+          <div class="m-bp-layer">
+            <div class="m-bp-layer-top">
+              <div class="m-bp-layer-meta">
+                <p class="m-bp-layer-eyebrow">Layer 2 <span class="m-bp-cost-label m-bp-cost-det">Deterministic</span></p>
+                <h3 class="m-bp-layer-title">Data &amp; Context Layer</h3>
+              </div>
+              <span class="m-bp-layer-num">2</span>
+            </div>
+            <p class="m-bp-layer-desc">Multiple durable representations of source records. Governed Memory is read here to populate inference context.</p>
+            <div class="m-bp-chips m-bp-chips--layer">
+              <span>Raw Cache</span><span>Vector Index</span><span>Graph Context</span><span>Timeline State</span><span>Memory Read</span>
+            </div>
+            <p class="m-bp-fallback">Fallback: Serve stale context with staleness flag — do not block inference</p>
+          </div>
+
+          <div class="m-bp-layer-connector" aria-hidden="true"></div>
+
+          <div class="m-bp-layer">
+            <div class="m-bp-layer-top">
+              <div class="m-bp-layer-meta">
+                <p class="m-bp-layer-eyebrow">Layer 3 <span class="m-bp-cost-label m-bp-cost-ai">AI</span></p>
+                <h3 class="m-bp-layer-title">Reasoning &amp; Orchestration</h3>
+              </div>
+              <span class="m-bp-layer-num">3</span>
+            </div>
+            <p class="m-bp-layer-desc">Models operate over structured context, not raw data. Agents are orchestrated as coordinated workflows, not freeform processes.</p>
+            <div class="m-bp-chips m-bp-chips--layer">
+              <span>Instruction Schema</span><span>Retrieval Routing</span><span>Tool Connectors</span><span>Model Runtime</span>
+            </div>
+            <p class="m-bp-fallback">Fallback: Reduce scope; Retry with larger model; Escalate to human queue</p>
+          </div>
+
+          <div class="m-bp-layer-connector" aria-hidden="true"></div>
+
+          <div class="m-bp-layer">
+            <div class="m-bp-layer-top">
+              <div class="m-bp-layer-meta">
+                <p class="m-bp-layer-eyebrow">Layer 4 <span class="m-bp-cost-label m-bp-cost-ai">AI</span></p>
+                <h3 class="m-bp-layer-title">Output Validation &amp; Confidence Scoring</h3>
+              </div>
+              <span class="m-bp-layer-num">4</span>
+            </div>
+            <p class="m-bp-layer-desc">Model output is validated against expected schemas and scored for confidence before it reaches any read or write path.</p>
+            <div class="m-bp-chips m-bp-chips--layer">
+              <span>Schema Enforcement</span><span>Confidence Scoring</span><span>Hallucination Detection</span><span>Retry Policy</span>
+            </div>
+            <p class="m-bp-fallback">Fallback: Return low-confidence flag — escalate to human review or discard</p>
+          </div>
+
+          <!-- Fork -->
+          <div class="m-bp-fork">
+            <div class="m-bp-fork-line"></div>
+            <span>Reads and writes diverge here.</span>
+            <div class="m-bp-fork-line"></div>
+          </div>
+
+          <!-- Read path -->
+          <div class="m-bp-layer m-bp-layer--read">
+            <p class="m-bp-layer-eyebrow m-bp-eyebrow--read">Read Path</p>
+            <h3 class="m-bp-layer-title">Retrieval &amp; Synthesis</h3>
+            <p class="m-bp-layer-desc">Reads are permissive. The system retrieves context, synthesizes meaning, and surfaces candidate interpretations.</p>
+            <div class="m-bp-chips m-bp-chips--read">
+              <span>Context Retrieval</span><span>Summarization</span><span>Narrative Synthesis</span><span>Session State</span>
+            </div>
+          </div>
+
+          <!-- Write path -->
+          <div class="m-bp-layer m-bp-layer--write">
+            <p class="m-bp-layer-eyebrow m-bp-eyebrow--write">Write Path — Gated</p>
+            <h3 class="m-bp-layer-title">Verification &amp; Write Controls</h3>
+            <p class="m-bp-layer-desc">Writes are governed. Candidate meaning does not become durable state without passing every gate.</p>
+            <div class="m-bp-chips m-bp-chips--write">
+              <span>Evidence Matching</span><span>Provenance Checks</span><span>Structured Validation</span><span>Mutation Policy</span>
+            </div>
+            <div class="m-bp-callout m-bp-callout--write">No provenance = no write</div>
+          </div>
+
+        </div><!-- /.m-bp-layers -->
+
+        <!-- Write path → Governed Memory connector -->
+        <div class="m-bp-connector m-bp-connector--write" aria-hidden="true"></div>
+
+        <!-- Governed Memory -->
+        <div class="m-bp-memory">
+          <div class="m-bp-memory-header">
+            <span class="m-bp-layer-num m-bp-layer-num--memory">M</span>
+            <div>
+              <p class="m-bp-layer-eyebrow m-bp-eyebrow--memory">Persistent State — Bidirectional</p>
+              <h3 class="m-bp-layer-title">Governed Memory</h3>
+            </div>
+          </div>
+          <p class="m-bp-layer-desc">Session state feeds inference. Committed state writes back. The feedback loop is explicit and controlled at both ends.</p>
+          <div class="m-bp-chips m-bp-chips--accent">
+            <span>Session State</span><span>Persistent Memory</span><span>Durable Structured State</span><span>Audit Trace</span>
+          </div>
+          <div class="m-bp-callout m-bp-callout--accent">Reads are cheap. Writes are governed.</div>
+        </div>
+
+        <div class="m-bp-connector" aria-hidden="true"></div>
+
+        <!-- Experience Layers -->
+        <div class="m-bp-rail m-bp-rail--outputs">
+          <span class="m-bp-rail-label">Experience Layers</span>
+          <p class="m-bp-rail-desc">Current, emerging, and new experiences that are not just consumed but also make the system better.</p>
+          <div class="m-bp-chips">
+            <span>AI Chat</span><span>Daily Briefings</span><span>Notifications</span><span>Gestures</span><span>AI Action Reviews</span><span>Semantic Search</span><span>AI Re-Steer</span>
+          </div>
+        </div>
+
+        <div class="m-bp-connector" aria-hidden="true"></div>
+
+        <!-- Covenant footer -->
+        <div class="m-bp-footer">
+          <p class="m-bp-footer-title">Built for production, not prototypes.</p>
+          <p class="m-bp-footer-desc">Every downstream read, write, and action is governed by evidence, provenance, validation, and fallback policy.</p>
+          <div class="m-bp-covenant">
+            <p>No provenance = no write.</p>
+            <p>No schema = no inference.</p>
+            <p>No fallback = no ship.</p>
+          </div>
+        </div>
+
+        </div><!-- /.m-bp-full -->
       </div>
     </section>
 
-    <!-- M4: What We Do -->
-    <section class="m-section m-whatwedo" id="m-product">
+    <!-- M4: Reference Implementation -->
+    <section class="m-section m-ref-impl" id="m-product">
       <div class="m-container">
-        <span class="m-section-label">— What We Do —</span>
-        <h2 class="m-section-h2">We run what we build.</h2>
-        <p class="m-section-sub">Gist is our own product — live in production, not a case study. Client work follows the same engineering standard. We don't recommend what we haven't shipped ourselves.</p>
+        <span class="m-section-label">— Live in Production —</span>
+        <h2 class="m-section-h2">Our Reference Architecture: Gist</h2>
+        <p class="m-section-sub">We only recommend architecture we run ourselves. Every deterministic fallback, ingestion pipeline, and governed write control in the blueprint above is live in production, powering our consumer product, Gist.</p>
+        <p class="m-section-sub" style="margin-top: 1rem;">Gist is our live stress-test for unstructured data. We use NLP, multi-modal AI, and agentic workflows to unify fragmented inputs into strict, normalized schemas.</p>
+        <p class="m-ref-proof">&#10003; Built on the Production AI Blueprint.</p>
+      </div>
+    </section>
 
-        <div class="m-gist-card">
-          <div class="m-gist-badge">
-            <span class="launch-pulse"></span>
-            Launching April 2026
+    <!-- M5: Engagement Models -->
+    <section class="m-section m-engagement">
+      <div class="m-container">
+        <span class="m-section-label">— Engagement Models —</span>
+        <h2 class="m-section-h2">How we work with clients.</h2>
+
+        <div class="m-engagement-list">
+          <div class="m-engagement-card">
+            <h3 class="m-engagement-title">01 / Full-Stack Implementation</h3>
+            <p class="m-engagement-body">We build the complete system—from data ingestion pipelines and deterministic processing layers to the final product surfaces.</p>
           </div>
-          <h3 class="m-gist-name">Gist</h3>
-          <p class="m-gist-tagline">One inbox. Every kid. Nothing missed.</p>
-          <p class="m-gist-proof">Built on the Production AI Blueprint. Every architectural claim on this page runs in Gist.</p>
-          <a href="support.html" class="btn btn-accent">Learn More About Gist</a>
-        </div>
-
-        <div class="m-studio-divider">Hire the builder, not the advisor.</div>
-
-        <p class="m-studio-intro">We work with a small number of organizations at a time. We do not write roadmaps and hand them off. We build systems, stay accountable for how they behave in production, and leave teams better than we found them.</p>
-
-        <div class="m-studio-list">
-          <div class="m-studio-item">
-            <div class="m-studio-item-header">
-              <span class="m-studio-num">01</span>
-              <span class="m-studio-type">Full Product Build</span>
-            </div>
-            <h4 class="m-studio-title">You have the vision.<br>We own the system.</h4>
-            <p class="m-studio-desc">Architecture, data pipeline, deterministic processing, reasoning layer, verification, product surface — we take the full stack from first whiteboard to deployed product. No hand-offs. No gap between design and implementation.</p>
-            <p class="m-studio-for">For teams with a product vision and no production AI team to execute it</p>
+          <div class="m-engagement-card">
+            <h3 class="m-engagement-title">02 / Architectural Design</h3>
+            <p class="m-engagement-body">We partner with your engineers to define the system. We establish ingestion boundaries, fallback policies, and strict write controls prior to implementation.</p>
           </div>
-          <div class="m-studio-item m-studio-item--featured">
-            <div class="m-studio-item-header">
-              <span class="m-studio-num">02</span>
-              <span class="m-studio-type">Embedded Architecture</span>
-            </div>
-            <h4 class="m-studio-title">Your engineers build it.<br>We design it right.</h4>
-            <p class="m-studio-desc">We embed at the architecture level — not the sprint level. We design the system your team implements: ingestion boundary, deterministic preprocessing, reasoning scope, write controls, fallback policy. The difference between an AI product that works in production and one that doesn't is usually these decisions, made before a line of code is written.</p>
-            <p class="m-studio-for">For engineering teams building AI products who need the architecture sound before they build the wrong thing</p>
-          </div>
-          <div class="m-studio-item">
-            <div class="m-studio-item-header">
-              <span class="m-studio-num">03</span>
-              <span class="m-studio-type">Production Rescue</span>
-            </div>
-            <h4 class="m-studio-title">Your AI is live.<br>Something is wrong.</h4>
-            <p class="m-studio-desc">Hallucination, state corruption, unpredictable behavior, costs scaling faster than value. We diagnose what's actually failing — it's usually missing deterministic preprocessing, ungoverned writes, or no fallback logic — and fix it at the root, not the symptom.</p>
-            <p class="m-studio-for">For teams with AI in production that is not behaving reliably</p>
+          <div class="m-engagement-card">
+            <h3 class="m-engagement-title">03 / Production Remediation</h3>
+            <p class="m-engagement-body">We audit live AI systems experiencing unpredictable behavior, state corruption, or scaling issues, and integrate the missing deterministic guardrails.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="m-creds">
-          <span class="m-creds-label">Prior work</span>
-          <div class="m-creds-list">Capital One · Visa · Anywhere Real Estate · Wharton · Georgia Tech</div>
+    <!-- M6: About the Founder -->
+    <section class="m-section m-founder">
+      <div class="m-container">
+        <h2 class="m-section-h2">About the Founder</h2>
+        <p class="m-section-sub">Rohit Kapoor brings 20+ years of experience bridging software engineering and enterprise product leadership. His track record includes managing a $1.3B portfolio at Capital One, serving as Global Head of Data Products at Visa, and scaling product organizations to 65+ professionals.</p>
+        <p class="m-section-sub" style="margin-top: 1rem;">Starting his career building mainframe services in TAL/COBOL, his focus at Hoot Ventures is applying strict operational rigor and systems engineering to AI.</p>
+
+        <div class="m-founder-facts">
+          <div class="m-founder-fact-block">
+            <span class="founder-fact-label">Education</span>
+            <p class="founder-fact-line">MS Industrial Engineering, Georgia Institute of Technology.</p>
+            <p class="founder-fact-line">MBA, The Wharton School.</p>
+            <p class="founder-fact-line">BE Production Engineering, Punjab Engineering College.</p>
+          </div>
+          <div class="m-founder-fact-block">
+            <span class="founder-fact-label">Prior Experience</span>
+            <p class="founder-fact-line">Anywhere Real Estate</p>
+            <p class="founder-fact-line">Visa Inc.</p>
+            <p class="founder-fact-line">Capital One</p>
+            <p class="founder-fact-line">Tata Consultancy Services</p>
+          </div>
         </div>
-
-        <a href="#contact" class="btn btn-primary m-cta-btn">Start a conversation</a>
       </div>
     </section>
 
@@ -939,41 +941,15 @@
 
 
   <!-- ========================= -->
-  <!-- 10. CONTACT               -->
+  <!-- FOOTER CTA                -->
   <!-- ========================= -->
-  <section class="contact-section" id="contact">
+  <section class="footer-cta-section" id="contact">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-text fade-in">
-          <span class="section-label">Let's Talk</span>
-          <h2>Have a problem worth solving?</h2>
-          <p>If you're building a product where AI could fundamentally change the user experience, we'd love to hear about it.</p>
-          <a href="mailto:contact@hootventures.ai" class="contact-email-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            contact@hootventures.ai
-          </a>
-        </div>
-        <div class="contact-form fade-in">
-          <h3>Start a conversation</h3>
-          <form action="https://formspree.io/f/placeholder" method="POST">
-            <div class="form-group">
-              <label>I am a</label>
-              <div class="form-radio-group">
-                <label class="form-radio"><input type="radio" name="type" value="partner"><span>Potential partner</span></label>
-                <label class="form-radio"><input type="radio" name="type" value="investor"><span>Investor / Press</span></label>
-                <label class="form-radio"><input type="radio" name="type" value="talent"><span>Talent</span></label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="company">Company (optional)</label>
-              <input type="text" id="company" name="company" placeholder="Your company">
-            </div>
-            <div class="form-group">
-              <label for="message">Tell us the problem</label>
-              <textarea id="message" name="message" placeholder="Brief description (120 chars)" maxlength="500"></textarea>
-            </div>
-            <button type="submit" class="form-submit">Start conversation</button>
-          </form>
+      <div class="footer-cta-inner">
+        <p class="footer-cta-tagline">Building deterministic AI systems for production.</p>
+        <div class="footer-cta-action">
+          <span class="footer-cta-discuss">Discuss a project.</span>
+          <a href="mailto:rohit@hootventures.ai" class="btn btn-primary">Contact Rohit</a>
         </div>
       </div>
     </div>
@@ -984,43 +960,167 @@
   <!-- ========================= -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="/" class="footer-logo">
-            <div class="footer-logo-mark">
-              <img src="hoot-ventures-logo-transparent-light.png" alt="Hoot Ventures logo">
-            </div>
-            <span class="footer-logo-text">Hoot Ventures</span>
-          </a>
-          <p>Technology studio building production-grade AI products.</p>
-        </div>
-        <div class="footer-links-section">
-          <div class="footer-links-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#product">Gist</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-links-col">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Service</a></li>
-              <li><a href="support.html">Support</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Hoot Ventures LLC. All rights reserved. Data practices are transparent. We do not sell customer data. <a href="privacy.html">See our privacy policy</a>.</p>
+        <p>&copy; 2026 Hoot Ventures LLC. All rights reserved. <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="support.html">Support</a></p>
       </div>
     </div>
   </footer>
 
   <script>
+    const COPY = {
+      hero: {
+        headline: 'AI demos are easy.<br><span class="accent-word">Production systems</span> are hard.',
+        subtitle: 'We build production AI systems.<br>Reliable software for real users, real data, and real scale.',
+        ctaPrimary: 'See How We Build',
+        ctaSecondary: 'Our Products',
+      },
+      gauntlet: {
+        phase0: {
+          eyebrow: '— The Hidden Work Behind Production AI —',
+          headline: 'We engineer the systems that make inference reliable.',
+          subtext: 'Demos only show the AI\'s output—ignoring the hard engineering required to scale it. That\'s why 75% of our codebase is dedicated to deterministic infrastructure.',
+          scrollCue: 'Scroll to explore',
+        },
+        phases: [
+          { tag: 'Deterministic', title: 'Signal Processing', body: 'Clean it. Fingerprint it. Normalize it.' },
+          { tag: 'Deterministic', title: 'Deduplication Cascade', body: 'Never let a model be your first line of defense against bad data.' },
+          { tag: 'Deterministic', title: 'Temporal Resolution', body: 'Resolve time and dates with hard logic, not hallucinations.' },
+          { tag: 'AI Inference', title: 'The AI Threshold', body: 'The model enters here to synthesize and narrate—but it never writes to the database blindly.' },
+        ],
+        micdrop: {
+          lines: ['No provenance = No write.', 'No fallback = No ship.'],
+          cta: 'View our AI Blueprint',
+        },
+      },
+      blueprint: {
+        eyebrow: '— The Production AI Blueprint —',
+        headline: 'Inside the complete AI stack.',
+        body: 'Here is the exact blueprint of how data moves from messy real-world inputs, through our deterministic systems and inference engine, and safely out to the user.',
+        ctaBtn: 'Click to View Our AI Blueprint',
+      },
+      whatWeDo: {
+        label: '— What We Do —',
+        headline: 'We run what we build.',
+        subhead: "Gist is our own product — live in production, not a case study. Client work follows the same engineering standard. We don't recommend what we haven't shipped ourselves.",
+      },
+      gist: {
+        badge: 'Launching April 2026',
+        name: 'Gist',
+        tagline: 'One inbox. Every kid. Nothing missed.',
+        desc: 'Schools, sports leagues, and activity providers scatter deadlines across inboxes. Gist connects to your email, extracts every deadline and action item, and organizes everything by child — presented as a clean daily briefing so nothing gets buried.',
+        proof: 'Built on the Production AI Blueprint. Every architectural claim on this page runs in Gist.',
+        cta: 'Learn More About Gist',
+      },
+      studio: {
+        dividerTagline: 'Hire the builder, not the advisor.',
+        intro: 'We work with a small number of organizations at a time. We do not write roadmaps and hand them off. We build systems, stay accountable for how they behave in production, and leave teams better than we found them.',
+      },
+      modes: [
+        {
+          type: 'Full Product Build',
+          title: 'You have the vision.<br>We own the system.',
+          desc: 'Architecture, data pipeline, deterministic processing, reasoning layer, verification, product surface — we take the full stack from first whiteboard to deployed product. No hand-offs. No gap between design and implementation.',
+          forLabel: 'For teams with a product vision and no production AI team to execute it',
+        },
+        {
+          type: 'Embedded Architecture',
+          title: 'Your engineers build it.<br>We design it right.',
+          desc: "We embed at the architecture level — not the sprint level. We design the system your team implements: ingestion boundary, deterministic preprocessing, reasoning scope, write controls, fallback policy. The difference between an AI product that works in production and one that doesn't is usually these decisions, made before a line of code is written.",
+          forLabel: 'For engineering teams building AI products who need the architecture sound before they build the wrong thing',
+        },
+        {
+          type: 'Production Rescue',
+          title: 'Your AI is live.<br>Something is wrong.',
+          desc: "Hallucination, state corruption, unpredictable behavior, costs scaling faster than value. We diagnose what's actually failing — it's usually missing deterministic preprocessing, ungoverned writes, or no fallback logic — and fix it at the root, not the symptom.",
+          forLabel: 'For teams with AI in production that is not behaving reliably',
+        },
+      ],
+      credentials: {
+        label: 'Prior work',
+        companies: ['Capital One', 'Visa', 'Anywhere Real Estate', 'Wharton', 'Georgia Tech'],
+      },
+      sharedCta: 'Start a conversation',
+    };
+
+    function _copyPath(obj, path) {
+      return path.split('.').reduce(function(acc, key) {
+        if (acc === undefined || acc === null) return undefined;
+        return isNaN(key) ? acc[key] : acc[parseInt(key, 10)];
+      }, obj);
+    }
+
+    function injectCopy() {
+      // Strategy 1: plain text
+      document.querySelectorAll('[data-copy]').forEach(function(el) {
+        var val = _copyPath(COPY, el.getAttribute('data-copy'));
+        if (val !== undefined) el.textContent = val;
+      });
+
+      // Strategy 2: innerHTML (only for elements with <br> or <span> markup)
+      document.querySelectorAll('[data-copy-html]').forEach(function(el) {
+        var val = _copyPath(COPY, el.getAttribute('data-copy-html'));
+        if (val !== undefined) el.innerHTML = val;
+      });
+
+      // Strategy 3: group arrays — data-copy-group + data-copy-field / data-copy-field-html
+      var seen = {};
+      document.querySelectorAll('[data-copy-group]').forEach(function(container) {
+        var groupPath = container.getAttribute('data-copy-group');
+        seen[groupPath] = (seen[groupPath] || 0);
+        var arr = _copyPath(COPY, groupPath);
+        if (!Array.isArray(arr)) return;
+        var idx = seen[groupPath] % arr.length;
+        seen[groupPath]++;
+        var item = arr[idx];
+        container.querySelectorAll('[data-copy-field]').forEach(function(field) {
+          var key = field.getAttribute('data-copy-field');
+          if (item[key] !== undefined) field.textContent = item[key];
+        });
+        container.querySelectorAll('[data-copy-field-html]').forEach(function(field) {
+          var key = field.getAttribute('data-copy-field-html');
+          if (item[key] !== undefined) field.innerHTML = item[key];
+        });
+      });
+
+      // Strategy 4: credentials (structurally different desktop vs mobile)
+      var desktopCreds = document.querySelectorAll('.creds-list > span:not(.cred-sep)');
+      desktopCreds.forEach(function(span, i) {
+        if (COPY.credentials.companies[i] !== undefined) span.textContent = COPY.credentials.companies[i];
+      });
+      var mobileCreds = document.querySelector('.m-creds-list');
+      if (mobileCreds) mobileCreds.textContent = COPY.credentials.companies.join(' · ');
+
+      // Strategy 5: SVG-mixed text nodes — find first non-whitespace TEXT_NODE child
+      function setTextNode(el, text) {
+        var tn = Array.from(el.childNodes).find(function(n) { return n.nodeType === 3 && n.nodeValue.trim() !== ''; });
+        if (tn) tn.nodeValue = text;
+      }
+      document.querySelectorAll('.gmd-cta, .m-gmd-cta').forEach(function(el) {
+        setTextNode(el, COPY.gauntlet.micdrop.cta + ' ');
+      });
+      var bpBtn = document.getElementById('blueprintBtn');
+      if (bpBtn) setTextNode(bpBtn, ' ' + COPY.blueprint.ctaBtn + ' ');
+    }
+
+    try { injectCopy(); } catch(e) { console.warn('[COPY] inject failed:', e); }
+  </script>
+
+  <script>
+    // Anchor scroll — offset by nav height + section padding so content lands flush under nav
+    const NAV_H = 56;
+    function scrollToSection(targetId) {
+      const el = document.getElementById(targetId);
+      if (!el) return;
+      const pt = parseFloat(getComputedStyle(el).paddingTop) || 0;
+      window.scrollTo({ top: el.offsetTop + pt - NAV_H - 28, behavior: 'smooth' });
+    }
+    document.querySelectorAll('a[href="#how-we-build"], a[href="#m-how-we-build"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        scrollToSection(a.getAttribute('href').slice(1));
+      });
+    });
+
     // Nav scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
@@ -1075,6 +1175,9 @@
     (function() {
       var canvas = document.getElementById('particleCanvas');
       if(!canvas) return;
+      // Animations disabled — kill canvas and scroll-driven bridge animation
+      canvas.style.display = 'none';
+      return;
       var ctx=canvas.getContext('2d');
       var W=0,H=0,particles=[],avgDotR=4,masterAlpha=1;
       var NUM_P=55,NUM_TL=18,PHASES=6,currentProgress=0;
@@ -1284,24 +1387,54 @@
   <script>
     (function() {
       var btn      = document.getElementById('blueprintBtn');
+      var preview  = document.getElementById('blueprintPreview');
       var modal    = document.getElementById('blueprintModal');
       var closeBtn = document.getElementById('blueprintClose');
       var backdrop = document.getElementById('blueprintBackdrop');
-      if (!btn || !modal) return;
+      if (!modal) return;
+
+      var scrollY = 0;
 
       function openModal() {
+        scrollY = window.pageYOffset;
+        // iOS-compatible scroll lock
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + scrollY + 'px';
+        document.body.style.width = '100%';
         modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-        closeBtn.focus();
+        // Delay focus so it doesn't interfere with iOS rendering
+        setTimeout(function() { if (closeBtn) closeBtn.focus(); }, 300);
       }
       function closeModal() {
         modal.classList.remove('is-open');
-        document.body.style.overflow = '';
-        btn.focus();
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
       }
-      btn.addEventListener('click', openModal);
-      closeBtn.addEventListener('click', closeModal);
-      backdrop.addEventListener('click', closeModal);
+
+      // Desktop triggers
+      if (btn) btn.addEventListener('click', openModal);
+      if (preview) {
+        preview.addEventListener('click', openModal);
+        preview.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+        });
+      }
+
+      // Mobile triggers
+      var mBtn     = document.getElementById('mBlueprintBtn');
+      var mPreview = document.getElementById('mBlueprintPreview');
+      if (mBtn) mBtn.addEventListener('click', openModal);
+      if (mPreview) {
+        mPreview.addEventListener('click', openModal);
+        mPreview.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+        });
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (backdrop) backdrop.addEventListener('click', closeModal);
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
       });
