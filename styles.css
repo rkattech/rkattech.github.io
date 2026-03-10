@@ -2438,21 +2438,22 @@ section[id] {
 }
 
 .footer-logo-mark {
-  height: 28px;
+  height: 34px;
   width: auto;
   display: flex;
   align-items: center;
 }
 
 .footer-logo-mark img {
-  height: 28px;
+  height: 34px;
   width: auto;
   display: block;
 }
 
 .footer-logo-text {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
 }
 
 .footer-links-section {
@@ -2490,7 +2491,6 @@ section[id] {
   text-align: center;
   margin-top: var(--space-lg);
   padding-top: var(--space-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.3);
   font-size: 0.78rem;
 }
@@ -2919,8 +2919,19 @@ section[id] {
   .footer-block { margin-top: 20px; }
   .footer-block h3 { font-size: clamp(1rem, 5.5vw, 1.35rem); }
 
-  /* Ring diagram: maximize size, let SVG scale naturally */
-  .ring-wrapper { max-width: 95vw; }
+  /* Ring diagram: horizontal scroll container — bypasses body overflow-x:hidden */
+  .ring-scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  .ring-scroll-container .ring-wrapper {
+    width: 560px;
+    max-width: none;
+    padding: 0 100px;
+    box-sizing: content-box; /* padding is extra space for corner label overflow */
+    margin: 0 auto;
+  }
 }
 
 
