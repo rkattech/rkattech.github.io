@@ -68,6 +68,11 @@ html {
   background: linear-gradient(180deg, #0a0f14 0%, #0d1116 20%, #0d1116 100%);
 }
 
+/* Scroll lock when modal is open — set on <html> only so body::before and position:fixed children still work */
+html.modal-open {
+  overflow: hidden;
+}
+
 /* Subtle grid overlay — also fixed to the viewport */
 html::before {
   content: "";

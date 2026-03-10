@@ -1393,24 +1393,13 @@
       var backdrop = document.getElementById('blueprintBackdrop');
       if (!modal) return;
 
-      var scrollY = 0;
-
       function openModal() {
-        scrollY = window.pageYOffset;
-        // iOS-compatible scroll lock
-        document.body.style.position = 'fixed';
-        document.body.style.top = '-' + scrollY + 'px';
-        document.body.style.width = '100%';
         modal.classList.add('is-open');
-        // Delay focus so it doesn't interfere with iOS rendering
-        setTimeout(function() { if (closeBtn) closeBtn.focus(); }, 300);
+        document.documentElement.classList.add('modal-open');
       }
       function closeModal() {
         modal.classList.remove('is-open');
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, scrollY);
+        document.documentElement.classList.remove('modal-open');
       }
 
       // Desktop triggers
