@@ -45,6 +45,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#blueprint">AI Blueprint</a></li>
+        <li><a href="#how-we-build">How We Build</a></li>
         <li><a href="#product">What We Do</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -56,8 +57,8 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#how-we-build" onclick="closeMobileMenu()">How We Build</a>
     <a href="#m-blueprint" onclick="closeMobileMenu()">AI Blueprint</a>
+    <a href="#m-how-we-build" onclick="closeMobileMenu()">How We Build</a>
     <a href="#m-product" onclick="closeMobileMenu()">What We Do</a>
     <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   </div>
@@ -1487,6 +1488,20 @@
       var el = document.querySelector('.ring-scroll-container');
       if (el) el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
     })();
+
+    // Remap footer anchor links on mobile to mobile section IDs
+    document.querySelectorAll('.footer a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        if (window.innerWidth > 768) return;
+        var map = { '#blueprint': '#m-blueprint', '#how-we-build': '#m-how-we-build', '#product': '#m-product' };
+        var target = map[a.getAttribute('href')];
+        if (target) {
+          e.preventDefault();
+          var el = document.querySelector(target);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
   </script>
 </body>
 </html>
