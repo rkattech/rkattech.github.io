@@ -881,11 +881,28 @@ section[id] {
   border-top: none;
   border-radius: 12px;
   margin-bottom: 2rem;
-  overflow: hidden;
+  /* Scroll horizontally at narrow widths; clip vertically */
+  overflow: auto hidden;
+  scrollbar-width: none; /* Firefox */
+}
+.gs-pipeline-panel::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+/* ── Principles Grid ── */
+/* Split top border lives here so the 75%/25% break tracks the
+   actual grid width even when the panel is scrolling */
+.gs-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  /* Minimum keeps all 4 columns readable; panel scrolls if viewport is narrower */
+  min-width: 680px;
+  width: 100%;
+  margin-bottom: 0;
+  position: relative;
 }
 
-/* Split top border: 75% grey / 25% purple */
-.gs-pipeline-panel::before {
+/* Split top border: 75% grey (3 det. phases) / 25% purple (AI phase) */
+.gs-principles-grid::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -897,15 +914,6 @@ section[id] {
     #b48aff 75%,
     #b48aff 100%
   );
-}
-
-/* ── Principles Grid ── */
-.gs-principles-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  width: 100%;
-  margin-bottom: 0;
 }
 
 .gs-1, .gs-2, .gs-3 {
@@ -2808,7 +2816,7 @@ section[id] {
   /* ──────────────────────────────────────
      HOW WE BUILD — collapse pipeline panel to 2-col
   ────────────────────────────────────── */
-  .gs-principles-grid { grid-template-columns: repeat(2, 1fr); }
+  /* gs-principles-grid: desktop-only is hidden at ≤768px; no override needed */
   .gs-1, .gs-3 { border-right: 1px solid rgba(255, 255, 255, 0.06); }
   .gs-2 { border-right: none; }
   .gs-1, .gs-2 { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
