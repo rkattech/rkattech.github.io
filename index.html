@@ -1481,6 +1481,12 @@
       var u = 'rohit', d = 'hootventures.ai';
       window.location.href = 'mailto:' + u + '@' + d;
     }
+
+    // Center the mobile ring diagram scroll container on load
+    (function() {
+      var el = document.querySelector('.ring-scroll-container');
+      if (el) el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+    })();
   </script>
 </body>
 </html>
