@@ -1637,71 +1637,68 @@ section[id] {
 .phone-mockup::before {
   content: '';
   position: absolute;
-  top: 20px;
+  top: 18px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 28px;
+  width: 80px;
+  height: 22px;
   background: #050a15;
-  border-radius: 20px;
+  border-radius: 16px;
   z-index: 2;
 }
 
 .phone-screen {
   background: #F7F5F2;
   border-radius: 26px;
-  padding: 2.5rem 1.25rem 1.5rem;
-  min-height: 420px;
-  max-height: 290px;
-  overflow: hidden;
+  padding: 2rem 1rem 1rem;
 }
 
 .mock-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .mock-app-name {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #1c1917;
 }
 
 .mock-date {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #78716c;
 }
 
 .mock-child-tab {
   background: #5B8DB8;
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
   display: inline-block;
 }
 
 .mock-card {
   background: white;
-  border-radius: 10px;
-  padding: 0.85rem 1rem;
-  margin-bottom: 0.6rem;
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  margin-bottom: 0.4rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .mock-card-badge {
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.15rem 0.5rem;
+  padding: 0.1rem 0.4rem;
   border-radius: 4px;
   display: inline-block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
 }
 
 .mock-badge-urgent { background: #FEF2F2; color: #DC2626; }
@@ -1710,9 +1707,9 @@ section[id] {
 .mock-badge-task { background: #F0FDF4; color: #16A34A; }
 
 .mock-card-text {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   color: #44403c;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 /* ===========================
@@ -2141,6 +2138,7 @@ section[id] {
 .ref-impl-visual {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 /* ===========================
